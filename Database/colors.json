@@ -1,0 +1,43 @@
+[{
+  "_id": {
+    "$oid": "649ca8b69c33476a2a15feec"
+  },
+  "name": "màu hồng",
+  "description": "#ed80ff",
+  "image": "http://localhost:3100/uploads\\1695548307756-mau-hong-didongviet-14.jpg",
+  "createdAt": {
+    "$date": "2023-06-28T21:40:06.344Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T09:38:27.774Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649caa199c33476a2a15ff3b"
+  },
+  "name": "màu nâu",
+  "description": "#303945",
+  "image": "http://localhost:3100/uploads\\1687988761710-9676_3c1b0f70d986fd4e324cb43331b33b81.png",
+  "createdAt": {
+    "$date": "2023-06-28T21:46:01.736Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-28T21:46:01.736Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "649caa259c33476a2a15ff3f"
+  },
+  "name": "màu xanh",
+  "description": "#1b519e",
+  "image": "http://localhost:3100/uploads\\1687988773725-9676_3c1b0f70d986fd4e324cb43331b33b81.png",
+  "createdAt": {
+    "$date": "2023-06-28T21:46:13.740Z"
+  },
+  "updatedAt": {
+    "$date": "2023-06-28T21:46:13.740Z"
+  },
+  "__v": 0
+}]

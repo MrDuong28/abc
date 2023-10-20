@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "643cd88879b4192efedda4e6"
+  },
+  "name": "Bếp từ, Bếp hồng ngoại",
+  "description": "Bếp từ, Bếp hồng ngoại",
+  "slug": "/beptu",
+  "createdAt": {
+    "$date": "2023-04-17T05:26:32.307Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T05:19:51.066Z"
+  },
+  "__v": 0,
+  "image": "http://localhost:3100/uploads\\1695532791049-GS-6IH.png"
+},{
+  "_id": {
+    "$oid": "643cd89a79b4192efedda4ee"
+  },
+  "name": "Đồ gia dụng",
+  "description": "Đồ gia dụng",
+  "slug": "/do-gia-dung",
+  "createdAt": {
+    "$date": "2023-04-17T05:26:50.892Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T05:20:12.224Z"
+  },
+  "__v": 0,
+  "image": "http://localhost:3100/uploads\\1695532812200-GS-1025.jpg"
+},{
+  "_id": {
+    "$oid": "643d030051fc7a906603da39"
+  },
+  "name": "Lò nướng, Lò vi sóng",
+  "description": "Lò nướng, Lò vi sóng",
+  "slug": "/lo-nuong",
+  "createdAt": {
+    "$date": "2023-04-17T08:27:44.893Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T05:20:36.824Z"
+  },
+  "__v": 0,
+  "image": "http://localhost:3100/uploads\\1695532836805-GS D25I8.jpg"
+},{
+  "_id": {
+    "$oid": "644d0f9dd8de2d2d1bac40f5"
+  },
+  "name": "Máy hút mùi",
+  "description": "Máy hút mùi",
+  "slug": "/may-hut-mui",
+  "createdAt": {
+    "$date": "2023-04-29T12:37:49.064Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T05:20:59.828Z"
+  },
+  "__v": 0,
+  "image": "http://localhost:3100/uploads\\1695532859802-GS-3388.png"
+},{
+  "_id": {
+    "$oid": "644d0fb0d8de2d2d1bac40f9"
+  },
+  "name": "Máy rửa bát",
+  "description": "Máy rửa bát",
+  "slug": "/máy rửa bát",
+  "createdAt": {
+    "$date": "2023-04-29T12:38:08.566Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T05:21:18.339Z"
+  },
+  "__v": 0,
+  "image": "http://localhost:3100/uploads\\1695532878318-GS 880.png"
+}]

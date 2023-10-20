@@ -1,0 +1,449 @@
+[{
+  "_id": {
+    "$oid": "651007d782502861831ef4e7"
+  },
+  "name": "GS-9538IH",
+  "price": 20000000,
+  "promotion": 19260000,
+  "quantity": 5,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Thuộc tính sản phẩm</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Bếp 2 vùng nấu cảm ứng từ\n – sản xuất theo tiêu chuẩn IEC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Mặt kính KANGER\n VITROCERAMIC phủ lụa sang trọng</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Công nghệ biến tần\n INVERTER thông minh vượt trội, tiết kiệm điện năng hiệu quả</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng Booster gia\n tăng công suất, nấu siêu nhanh</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Nhận diện vùng nấu chính\n xác, vùng nấu chỉ nóng lên khi phát hiện nồi nấu</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng giữ / ủ ấm thức\n ăn Keep Warm</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng tạm dừng -\n “Pause - Stop &amp; Go”</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng chiên rán\n Frying</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Điều khiển cảm ứng trượt\n slider 9 mức độ công suất</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Tính năng an toàn</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Tiêu chuẩn EMC – Tương\n thích điện từ trường, an toàn cho các thiết bị điện trong gia đình.</p><div><strong>Thuộc tính sản phẩm</strong><p></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Khóa an toàn bảo vệ trẻ\n em Child lock,</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng tự động tắt khi\n không có nồi</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng tự động ngắt\n (IGBT) khi quá nhiệt, quá áp</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Cảm biến chống tràn, tự động ngắt khi có chất lỏng\n tràn lên bề mặt vùng điều khiển</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Hẹn giờ giới hạn thời gian hoạt động linh hoạt\n Timer</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Chức năng cảnh báo nhiệt dư “H” được hiển thị trên\n từng vùng nấu khi còn nóng.</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong><span style=\" mso-ansi-language:vi'=\" \"=\"\">Thông số kỹ thuật</span></strong></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Tổng công suất 4000W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Vùng nấu từ trái #210mm - 2000W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Vùng nấu từ phải #210mm - 2000W, Booster 2400W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Điện áp: 220-240V/50-60HZ</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Kích thước bếp (WxD): 730x410mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"mso-ansi-language:VI\">Kích thước khoét đá (WxD): 680*380mm</span></p><p></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><strong><span style=\"font-size:14.0pt;>Chế độ bảo hành</span></STRONG><span style=\" font-size:14.0pt;=\"\">Chế độ bảo hành: 2 năm</span><!--EndFragment--></strong></p></div>",
+  "image": "http://localhost:3100/uploads\\1695549399588-GS-9538IH.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695549344869-GS-9538IH.jpg"
+  ],
+  "color": [
+    "#303945",
+    "#1b519e"
+  ],
+  "category": {
+    "$oid": "643cd88879b4192efedda4e6"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T09:56:39.681Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T09:56:39.681Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "651008cf82502861831ef511"
+  },
+  "name": "GS-9568IH",
+  "price": 19000000,
+  "promotion": 18860000,
+  "quantity": 8,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Bếp 2 vùng nấu cảm ứng từ\n – sản xuất theo tiêu chuẩn IEC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mặt kính KANGER\n VITROCERAMIC vát cạnh sang trọng</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công nghệ biến tần\n INVERTER thông minh vượt trội, tiết kiệm điện năng hiệu quả</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng Booster gia\n tăng công suất, nấu siêu nhanh</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Nhận diện vùng nấu chính\n xác, vùng nấu chỉ nóng lên khi phát hiện nồi nấu</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng giữ / ủ ấm thức\n ăn Keep Warm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng tạm dừng -\n “Pause - Stop &amp; Go”</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển cảm ứng trượt\n slider 9 mức độ công suất</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Tính năng an toàn</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Tiêu chuẩn EMC – Tương\n thích điện từ trường, an toàn cho các thiết bị điện trong gia đình.</span></p><div><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Khóa an toàn bảo vệ trẻ\n em Child lock,</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng tự động tắt khi\n không có nồi</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng tự động ngắt\n (IGBT) khi quá nhiệt, quá áp</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Cảm biến chống tràn, tự động\n ngắt khi có chất lỏng tràn lên bề mặt vùng điều khiển</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hẹn giờ giới hạn thời\n gian hoạt động linh hoạt Timer</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng cảnh báo nhiệt\n dư, cảnh báo người dùng khi vùng nấu còn nóng.<strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Tổng công suất 4000W</span></p><span style=\"font-size: 14px;\"><strong>Tính năng an toàn</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Vùng nấu từ trái #210mm -\n 2000W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Vùng nấu từ phải #210mm -\n 2000W, Booster 2400W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60HZ</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước bếp (WxD):\n 730x430mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước khoét đá\n (WxD): 700*410mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 2 năm</strong></span></p><span style=\"font-size: 14px;\"></span></div>",
+  "image": "http://localhost:3100/uploads\\1695549646943-GS-9568IH.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695549622728-GS-9568IH.png"
+  ],
+  "color": [
+    "#1b519e",
+    "#303945"
+  ],
+  "category": {
+    "$oid": "643cd88879b4192efedda4e6"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:00:47.015Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:00:47.015Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "651009d02f91c5df0c88aff4"
+  },
+  "name": "GS-839IT",
+  "price": 32000000,
+  "promotion": 31860000,
+  "quantity": 6,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Bếp 3 vùng nấu từ – sản\n xuất theo tiêu chuẩn IEC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mặt kính EUROKERA Made in\n France, chịu lực, chịu nhiệt, chống trầy xước</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công nghệ biến tần\n INVERTER thông minh vượt trội, tiết kiệm điện năng</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng Booster siêu\n nhanh, công suất max đạt 3000W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mâm nhiệt &amp; bản mạch\n EGO Made in Germany, tốc độ tăng nhiệt gấp 3 lần so với các loại bếp truyền thống</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Nhận diện vùng nấu chính\n xác, vùng nấu chỉ nóng lên khi phát hiện nồi nấu</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển cảm ứng trượt\n Slider 9 mức độ công suất</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Tính năng an toàn</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Khóa an toàn bảo vệ trẻ\n em Child lock,</span></p><div><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Khóa phím Key lock tiện lợi</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng tự động tắt khi\n không có nồi</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng tự động ngắt\n (IGBT) khi quá nhiệt, quá áp</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng tự động tắt bếp\n khi có chất lỏng trào lên bề mặt vùng điều khiển</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hệ thống bảo vệ an toàn\n khi quá nhiệt (cảm biến nhiệt độ tích hợp trong mỗi vùng nấu)</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hẹn giờ giới hạn thời\n gian hoạt động linh hoạt</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng cảnh báo nhiệt\n dư “H” được hiển thị trên từng vùng nấu khi còn nóng.</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Tổng công suất 6200W</span></p><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 2 năm</strong></span></div>",
+  "image": "http://localhost:3100/uploads\\1695549904561-GS-839IT.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695549855380-GS-839IT.jpg"
+  ],
+  "color": [
+    "#ed80ff",
+    "#303945"
+  ],
+  "category": {
+    "$oid": "643cd88879b4192efedda4e6"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:05:04.628Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:05:04.628Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65100ab12f91c5df0c88b026"
+  },
+  "name": "GS-6IH",
+  "price": 4000000,
+  "promotion": 3960000,
+  "quantity": 6,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Thuộc tính sản phẩm</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Bếp từ đơn Domino – sản\n xuất theo tiêu chuẩn IEC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Mặt kính CRYTALLITE\n VITROCERAMIC cao cấp siêu bền</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Công nghệ biến tần\n INVERTER thông minh vượt trội, tiết kiệm điện năng hiệu quả</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng ổn định nhiệt độ\n Temperature stability cho phép lựa chọn nhiệt độ 60°C đến 240°C, phù hợp nấu\n các món<span style=\"mso-spacerun:yes\">&nbsp; </span>rang, rán, xào …vv…</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Điều khiển cảm ứng 9 mức\n độ công suất</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Tính năng an toàn</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Tiêu chuẩn EMC – Tương\n thích điện từ trường, an toàn cho các thiết bị điện trong gia đình.</p><div><p></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Khóa an toàn bảo vệ trẻ\n em Child lock,</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chức năng tự động tắt khi\n không có nồi</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Hẹn giờ giới hạn thời\n gian hoạt động linh hoạt Timer</p><p class=\"MsoNormal\" style=\"text-align: left;\"><strong>Thông số kỹ thuật</strong><br></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Tổng công suất 2000W; Điện\n áp: 220-240V/50-60HZ</p></div><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Kích thước bếp (WxD): 390\n x 300mm</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Kích thước khoét đá\n (WxD): 370 x 280 mm</p><p class=\"MsoNormal\" style=\"text-align: left;\"><strong>Chế độ bảo hành: 18 tháng</strong><br></p>",
+  "image": "http://localhost:3100/uploads\\1695550129627-GS-6IH.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695550086451-GS-6IH.png"
+  ],
+  "color": [
+    "#303945",
+    "#1b519e"
+  ],
+  "category": {
+    "$oid": "643cd88879b4192efedda4e6"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:08:49.700Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:08:49.700Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65100b012f91c5df0c88b03e"
+  },
+  "name": "GS-1025",
+  "price": 4400000,
+  "promotion": 4360000,
+  "quantity": 7,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">BỘ NỒI CAO CẤP</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chất liệu inox, nắp kính\n chịu nhiệt và dễ dàng quan sát món ăn</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Sử dụng được trên các loại\n bếp</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Dễ dàng vệ sinh</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Bộ bao gồm: 4 nồi + chảo</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Đường kính nồi:\n 16/18/20/24 cm</p>",
+  "image": "http://localhost:3100/uploads\\1695550209152-GS-1025.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695550204521-GS-1025.jpg"
+  ],
+  "color": [
+    "#ed80ff"
+  ],
+  "category": {
+    "$oid": "643cd89a79b4192efedda4ee"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:10:09.174Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:10:09.174Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65100b5d2f91c5df0c88b055"
+  },
+  "name": "GS-1035",
+  "price": 7000000,
+  "promotion": 6560000,
+  "quantity": 6,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left;tab-stops:16.55pt center 86.85pt\">BỘ\n NỒI CAO CẤP </p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left;tab-stops:16.55pt center 86.85pt\">Chất\n liệu inox 304, nắp kính chịu nhiệt và dễ dàng quan sát món ăn</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left;tab-stops:16.55pt center 86.85pt\">Sử\n dụng được trên các loại bếp</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left;tab-stops:16.55pt center 86.85pt\">Dễ\n dàng vệ sinh</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left;tab-stops:16.55pt center 86.85pt\">Bộ\n bao gồm: 4 nồi + chảo + 1 quánh</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left;tab-stops:16.55pt center 86.85pt\">Đường\n kính nồi: 16/18/20/24 cm</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left;tab-stops:16.55pt center 86.85pt\">Đường\n kính quánh: 16cm</p><div><span style=\"font-size:14.0pt;mso-bidi-font-size:11.0pt;line-height:150%;>Đường kính chảo: 24 cm<span style=\" mso-tab-count:=\"\"> </span></div>",
+  "image": "http://localhost:3100/uploads\\1695550301154-GS 1035.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695550297205-GS 1035.jpg"
+  ],
+  "color": [
+    "#ed80ff"
+  ],
+  "category": {
+    "$oid": "643cd89a79b4192efedda4ee"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:11:41.228Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:11:41.228Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65100b8b2f91c5df0c88b062"
+  },
+  "name": "PK-B065",
+  "price": 2000000,
+  "promotion": 1560000,
+  "quantity": 6,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">ẤM ĐUN NƯỚC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Dung tích:<span style=\"mso-spacerun:yes\">&nbsp; </span>3.0L</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Chất liệu inox, sơn tĩnh\n điện, quai cầm nhựa chịu nhiệt</p>",
+  "image": "http://localhost:3100/uploads\\1695550347924-PK-B065.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695550338937-PK-B065.jpg"
+  ],
+  "color": [
+    "#303945"
+  ],
+  "category": {
+    "$oid": "643cd89a79b4192efedda4ee"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:12:27.999Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:12:27.999Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65100ede71c4e1523e6ab4a5"
+  },
+  "name": "GS 9511",
+  "price": 19000000,
+  "promotion": 18260000,
+  "quantity": 7,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Lò nướng âm tủ 11 chức\n năng</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển cảm ứng màn\n hình hiển thị</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Cửa kính cường lực 3 lớp\n chịu lực, chịu nhiệt giữ ổn định nhiệt độ trong khoang</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Thiết bị Rotisserie giúp\n thịt nướng vàng và giòn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng ECO tiết kiệm\n năng lượng, thân thiện môi trường</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">11 chức năng nướng tích hợp:\n Làm nóng nhanh/ nướng thông thường/nhiệt bức xạ/nướng đôi/ nướng quạt/rã\n đông/nướng đôi + quạt/nhiệt trên/nhiệt trên+quạt/Pizza/Eco.</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Chức năng an toàn:</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Cửa kính 3 lớp chịu nhiệt\n cao</span></p><div><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Khóa điện tử an toàn cho\n trẻ em</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Dung tích: 68L</span></p><span style=\"font-size: 14px;\"><strong>Chức năng an toàn:</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tiêu chuẩn năng lượng\n châu Âu: A</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Nhiệt độ nướng: 50-250oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công suất:</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60Hz</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước sản phẩm: 595\n (R)*595 (C)*575 (S) mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước âm tủ: 555 (R)*580\n (C)*560 (S) mm</span></p><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 2 nămEndFragment</strong></span></p><span style=\"font-size: 14px;\"></span></div>",
+  "image": "http://localhost:3100/uploads\\1695551198098-GS 9511.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695551181075-GS 9511.jpg"
+  ],
+  "color": [
+    "#ed80ff"
+  ],
+  "category": {
+    "$oid": "643d030051fc7a906603da39"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:26:38.163Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:26:38.163Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "65100f1a71c4e1523e6ab4ab"
+  },
+  "name": "GS MOV D25I8",
+  "price": 14000000,
+  "promotion": 12960000,
+  "quantity": 6,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Lò vi sóng kết hợp nướng\n âm tủ</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển phím nhấn có bảng\n hiển thị</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mặt kính cường lực&nbsp; phối inox</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">6 mức công suất lò vi\n sóng</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng rã đông/nướng/hâm\n nóng/nấu nhanh/kết hợp</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng rã đông theo trọng\n lượng và thời gian</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Menu nấu mặc định nhiệt độ\n và thời gian</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tín hiệu âm thanh báo quá\n trình nấu kết thúc</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hẹn giờ nấu tắt, khóa trẻ\n em an toàn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Dung tích: 25L</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Đĩa thủy tinh chịu nhiệt:\n 315mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công suất lò vi sóng:\n 800W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công suất nướng: 1000W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước sản phẩm: 595\n (R)*384 (C)*366 (S) mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước âm tủ: 560\n (R)*360 (C)*380 (S) mm</span></p><div><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 2 nămEndFragment</strong></span></p></div>",
+  "image": "http://localhost:3100/uploads\\1695551258329-GS D25I8.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695551229727-GS D25I8.jpg"
+  ],
+  "color": [
+    "#ed80ff",
+    "#303945"
+  ],
+  "category": {
+    "$oid": "643d030051fc7a906603da39"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:27:38.408Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:27:38.408Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6510126771c4e1523e6ab5b4"
+  },
+  "name": "GS-9508",
+  "price": 9000000,
+  "promotion": 8960000,
+  "quantity": 6,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Máy hút mùi gắn tường, kiểu\n dáng kính cong, kích thước 70/90cm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Thân máy: inox cao cấp\n 430, kính cong cường lực</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hệ thống hút lọc: Hút\n &amp; khử một chiều bằng than hoạt tính</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Motor không chổi than, lực\n hút khỏe, vận hành êm ái</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển phím nhấn 3 mức\n độ công suất</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Lưới lọc dạng thanh, chất\n liệu Inox baffle filter, chắc chắn, dễ vệ sinh</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Đèn LED&nbsp; siêu sáng (2*1.5W) tiết kiệm điện</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Công suất hút: 1300m3/h</span></p><div><strong>Thuộc tính sản phẩm</strong><p></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Motor Power: 210W</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Độ ồn ≤ 48 dB</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Ống thoát: ɸ 150 mm/dài\n 1,5m</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Điện áp: 220-240V/50-60Hz</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Kích thước: 700 (R)*500\n (S)*500 (C) mm</p><strong><span style=\"font-size: 14px;\" font-size:14.0pt;=\"\">Chế độ bảo hành: 18 tháng</span></strong></div>",
+  "image": "http://localhost:3100/uploads\\1695552103645-GS-9508.png",
+  "slide": [],
+  "color": [
+    "#ed80ff"
+  ],
+  "category": {
+    "$oid": "644d0f9dd8de2d2d1bac40f5"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:41:43.687Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:41:43.687Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "651012a071c4e1523e6ab5ba"
+  },
+  "name": "GS-9528",
+  "price": 11000000,
+  "promotion": 10360000,
+  "quantity": 8,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Máy hút mùi gắn tường, kiểu\n dáng kính cong, kích thước 70/90cm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Thân máy: inox cao cấp\n 430, kính cong cường lực</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hệ thống hút lọc: Hút\n &amp; khử một chiều bằng than hoạt tính</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Motor không chổi than, lực\n hút khỏe, vận hành êm ái</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển phím nhấn 3 mức\n độ công suất</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Lưới lọc dạng thanh, chất\n liệu Inox baffle filter, chắc chắn, dễ vệ sinh</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Đèn LED&nbsp; siêu sáng (2*1.5W) tiết kiệm điện</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Thông số kỹ thuật</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công suất hút: 1200m3/h</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Motor Power: 190W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Độ ồn ≤ 48 dB</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Ống thoát: ɸ 150 mm/dài\n 1,5m</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60Hz</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước: 700 (R)*500\n (S)*500 (C) mm</span></p><div><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 18 thángEndFragment</strong></span></div>",
+  "image": "http://localhost:3100/uploads\\1695552159989-GS-9528.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695552133468-GS-9528.png"
+  ],
+  "color": [
+    "#ed80ff",
+    "#303945"
+  ],
+  "category": {
+    "$oid": "644d0f9dd8de2d2d1bac40f5"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:42:40.036Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:42:40.036Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "651012d471c4e1523e6ab5c0"
+  },
+  "name": "GS-3388",
+  "price": 7000000,
+  "promotion": 6960000,
+  "quantity": 6,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Máy hút mùi gắn tường, kiểu\n dáng kính cong, kích thước 70/90cm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Thân máy: inox cao cấp\n 430, kính cong cường lực</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hệ thống hút lọc: Hút\n &amp; khử một chiều bằng than hoạt tính</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển phím nhấn 3 mức\n độ công suất</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Lưới lọc hợp kim nhôm 5 lớp\n chắc chắn, dễ vệ sinh</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Đèn LED 2*1.5W&nbsp; tiết kiệm điện<strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Công suất hút: 1.100m3/h</span></p><div><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Motor Power AC: 120W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Độ ồn ≤ 48 dB</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Ống thoát: ɸ 150 mm/ dài\n 2.0m</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60Hz</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước: 700 (R)*470\n (S) *800 (C) mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 18 tháng</strong></span></p><span style=\"font-size: 14px;\"></span><br></div>",
+  "image": "http://localhost:3100/uploads\\1695552212915-GS-3388.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695552192077-GS-3388.png"
+  ],
+  "color": [
+    "#ed80ff"
+  ],
+  "category": {
+    "$oid": "644d0f9dd8de2d2d1bac40f5"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:43:32.965Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:43:32.965Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6510130d71c4e1523e6ab5c6"
+  },
+  "name": "GS-88STT",
+  "price": 12000000,
+  "promotion": 11760000,
+  "quantity": 8,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Máy hút mùi gắn tường, kiểu\n dáng chữ T, kích thước 70 / 90cm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Thân máy: inox cao cấp\n 430</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Hệ thống hút xả: Hút\n &amp; khử một chiều bằng than hoạt tính</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Motor không chổi than, lực\n hút khỏe, vận hành êm ái</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điều khiển cảm ứng Touch\n control 3 mức độ công suất</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Lưới lọc dạng thanh, chất\n liệu Inox baffle filter, chắc chắn, dễ vệ sinh</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chức năng hút trễ, máy tự\n tắt sau khi tắt 3 phút, giúp hút sạch mùi sau khi nấu ăn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Đèn LED (2*1.5W) tiết kiệm\n điện</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Công suất hút: 1300m3/h</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Động cơ 1*215W</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Độ ồn ≤ 48 dB</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Ống thoát: ɸ 150 mm/ dài\n 1.5m</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60Hz</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước: 700 (R)*500\n (S) *550 (C) mm</span></p><div><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 18 tháng</strong></span></p><span style=\"font-size: 14px;\"></span></div>",
+  "image": "http://localhost:3100/uploads\\1695552269061-GS-88STT.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695552241446-GS-88STT.png"
+  ],
+  "color": [
+    "#1b519e"
+  ],
+  "category": {
+    "$oid": "644d0f9dd8de2d2d1bac40f5"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:44:29.261Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:44:29.261Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6510142371c4e1523e6ab60d"
+  },
+  "name": "GS-898",
+  "price": 30000000,
+  "promotion": 29860000,
+  "quantity": 8,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Thuộc tính sản phẩm</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Máy rửa bát lắp độc lập\n hoặc âm tủ thế hệ mới</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">3 giàn rửa cơ động, thiết\n kế các vị trí sắp xếp tiện lợi</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Ray nâng hạ Vario space\n thông minh thay đổi chiều cao của giàn rửa</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Công nghệ Autodoor – cửa\n tự động mở cung cấp thêm quá trình sấy hiệu quả, bởi trong giai đoạn sấy không\n khí nóng và hơi nước có thể thoát ra khỏi máy để làm khô vật dụng và không bị đọng\n hơi nước.</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Công nghệ Eco Silence\n cùng động cơ BLDC giúp máy hoạt động mạnh mẽ hơn, tiết kiệm năng lượng và thời\n gian, chống rung máy và hoạt động yên tĩnh hơn với độ ồn thấp.</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Công nghệ rửa thân thiện\n Ecowash – Half load với rửa ½ giàn</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Khóa trẻ em – Child lock</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Chương trình rửa</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Auto – Rửa tự động chuyên\n sâu 50oC-65oC</p><div><strong>Thuộc tính sản phẩm</strong><p></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Intensive - Rửa sâu, rửa\n mạnh 50oC-65oC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Hygiene – Rửa diệt khuẩn\n 70oC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Eco - Rửa tiêu chuẩn 50oC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Glass - Rửa cốc, chén\n 50oC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">58 min - Rửa nhanh 58\n phút 30oC-60oC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Self-cleaning – Tự động\n làm sạch 60 oC</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Soak – Rửa tráng </p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Tính năng tăng cường</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Energy save – Chức năng\n tiết kiệm điện</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Extra Drying – Chức năng\n sấy tăng cường</p></div><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Extra Hygiene – Chức năng\n diệt khuẩn tăng cường</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Display timer – Hẹn giờ\n 1-24h</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><strong>Thông số kỹ thuật</strong></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\">Dung tích: 15 bộ bát đĩa\n EU style</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Mức độ ồn: ≤ 47dB</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Tiêu chuẩn năng lượng A+++</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Tiêu chuẩn chỉ số hiệu quả\n sấy khô: Drying efficiency class A</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Điện áp: 220-240V/50-60Hz</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Mức độ tiêu thụ điện\n năng: Khoảng 0.776kWh/ lần rửa tiêu chuẩn</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Mức độ tiêu thụ nước: Khoảng\n 4.1-18L/ lần rửa (tùy chu trình)</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Kích thước sản phẩm: 600\n (R)*600 (S)*845 (C) mm</p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\">Kích thước khoét âm tủ:\n 605 (R)**605 (S)*850 (C) mm</p><p class=\"MsoNormal\" style=\"text-align: left;\"><strong>Chế độ bảo hành: 2 năm</strong><br></p>",
+  "image": "http://localhost:3100/uploads\\1695552547623-GS 898.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695552510119-GS 898.png"
+  ],
+  "color": [
+    "#ed80ff",
+    "#303945"
+  ],
+  "category": {
+    "$oid": "644d0fb0d8de2d2d1bac40f9"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:49:07.690Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:49:07.690Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6510145b71c4e1523e6ab613"
+  },
+  "name": "GS-608",
+  "price": 20000000,
+  "promotion": 19860001,
+  "quantity": 8,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Máy rửa bát lắp độc lập\n hoặc âm tủ thế hệ mới</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">2 giàn rửa cơ động, thiết\n kế các vị trí sắp xếp tiện lợi</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Ray nâng hạ Vario space thông\n minh thay đổi chiều cao của giàn rửa</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công nghệ rửa xịt áp lực\n cao với góc xịt lên tới 720o</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Khóa trẻ em – Child lock</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tạm dừng máy khi cần thiết\n và tái khởi động máy nhanh chóng</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chương trình rửa</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Intensive - Rửa sâu, rửa\n mạnh 60oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Eco - Rửa tiêu chuẩn 50oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Light - Rửa cốc, chén 45\n oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Crystal – Rửa đồ thủy\n tinh, đồ dễ vỡ 40 oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Rapid - Rửa tráng 40oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Pre-Rinse - ngâm trước chờ\n rửa</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Tính năng tăng cường</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Energy save – Chức năng\n tiết kiệm điện</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Display timer – Hẹn giờ\n 1-24h</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Dung tích: 12 bộ bát đĩa\n EU style</span></p><div><span style=\"font-size: 14px;\"><strong>Tính năng tăng cường</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ ồn: ≤ 44dB</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tiêu chuẩn năng lượng A+</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tiêu chuẩn chỉ số hiệu quả\n sấy khô: Drying efficiecy class A</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60Hz</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ tiêu thụ điện\n năng: Khoảng 1.03kWh/ lần rửa tiêu chuẩn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ tiêu thụ nước: Khoảng\n 4-14L/ lần rửa (tùy chu trình)</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước sản phẩm: 600\n (R)*600 (S)*850 (C) mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước khoét âm tủ:\n 605 (R)**605 (S)*855 (C) mm</span></p><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 2 năm</strong></span></p><span style=\"font-size: 14px;\"></span></div>",
+  "image": "http://localhost:3100/uploads\\1695552603790-GS 608.jpg",
+  "slide": [
+    "http://localhost:3100/uploads\\1695552576644-GS 608.jpg"
+  ],
+  "color": [
+    "#ed80ff",
+    "#303945"
+  ],
+  "category": {
+    "$oid": "644d0fb0d8de2d2d1bac40f9"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:50:03.863Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:50:03.863Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "651014a071c4e1523e6ab619"
+  },
+  "name": "GS-880",
+  "price": 20000000,
+  "promotion": 18960000,
+  "quantity": 12,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Máy rửa bát lắp độc lập\n hoặc âm tủ thế hệ mới</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">2 giàn rửa cơ động, thiết\n kế các vị trí sắp xếp tiện lợi</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Ray nâng hạ Vario space\n thông minh thay đổi chiều cao của giàn rửa</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Khóa trẻ em – Child lock</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công nghệ rửa thân thiện\n Ecowash – Half load với rửa ½ giàn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tạm dừng máy khi cần thiết\n 3/6/9h và tái khởi động máy nhanh chóng</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Chương trình rửa</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Intensive - Rửa sâu, rửa\n mạnh 50o-70oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Normal – Rửa thông thường\n với nồi, chảo 45o-65oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Eco - Rửa tiêu chuẩn\n 45o-65oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">90 min – Rửa nhanh 90\n phút 65oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Rapid - Rửa cốc, chén\n 45o-55oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Tính năng tăng cường</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Energy save – Chức năng\n tiết kiệm điện</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Extra fast – Rửa tăng cường\n cực nhanh</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Display timer – Hẹn giờ\n 1-24h</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Dung tích: 12 bộ bát đĩa\n EU style</span></p><div><span style=\"font-size: 14px;\"><strong>Tính năng tăng cường</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ ồn: ≤ 44dB</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tiêu chuẩn năng lượng A++</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tiêu chuẩn chỉ số hiệu quả\n sấy khô: Drying efficiency class A</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60Hz</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ tiêu thụ điện\n năng: Khoảng 0.90kWh/ lần rửa tiêu chuẩn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ tiêu thụ nước: Khoảng\n 11-18.5L/ lần rửa (tùy chu trình)</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước sản phẩm: 600\n (R)*600 (S)*845 (C) mm</span></p><span style=\"font-size: 14px;\"></span></div><p class=\"MsoNormal\" style=\"text-align: left;\"><span style=\"font-size: 14px;\">​</span></p>",
+  "image": "http://localhost:3100/uploads\\1695552672108-GS 880.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695552652335-GS 880.png"
+  ],
+  "color": [
+    "#1b519e"
+  ],
+  "category": {
+    "$oid": "644d0fb0d8de2d2d1bac40f9"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:51:12.135Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:51:12.135Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "651014ec71c4e1523e6ab61f"
+  },
+  "name": "GS-9580",
+  "price": 31000000,
+  "promotion": 28860000,
+  "quantity": 10,
+  "description": "<p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thuộc tính sản phẩm</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Máy rửa bát lắp độc lập\n hoặc âm tủ thế hệ mới</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">3 giàn rửa cơ động, thiết\n kế các vị trí sắp xếp tiện lợi</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Ray nâng hạ Vario space\n thông minh thay đổi chiều cao của giàn rửa</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công nghệ sấy khô Turbo\n Fan Drying, sấy khô triệt để, diệt vi khuẩn và nấm mốc hiệu quả</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công nghệ rửa thân thiện\n Ecowash – Half load với rửa ½ giàn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Công nghệ Dual Zone giúp\n tiết kiệm nước và điện năng, giảm tối đa chi phí sử dụng hoạt động bền bỉ</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Khóa trẻ em – Child lock</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Chương trình rửa</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Intensive - Rửa sâu, rửa\n mạnh 60oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Eco - Rửa tiêu chuẩn 48oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Light - Rửa cốc, chén\n 45oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">60min - Rửa nhanh 60 phút\n 50oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Rapid - Rửa tráng 45oC</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Pre-Rinse - ngâm trước chờ\n rửa</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Tính năng tăng cường</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Energy save – Chức năng\n tiết kiệm điện</span></p><div><span style=\"font-size: 14px;\"><strong>Chương trình rửa</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Extra fast – Rửa tăng cường\n cực nhanh</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Display timer – Hẹn giờ\n 1-24h</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\"><strong>Thông số kỹ thuật</strong></span></p><p class=\"MsoNormal\" align=\"left\" style=\" text-align:left'=\" \"=\"\"><span style=\"font-size: 14px;\">Dung tích: 14 bộ bát đĩa\n EU style</span></p><span style=\"font-size: 14px;\"><strong>Tính năng tăng cường</strong></span><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ ồn: ≤ 44dB</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tiêu chuẩn năng lượng\n A+++</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Tiêu chuẩn chỉ số hiệu quả\n sấy khô: Drying efficiency class A</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Điện áp: 220-240V/50-60Hz</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ tiêu thụ điện\n năng: Khoảng 0.825kWh/ lần rửa tiêu chuẩn</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Mức độ tiêu thụ nước: Khoảng\n 3.9-15.5L/ lần rửa (tùy chu trình)</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước sản phẩm: 600\n (R)*600 (S)*845 (C) mm</span></p><p class=\"MsoNormal\" align=\"left\" style=\"text-align:left\"><span style=\"font-size: 14px;\">Kích thước khoét âm tủ:\n 605 (R)**605 (S)*850 (C) mm</span></p><span style=\"font-size: 14px;\"></span></div><p class=\"MsoNormal\" style=\"text-align: left;\"><span style=\"font-size: 14px;\"><strong>Chế độ bảo hành: 2 năm</strong></span></p>",
+  "image": "http://localhost:3100/uploads\\1695552748306-GS 9580.png",
+  "slide": [
+    "http://localhost:3100/uploads\\1695552704115-GS 9580.png"
+  ],
+  "color": [
+    "#303945"
+  ],
+  "category": {
+    "$oid": "644d0fb0d8de2d2d1bac40f9"
+  },
+  "createdAt": {
+    "$date": "2023-09-24T10:52:28.360Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-24T10:52:28.360Z"
+  },
+  "__v": 0
+}]
