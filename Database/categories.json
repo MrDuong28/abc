@@ -2,75 +2,75 @@
   "_id": {
     "$oid": "643cd88879b4192efedda4e6"
   },
-  "name": "Bếp từ, Bếp hồng ngoại",
-  "description": "Bếp từ, Bếp hồng ngoại",
-  "slug": "/beptu",
+  "name": "Sách giáo khoa",
+  "description": "Sách giáo khoa",
+  "slug": "/sach-giao-khoa",
   "createdAt": {
     "$date": "2023-04-17T05:26:32.307Z"
   },
   "updatedAt": {
-    "$date": "2023-09-24T05:19:51.066Z"
+    "$date": "2023-10-20T13:18:33.719Z"
   },
   "__v": 0,
-  "image": "http://localhost:3100/uploads\\1695532791049-GS-6IH.png"
+  "image": "http://localhost:3100/uploads\\1697807913704-sticker_1.png"
 },{
   "_id": {
     "$oid": "643cd89a79b4192efedda4ee"
   },
-  "name": "Đồ gia dụng",
-  "description": "Đồ gia dụng",
-  "slug": "/do-gia-dung",
+  "name": "Văn học",
+  "description": "Văn học",
+  "slug": "/van-hoc",
   "createdAt": {
     "$date": "2023-04-17T05:26:50.892Z"
   },
   "updatedAt": {
-    "$date": "2023-09-24T05:20:12.224Z"
+    "$date": "2023-10-20T13:18:57.051Z"
   },
   "__v": 0,
-  "image": "http://localhost:3100/uploads\\1695532812200-GS-1025.jpg"
+  "image": "http://localhost:3100/uploads\\1697807937036-sticker_1.png"
 },{
   "_id": {
     "$oid": "643d030051fc7a906603da39"
   },
-  "name": "Lò nướng, Lò vi sóng",
-  "description": "Lò nướng, Lò vi sóng",
-  "slug": "/lo-nuong",
+  "name": "Thiếu Nhi",
+  "description": "Thiếu Nhi",
+  "slug": "/thieu-nhi",
   "createdAt": {
     "$date": "2023-04-17T08:27:44.893Z"
   },
   "updatedAt": {
-    "$date": "2023-09-24T05:20:36.824Z"
+    "$date": "2023-10-20T13:19:17.726Z"
   },
   "__v": 0,
-  "image": "http://localhost:3100/uploads\\1695532836805-GS D25I8.jpg"
+  "image": "http://localhost:3100/uploads\\1697807957709-sticker_1.png"
 },{
   "_id": {
     "$oid": "644d0f9dd8de2d2d1bac40f5"
   },
-  "name": "Máy hút mùi",
-  "description": "Máy hút mùi",
-  "slug": "/may-hut-mui",
+  "name": "Teen",
+  "description": "Teen",
+  "slug": "/teen",
   "createdAt": {
     "$date": "2023-04-29T12:37:49.064Z"
   },
   "updatedAt": {
-    "$date": "2023-09-24T05:20:59.828Z"
+    "$date": "2023-10-20T13:19:34.463Z"
   },
   "__v": 0,
-  "image": "http://localhost:3100/uploads\\1695532859802-GS-3388.png"
+  "image": "http://localhost:3100/uploads\\1697807974440-sticker_1.png"
 },{
   "_id": {
     "$oid": "644d0fb0d8de2d2d1bac40f9"
   },
-  "name": "Máy rửa bát",
-  "description": "Máy rửa bát",
-  "slug": "/máy rửa bát",
+  "name": "Tâm lý/Giáo dục",
+  "description": "Tâm lý giáo dục",
+  "slug": "/tam-ly-giao-duc",
   "createdAt": {
     "$date": "2023-04-29T12:38:08.566Z"
   },
   "updatedAt": {
-    "$date": "2023-09-24T05:21:18.339Z"
+    "$date": "2023-10-20T13:20:26.756Z"
   },
   "__v": 0,
-  "image": "http://localhost:3100/uploads\\1695532878318-GS 880.png"
+  "image": "http://localhost:3100/uploads\\1697808026741-sticker_1.png"
 }]
