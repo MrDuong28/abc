@@ -28,7 +28,7 @@
 .menu-item-1 {
     flex: 0 0 calc(33.33% - 10px);
     /* Hiển thị 3 cột trên mỗi hàng */
-    background-color: #ffffff;
+    background-color: #EEEEEE;
     border: 1px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
@@ -188,6 +188,13 @@ hr {
     margin: 0;
 }
 
+.button-category Button{
+    float: right;
+    font-size: 15.5px;
+    margin-top: 25px;
+    margin-right: 5px;
+}
+
 .comment_total {
     text-align: center;
 }
@@ -200,8 +207,6 @@ hr {
     display: flex;
     justify-content: center;
 }
-
-.button_comment {}
 
 .is-active {
     fill: #FADB14;

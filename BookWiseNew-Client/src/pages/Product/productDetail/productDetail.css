@@ -18,6 +18,11 @@
     width: 70%;
 }
 
+.carousel-image .img img {
+    border: 0.1px solid #00000050;
+    box-shadow: 5px 5px 5px 5px #AAA;
+}
+
 .price_product {
     font-size: 16px;
     font-weight: 700;
@@ -85,12 +90,14 @@ hr {
     margin-left: 5px;
 }
 
-.box_detail_description {
-    margin-top: 20px;
+.describe_detail_description {
+    width: 66.5%;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
 }
 
 .product_name {
-    font-size: 20px;
     font-weight: 600;
 }
 
@@ -98,12 +105,15 @@ hr {
     display: block;
     padding: 0;
     margin: 0;
+    font-size: 25px;
+    /* color: #003300; */
 }
 
 .price {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .price .rate {
@@ -159,7 +169,17 @@ hr {
     justify-content: center;
 }
 
-.button_comment {}
+.describe {
+    padding-top: 40px;
+}
+
+.describe .title_total {
+    padding-bottom: 18px;
+}
+
+.title_total {
+    font-size: 16px;
+}
 
 .is-active {
     fill: #FADB14;

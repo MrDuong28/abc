@@ -42,6 +42,7 @@ const ProductList = () => {
     const [id, setId] = useState();
     const [visible, setVisible] = useState(false);
     const [images, setImages] = useState([]);
+    const [bookUrl, setBookUrl] = useState([]);
 
     const history = useHistory();
 
@@ -70,8 +71,8 @@ const ProductList = () => {
                     "promotion": values.promotion,
                     "quantity": values.quantity,
                     "slide": images,
-                    "color": values.colors
-
+                    "color": values.colors,
+                    "url_book":  bookUrl
                 };
 
                 return axiosClient.post("/product", categoryList).then(response => {
@@ -123,6 +124,30 @@ const ProductList = () => {
         }
     }
 
+    const handleFileUpload = async (info) => {
+        const image = info.file;
+        const formData = new FormData();
+        formData.append('image', image);
+
+        try {
+            await axiosClient.post('/uploadFile', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            }).then(response => {
+                const imageUrl = response.image_url;
+                console.log(imageUrl);
+                // Lưu trữ URL hình ảnh trong trạng thái của thành phần
+                setBookUrl(imageUrl);
+
+                console.log(images);
+                message.success(`${info.file.name} đã được tải lên thành công!`);
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const handleUpdateProduct = async (values) => {
         setLoading(true);
         try {
@@ -143,7 +168,8 @@ const ProductList = () => {
                         "image": response.image_url,
                         "promotion": values.promotion,
                         "quantity": values.quantity,
-                        "color": values.colors
+                        "color": values.colors,
+                        "url_book":  bookUrl
                     };
 
                     return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -172,7 +198,8 @@ const ProductList = () => {
                     "category": values.category,
                     "promotion": values.promotion,
                     "quantity": values.quantity,
-                    "color": values.colors
+                    "color": values.colors,
+                    "url_book":  bookUrl.length > 0 ? bookUrl : ""
                 };
 
                 return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -614,29 +641,6 @@ const ProductList = () => {
                         </Form.Item>
 
                         <Form.Item
-                            name="colors"
-                            label="Màu sắc"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng chọn ít nhất một màu!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Select
-                                mode="multiple"
-                                placeholder="Chọn màu"
-                            >
-                                {newsList.map((color) => (
-                                    <Select.Option key={color._id} value={color?.description}>
-                                        {color.name}
-                                    </Select.Option>
-                                ))}
-                            </Select>
-                        </Form.Item>
-
-                        <Form.Item
                             name="images"
                             label="Hình ảnh slide"
                             style={{ marginBottom: 10 }}
@@ -650,6 +654,23 @@ const ProductList = () => {
                                 multiple
                             >
                                 <Button icon={<UploadOutlined />}>Tải lên</Button>
+                            </Upload>
+                        </Form.Item>
+
+                        <Form.Item
+                            name="url_book"
+                            label="File sách"
+                            style={{ marginBottom: 10 }}
+                        >
+                            <Upload
+                                name="images"
+                                listType="picture-card"
+                                showUploadList={true}
+                                beforeUpload={() => false}
+                                onChange={handleFileUpload}
+                                multiple
+                            >
+                                <Button icon={<UploadOutlined />}>Tải lên sách</Button>
                             </Upload>
                         </Form.Item>
 
@@ -831,6 +852,28 @@ const ProductList = () => {
                             <input type="file" onChange={handleChangeImage}
                                 id="avatar" name="file"
                                 accept="image/png, image/jpeg" />
+                        </Form.Item>
+
+                        <Form.Item
+                            name="url_book"
+                            label="File sách"
+                            style={{ marginBottom: 10 }}
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Vui lòng chọn file sách!',
+                                },
+                            ]}
+                        >
+                            <Upload
+                                name="images"
+                                listType="picture-card"
+                                showUploadList={true}
+                                beforeUpload={() => false}
+                                onChange={handleFileUpload}
+                            >
+                                <Button icon={<UploadOutlined />}>Tải lên sách</Button>
+                            </Upload>
                         </Form.Item>
 
                         <Form.Item

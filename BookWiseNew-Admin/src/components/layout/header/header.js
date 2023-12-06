@@ -110,9 +110,9 @@ function Topbar() {
               <Row
                 justify="center"
               >
-                <Col style={{ paddingLeft: 20 }}>
+                <Col style={{ paddingLeft: 40 }}>
                   <a href="#">
-                    <img style={{ height: 44 }} className="logo" alt="" src="https://i.ibb.co/6H10H12/logo.png" />
+                    <img style={{ height: 50, width: 105 }} className="logo" alt="" src="https://upload.wikimedia.org/wikipedia/vi/2/24/Logo_Nh%C3%A3_Nam.jpg" />
                   </a>
                 </Col>
               </Row>

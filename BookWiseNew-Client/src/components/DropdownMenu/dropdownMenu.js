@@ -76,14 +76,14 @@ function DropdownAvatar() {
           >
 
             <div style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-              <div style={{ paddingRight: 10 }}>
+              {/* <div style={{ paddingRight: 10 }}>
                 <Avatar
                   style={{
                     outline: 'none',
                   }}
                   src={userData ? userData.image : "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"}
                 />
-              </div>
+              </div> */}
               <p style={{ padding: 0, margin: 0, textTransform: 'capitalize', color: "#FFFFFF" }} >
                 {userData?.username}
               </p>

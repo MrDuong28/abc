@@ -4,7 +4,7 @@
 }
 
 .hoverLink {
-  color: #FF0000;
+  color: #FFFFFF;
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
@@ -18,7 +18,7 @@
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #FF0000;
+  background: #FFFFFF;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
   

@@ -31,11 +31,30 @@ const statisticalController = {
                     }
                 }
             ]);
+
+            const orderIncomePromise = OrderModel.aggregate([
+                {
+                    $match: {
+                        status: "final", // hoặc status: "delivered" tùy vào trạng thái đã thanh toán hay giao hàng thành công của đơn hàng
+                        createdAt: {
+                            $gte: last12Months,
+                            $lte: new Date()
+                        }
+                    }
+                },
+                {
+                    $group: {
+                        _id: null,
+                        totalIncome: { $sum: "$orderTotal" }
+                    }
+                }
+            ]);
+            
             const result = {};
             // Sử dụng Promise.all để chờ cả hai Promise hoàn thành
-            Promise.all([userCountPromise, productCountPromise, categoryCountPromise, orderCountPromise])
+            Promise.all([userCountPromise, productCountPromise, categoryCountPromise, orderCountPromise, orderIncomePromise])
                 .then((results) => {
-                    const [userCount, productCount, categoryCount, orderCount] = results;
+                    const [userCount, productCount, categoryCount, orderCount, orderIncome] = results;
                     const data = [
                         { name: "Tháng 1", Total: 0 },
                         { name: "Tháng 2", Total: 0 },
@@ -62,6 +81,7 @@ const statisticalController = {
                         productTotal: productCount,
                         categoryTotal: categoryCount,
                         orderTotal: orderCount.reduce((acc, item) => acc + item.total, 0),
+                        totalIncome: orderIncome.length > 0 ? orderIncome[0].totalIncome : 0, // Tổng thu nhập từ đơn hàng đã hoàn thành
                         data
                     };
                     res.status(200).json({ data: result });

@@ -431,9 +431,9 @@ h3 {
 }
 
 .texty-demo-footer {
-    margin-top: 80px;
+    margin-top: 40px;
     text-align: center;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     font-size: 22px;
     letter-spacing: 5px;
     color: white;
@@ -442,7 +442,7 @@ h3 {
 .texty-title {
     text-align: center;
     margin-bottom: 10px;
-    font-size: 44px;
+    font-size: 40px;
     letter-spacing: 0.5px;
 }
 
@@ -686,7 +686,7 @@ h3 {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 450px;
+        height: 400px;
     }
 
     .wave {
@@ -760,7 +760,7 @@ h3 {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 450px;
+        height: 400px;
     }
 
     .wave {
@@ -812,7 +812,7 @@ h3 {
     }
 
     .texty-demo {
-        margin-top: 80px;
+        margin-top: 40px;
         text-align: center;
         margin-bottom: 10px;
         font-size: 22px;
@@ -832,7 +832,7 @@ h3 {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 550px;
+        height: 400px;
     }
 
     .wave {
@@ -913,6 +913,10 @@ h3 {
     width: 100%;
 }
 
+.right-banner .right-banner__item:hover {
+    transform: scale(1.04);
+}
+
 .ant-carousel .slick-dots {
     margin-left: 0 !important;
 }
@@ -937,9 +941,15 @@ ul {
 }
 
 .menu-category {
-    margin-bottom: 6px;
+    font-size: 16px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.menu-category:hover {
+    transform: scale(1.05);
 }
 
 .promotion1 {
@@ -951,7 +961,7 @@ ul {
 .list-products {
     margin-top: 20px;
     background-color: #fff;
-    padding: 30px;
+    border-radius: 10px;
 }
 
 .row-product {
@@ -979,7 +989,12 @@ ul {
 
 .show-product{
     border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;}
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.show-product:hover {
+    transform: scale(1.03);
+}
 
 .wrapper-products {
     display: flex;
@@ -997,6 +1012,7 @@ ul {
     font-weight: bold;
     line-height: 1.5;
     height: 60px;
+    text-align: center;
 }
 
 .price-amount {

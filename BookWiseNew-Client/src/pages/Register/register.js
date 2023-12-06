@@ -77,10 +77,10 @@ const RegisterCustomer = () => {
                         >
                             <Form.Item style={{ marginBottom: 3 }}>
 
-                                <Divider style={{ marginBottom: 5, fontSize: 19 }} orientation="center">HomeEssentialsHUb</Divider>
+                                <Divider style={{ marginBottom: 5, fontSize: 19 }} orientation="center">NHÀ SÁCH NHÃ NAM</Divider>
                             </Form.Item>
                             <Form.Item style={{ marginBottom: 16 }}>
-                                <p className="text">Đăng Kí Tài Khoản khách hàng</p>
+                                <p className="text">Đăng Kí Tài Khoản Khách Hàng</p>
                             </Form.Item>
 
                             <Form.Item

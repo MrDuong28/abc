@@ -1,8 +1,7 @@
 const OrderModel = require('../models/order');
-const UserModel = require('../models/user');
-const { sendKafkaMessage } = require('../kafka/producer');
 const _const = require('../config/constant')
 const jwt = require('jsonwebtoken');
+const Product = require('../models/product');
 
 const orderController = {
     getAllOrder: async (req, res) => {
@@ -33,6 +32,8 @@ const orderController = {
 
     createOrder: async (req, res) => {
         try {
+            const insufficientQuantityProducts = [];
+
             const order = new OrderModel({
                 user: req.body.userId,
                 products: req.body.products,
@@ -42,20 +43,36 @@ const orderController = {
                 address: req.body.address,
                 status: req.body.status,
             });
-            const user = await UserModel.findById(req.body.userId);
-            console.log(user);
-            const email = user.email;
-            const message = `<div style="background-color: #f2f2f2; padding: 20px;">
-            <h1 style="color: #007bff;">Xác nhận đơn hàng đặt thành công</h1>
-            <p style="font-size: 16px; color: #333;">Cảm ơn bạn đã sử dụng dịch của chúng tôi sau đây là 1 tóm tắt ngắng về đơn hàng</p>
-            <ul style="list-style: none; padding: 0;">
-                <li style="color: green;">Tổng đơn hàng:${req.body.orderTotal}</li>
-                <li style="color: red;">Địa chỉ nhận hàng:${req.body.address}</li>
-                <li style="color: blue;"Hình thức nhận hàng: COD</li>
-            </ul>
-        </div>`;
-            // Gửi thông báo Kafka
-            // await sendKafkaMessage(email, message);
+
+            for (const productItem of req.body.products) {
+                const productId = productItem.product;
+                const quantity = productItem.quantity;
+
+                // Find the product in the database
+                const product = await Product.findById(productId);
+
+                if (!product || product.quantity < quantity) {
+                    insufficientQuantityProducts.push({
+                        productId,
+                        quantity: product ? product.quantity : 0,
+                    });
+                }
+
+                if (insufficientQuantityProducts.length > 0) {
+                    return res.status(200).json({
+                        error: 'Insufficient quantity for one or more products.',
+                        insufficientQuantityProducts,
+                    });
+                }
+
+
+                // Update the product quantity
+                if (product) {
+                    product.quantity -= quantity;
+                    await product.save();
+                }
+            }
+
 
             const orderList = await order.save();
             res.status(200).json(orderList);
@@ -63,6 +80,7 @@ const orderController = {
 
         }
         catch (err) {
+            console.log(err);
             res.status(500).json(err);
         }
     },

@@ -37,6 +37,9 @@ const ProductSchema = new mongoose.Schema({
     ref: 'Category',
     required: true
   },
+  url_book: {
+    type: String 
+  }
  
 }, { timestamps: true }, { collection: 'product' });
 

@@ -6,7 +6,7 @@ import logo from "../../../assets/image/logo-dtu.png";
 import DropdownAvatar from "../../DropdownMenu/dropdownMenu";
 import { useHistory, NavLink } from "react-router-dom";
 import { Layout, Avatar, Badge, Row, Col, List, Popover, Modal, Drawer, Select } from 'antd';
-import { BellOutlined, NotificationTwoTone, BarsOutlined, ShoppingOutlined } from '@ant-design/icons';
+import { BellOutlined, NotificationTwoTone, BarsOutlined, ShoppingCartOutlined, UserOutlined  } from '@ant-design/icons';
 import axiosClient from "../../../apis/axiosClient";
 
 const { Option } = Select;
@@ -125,14 +125,14 @@ function Topbar() {
 
   return (
     <Header
-      style={{ background: "#D70018" }}
+      style={{ background: "#003300" }}
       className={styles.header}
     >
       <div className="">
-        <img style={{ color: "#000000", fontSize: 15, height: 55, cursor: "pointer" }} src="https://i.ibb.co/6H10H12/logo.png" onClick={() => handleLink("/home")}></img>
+        <img style={{ color: "#000000", fontSize: 15, width: 200, height: 80, cursor: "pointer" }} src="https://upload.wikimedia.org/wikipedia/vi/2/24/Logo_Nh%C3%A3_Nam.jpg" onClick={() => handleLink("/home")}></img>
       </div>
       <BarsOutlined className={styles.bars} onClick={showDrawer} />
-      <div className={styles.navmenu} style={{ marginLeft: 15 }}>
+      <div className={styles.navmenu} style={{ marginLeft: 20 }}>
         <NavLink className={styles.navlink} to="/home" activeStyle>
           Trang chủ
         </NavLink>
@@ -147,7 +147,7 @@ function Topbar() {
         </NavLink>
         <Select
           showSearch
-          style={{ width: 270 }}
+          style={{ marginLeft: 20, width: 300 }}
           placeholder="Bạn tìm gì..."
           optionFilterProp="children"
           filterOption={(input, option) => (option?.label ?? '').includes(input)}
@@ -164,13 +164,13 @@ function Topbar() {
         <div style={{ position: 'relative', display: 'flex', float: 'right', alignItems: "center", cursor: 'pointer' }}>
           <Row>
             <Col onClick={() => handleLink("/cart")}>
-              <p style={{ marginRight: 10, padding: 0, margin: 0, color: '#FFFFFF' }}><ShoppingOutlined style={{ fontSize: '18px', color: '#FFFFFF' }} /> {cart} sản phẩm</p>
+              <p style={{ marginRight: 10, padding: 30, margin: 0, fontSize: '14px', color: '#FFFFFF' }}>Giỏ hàng <ShoppingCartOutlined style={{ fontSize: '32px', color: '#FFFFFF' }} />{cart}</p>
             </Col>
             <Col>
               <Badge style={{ marginLeft: 10 }} overflowCount={9999} count={userData?.score > 0 ? userData?.score : 0} />
             </Col>
           </Row>
-          <Row>
+          {/* <Row>
             <span className={styles.container} style={{ marginRight: 15 }} >
               <Popover placement="bottomRight" title="Thông Báo" content={content} visible={visiblePopover} onVisibleChange={handleVisibleChange} trigger="click">
                 <Badge count={countNotification} >
@@ -178,9 +178,10 @@ function Topbar() {
                 </Badge>
               </Popover>
             </span>
-          </Row>
+          </Row> */}
           <Row>
             <DropdownAvatar key="avatar" />
+            <p style={{ marginRight: 10, padding: 0, margin: 0, color: '#FFFFFF' }}><UserOutlined  style={{ fontSize: '28px', color: '#FFFFFF' }} /></p>
           </Row>
           <Modal
             title={titleNotification}
@@ -209,7 +210,7 @@ function Topbar() {
           </NavLink>
           <div className={styles.navlink2}>
             <div style={{ display: 'flex', cursor: 'pointer' }} onClick={() => handleLink("/cart")}>
-              <p style={{ marginRight: 10, padding: 0, margin: 0, color: 'black' }}><ShoppingOutlined style={{ fontSize: '18px', color: 'black' }} /> {cart} sản phẩm</p>
+              <p style={{ marginRight: 10, padding: 0, margin: 0, color: 'black' }}><ShoppingCartOutlined style={{ fontSize: '18px', color: 'black' }} /> {cart} Giỏ hàng</p>
               <Badge style={{ marginLeft: 10 }} overflowCount={9999} count={userData?.score > 0 ? userData?.score : 0} />
             </div>
           </div>

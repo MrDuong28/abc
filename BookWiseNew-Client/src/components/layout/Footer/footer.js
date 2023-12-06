@@ -32,7 +32,7 @@ function _Footer() {
                 </Col>
                 <Col span={5} className="footer">
                     <strong style={{ color: "#FFFFFF", fontSize: 20, cursor: "pointer" }}>Địa chỉ</strong>
-                    <p style={{ marginTop: 20, color: "#FFFFFF", fontWeight: 400, fontSize: 14, cursor: "pointer" }}>Chi nhánh 1: 94E-94F Đường Láng, Phường Ngã Tư Sở, Quận Đống Đa, Hà Nội</p>
+                    <p style={{ marginTop: 20, color: "#FFFFFF", fontWeight: 400, fontSize: 14, cursor: "pointer" }}>Chi nhánh 1: 59 Đỗ Quang, Phường Trung Hoà, Quận Cầu Giấy, Hà Nội</p>
                     <p style={{ marginTop: 20, color: "#FFFFFF", fontWeight: 400, fontSize: 14, cursor: "pointer" }}>Chi nhánh 2: 94E-94F Đường Láng, Phường Ngã Tư Sở, Quận Đống Đa, Hà Nội</p>
 
                 </Col>
@@ -43,10 +43,10 @@ function _Footer() {
                             <SocialIcon url="https://www.youtube.com/" style={{ height: 35, width: 35, cursor: "pointer" }} />
                         </Col>
                         <Col span={6}>
-                            <SocialIcon url="https://www.facebook.com/" style={{ height: 35, width: 35, cursor: "pointer" }} />
+                            <SocialIcon url="https://www.facebook.com/nqhuy.andrew" style={{ height: 35, width: 35, cursor: "pointer" }} />
                         </Col>
                         <Col span={6}>
-                            <SocialIcon url="https://www.instagram.com/" style={{ height: 35, width: 35, cursor: "pointer" }} />
+                            <SocialIcon url="https://www.instagram.com/qhuy.n_/?fbclid=IwAR2f4MgLZzSJMeUpgws1CWdjJVw0w5ooEieEn8f5E3EarifbFswHG934qsI" style={{ height: 35, width: 35, cursor: "pointer" }} />
                         </Col>
                         <Col span={6}>
                             <SocialIcon url="https://www.tiktok.com/" style={{ height: 35, width: 35, cursor: "pointer" }} />
@@ -88,8 +88,8 @@ function _Footer() {
             </div>
             <div style={{ textAlign: 'center' }}>
                 <Divider style={{ padding: 0 }} />
-                <p style={{ color: "#FFFFFF", fontSize: 13 }}>Copyright@ 2023 Created by team BookWiseNew</p>
-                <p style={{ color: "#FFFFFF", fontSize: 13 }}>Điện thoại: (+84) 000.0000000 - (+84) 000.0000000</p>
+                <p style={{ color: "#FFFFFF", fontSize: 13 }}>Copyright@ 2023 Created by QuangHuy</p>
+                <p style={{ color: "#FFFFFF", fontSize: 13 }}>Điện thoại: (+84) 354522975 - (+84) 912150371</p>
             </div>
         </Footer>
     );

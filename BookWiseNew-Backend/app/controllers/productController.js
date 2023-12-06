@@ -54,7 +54,7 @@ const productController = {
     },
 
     createProduct: async (req, res) => {
-        const {
+      const {
           name,
           price,
           description,
@@ -64,10 +64,10 @@ const productController = {
           quantity,
           color,
           slide,
-        
-        } = req.body;
-      
-        const product = new ProductModel({
+          url_book  
+      } = req.body;
+  
+      const product = new ProductModel({
           name,
           price,
           description,
@@ -77,20 +77,20 @@ const productController = {
           quantity,
           slide,
           color,
-        
-        });
-      
-        try {
+          url_book  
+      });
+  
+      try {
           const checkCategory = await CategoryModel.findById(category);
           if (!checkCategory) {
-            return res.status(400).json({ error: 'Invalid category' });
+              return res.status(400).json({ error: 'Invalid category' });
           }
           const newProduct = await product.save();
           res.status(200).json(newProduct);
-        } catch (err) {
+      } catch (err) {
           res.status(500).json(err);
-        }
-      },
+      }
+  },
       
 
     deleteProduct: async (req, res) => {
@@ -115,7 +115,8 @@ const productController = {
           image,
           promotion,
           quantity,
-          color
+          color,
+          url_book 
         } = req.body;
       
         try {
@@ -129,7 +130,8 @@ const productController = {
               category,
               image,
               promotion,
-              color
+              color,
+              url_book 
             },
             { new: true }
           );
