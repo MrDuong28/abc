@@ -253,14 +253,17 @@ const Pay = () => {
           phone: response.user.phone,
         });
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        console.log(cart);
+
         const transformedData = cart.map(
-          ({ _id: product, quantity, price }) => ({ product, quantity, price })
+          ({ _id: product, quantity, promotion, price }) => ({ product, quantity, promotion,price })
         );
         let totalPrice = 0;
 
         for (let i = 0; i < transformedData.length; i++) {
           let product = transformedData[i];
-          let price = product.price * product.quantity;
+          console.log(product);
+          let price = product.promotion * product.quantity;
           totalPrice += price;
         }
 
