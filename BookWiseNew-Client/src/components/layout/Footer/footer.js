@@ -12,7 +12,7 @@ function _Footer() {
                     <div class="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                         <img class="w-auto h-auto" src="https://i.ibb.co/hXC9P2p/432896053-431139066148630-3207667354342141055-n-1.png" alt="" />
 
-                        <p class="text-base leading-relaxed text-gray-600 mt-7">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+                        <p class="text-base leading-relaxed text-gray-600 mt-7">Chúng tôi cung cấp nhiều loại sách đa dạng để bạn lựa chọn. Hãy thăm cửa hàng của chúng tôi ngay hôm nay!</p>
 
                         <ul class="flex items-center space-x-3 mt-9">
                             <li>
@@ -60,51 +60,51 @@ function _Footer() {
                     </div>
 
                     <div>
-                        <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Company</p>
+                        <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Giới thiệu về chúng tôi</p>
 
                         <ul class="mt-6 space-y-4">
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> About </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Về chúng tôi </a>
                             </li>
 
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Features </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Tính năng </a>
                             </li>
 
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Works </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Cách hoạt động </a>
                             </li>
 
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Career </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Cơ hội nghề nghiệp </a>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Help</p>
+                        <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Trợ giúp</p>
 
                         <ul class="mt-6 space-y-4">
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Customer Support </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Hỗ trợ khách hàng </a>
                             </li>
 
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Delivery Details </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Chi tiết vận chuyển </a>
                             </li>
 
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Terms & Conditions </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Điều khoản và điều kiện </a>
                             </li>
 
                             <li>
-                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy Policy </a>
+                                <a href="#" title="" class="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Chính sách bảo mật </a>
                             </li>
                         </ul>
                     </div>
 
                     <div class="col-span-2 md:col-span-1 lg:col-span-2 lg:pl-8">
-                        <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Subscribe to newsletter</p>
+                        <p class="text-sm font-semibold tracking-widest text-gray-400 uppercase">Đăng ký nhận bản tin:</p>
 
                         <form action="#" method="POST" class="mt-6">
                             <div>
@@ -112,7 +112,7 @@ function _Footer() {
                                 <input type="email" name="email" id="email" placeholder="Enter your email" class="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600" />
                             </div>
 
-                            <button type="submit" class="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-blue-600 rounded-md hover:bg-blue-700 focus:bg-blue-700">Subscribe</button>
+                            <button type="submit" class="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-blue-600 rounded-md hover:bg-blue-700 focus:bg-blue-700">Đăng ký nhận bản tin</button>
                         </form>
                     </div>
                 </div>

@@ -1,21 +1,12 @@
-import QueueAnim from "rc-queue-anim";
-import { OverPack } from "rc-scroll-anim";
 import Texty from "rc-texty";
-import TweenOne from "rc-tween-one";
 import React, { useEffect, useRef, useState } from "react";
 import eventApi from "../../apis/eventApi";
 import productApi from "../../apis/productApi";
 import triangleTopRight from "../../assets/icon/Triangle-Top-Right.svg";
-import service10 from "../../assets/image/service/service10.png";
-import service6 from "../../assets/image/service/service6.png";
-import service7 from "../../assets/image/service/service7.png";
-import service8 from "../../assets/image/service/service8.png";
-import service9 from "../../assets/image/service/service9.png";
 import "../Home/home.css";
 
 import {
   BackTop,
-  Card,
   Carousel,
   Col,
   Row,
@@ -273,9 +264,6 @@ const Home = () => {
           </Row>
         </div>
 
-        {/* <div className="container-home container">
-                    <img src="https://nhasachphuongnam.com/images/promo/262/Banner_Halloween_1180x200px.jpg" className="promotion1"></img>
-                </div> */}
 
         <div className="image-one">
           <div className="texty-demo">
@@ -287,40 +275,9 @@ const Home = () => {
             </p>
           </div>
 
-          {/* <div class="item" key="0">
-                        <div class="event-item">
-                            <div class="countdown-timer">
-                                <ul class="countdown-list" data-countdown="2020/08/08">
-                                    <li className="timer-item days">
-                                        <strong style={{ fontSize: 18 }}>01</strong><br />
-                                        <small>Ngày</small>
-                                    </li>
-                                    <li className="timer-item hours">
-                                        <strong style={{ fontSize: 18 }}>{hours.toString().padStart(2, '0')}</strong><br />
-                                        <small>Giờ</small>
-                                    </li>
-                                    <li className="timer-item mins">
-                                        <strong style={{ fontSize: 18 }}>{minutes.toString().padStart(2, '0')}</strong><br />
-                                        <small>Phút</small>
-                                    </li>
-                                    <li className="timer-item seco">
-                                        <strong style={{ fontSize: 18 }}>{seconds.toString().padStart(2, '0')}</strong><br />
-                                        <small>Giây</small>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> */}
+
           <div className="list-products container" key="1">
-            {/* <Row>
-                            <Col>
-                                <div className="title-category">
-                                    <a href="" class="title">
-                                        <h3>Sách NỔI BẬT NHẤT</h3>
-                                    </a>
-                                </div>
-                            </Col>
-                        </Row> */}
+
             <Row
               gutter={{ xs: 8, sm: 16, md: 24, lg: 48 }}
               className="row-product"
@@ -378,6 +335,49 @@ const Home = () => {
         </div>
         <div></div>
 
+        <section class="py-10 bg-white sm:py-16 lg:py-24">
+          <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+              <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Làm thế nào để mua hàng?</h2>
+              <p class="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">Đăng ký tài khoản miễn phí để bắt đầu trải nghiệm mua sắm.</p>
+            </div>
+
+            <div class="relative mt-12 lg:mt-20">
+              <div class="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
+                <img class="w-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg" alt="" />
+              </div>
+
+              <div class="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
+                <div>
+                  <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                    <span class="text-xl font-semibold text-gray-700"> 1 </span>
+                  </div>
+                  <h3 class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Tạo tài khoản miễn phí</h3>
+                  <p class="mt-4 text-base text-gray-600">Đăng ký tài khoản miễn phí để bắt đầu trải nghiệm mua sắm.</p>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                    <span class="text-xl font-semibold text-gray-700"> 2 </span>
+                  </div>
+                  <h3 class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Xây dựng giỏ hàng</h3>
+                  <p class="mt-4 text-base text-gray-600">Thêm sản phẩm vào giỏ hàng và tiến hành thanh toán khi đã hoàn tất lựa chọn.</p>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                    <span class="text-xl font-semibold text-gray-700"> 3 </span>
+                  </div>
+                  <h3 class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Thanh toán và Giao hàng</h3>
+                  <p class="mt-4 text-base text-gray-600">Hoàn tất thanh toán và chờ nhận sản phẩm tại địa chỉ đã cung cấp.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
         <div className="image-one">
           <div className="texty-demo">
             <Texty>Giờ Vàng</Texty>
@@ -389,15 +389,7 @@ const Home = () => {
           </div>
 
           <div className="list-products container" key="1">
-            {/* <Row>
-                            <Col>
-                                <div className="title-category">
-                                    <a href="" class="title">
-                                        <h3>Sách KHUYẾN MÃI</h3>
-                                    </a>
-                                </div>
-                            </Col>
-                        </Row> */}
+
             <Row
               gutter={{ xs: 8, sm: 16, md: 24, lg: 48 }}
               className="row-product"
@@ -466,13 +458,7 @@ const Home = () => {
 
           <div className="list-products container" key="1">
             <Row>
-              {/* <Col>
-                <div className="title-category">
-                  <a href="" class="title">
-                    <h3></h3>
-                  </a>
-                </div>
-              </Col> */}
+
             </Row>
             <Row
               gutter={{ xs: 8, sm: 16, md: 24, lg: 48 }}
