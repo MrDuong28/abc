@@ -43,14 +43,6 @@ const AccountCreate = lazy(() => {
         .then(([moduleExports]) => moduleExports);
 });
 
-const Notification = lazy(() => {
-    return Promise.all([
-        import('../pages/Notifications/notification'),
-        new Promise(resolve => setTimeout(resolve, 0))
-    ])
-        .then(([moduleExports]) => moduleExports);
-});
-
 
 const ProductList = lazy(() => {
     return Promise.all([
@@ -177,12 +169,6 @@ const RouterURL = withRouter(({ location }) => {
                         <PrivateRoute exact path="/notfound">
                             <NotFound /></PrivateRoute>
 
-
-                        <PrivateRoute exact path="/notification">
-                            <Suspense fallback={<LoadingScreen />}>
-                                <Notification />
-                            </Suspense>
-                        </PrivateRoute>
                         <PrivateRoute exact path="/product-list">
                             <Suspense fallback={<LoadingScreen />}>
                                 <ProductList />
@@ -253,9 +239,6 @@ const RouterURL = withRouter(({ location }) => {
                         <DefaultContainer />
                     </Route>
                     <Route exact path="/account-management">
-                        <DefaultContainer />
-                    </Route>
-                    <Route exact path="/notification">
                         <DefaultContainer />
                     </Route>
                     <Route exact path="/product-list">
