@@ -1,10 +1,9 @@
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Alert, Button, Divider, Form, Input, Row, notification } from 'antd';
 import React, { useState } from 'react';
-import "./login.css";
+import { Link, useHistory } from "react-router-dom";
 import userApi from "../../apis/userApi";
-import { useHistory, Link } from "react-router-dom";
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Form, Input, Button, Checkbox, Divider, Alert, Row, notification } from 'antd';
-import backgroundLogin from "../../assets/image/background-client.gif";
+import "./login.css";
 
 const Login = () => {
 
@@ -31,10 +30,6 @@ const Login = () => {
       .catch(error => {
         console.log("email or password error" + error)
       });
-  }
-
-  const handleLink = () => {
-    history.push("/register");
   }
 
   return (
