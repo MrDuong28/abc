@@ -116,14 +116,6 @@ const OrderDetail = lazy(() => {
         .then(([moduleExports]) => moduleExports);
 });
 
-const ColorList = lazy(() => {
-    return Promise.all([
-        import('../pages/Color/color'),
-        new Promise(resolve => setTimeout(resolve, 0))
-    ])
-        .then(([moduleExports]) => moduleExports);
-});
-
 
 const RouterURL = withRouter(({ location }) => {
 
@@ -210,12 +202,7 @@ const RouterURL = withRouter(({ location }) => {
                             <Suspense fallback={<LoadingScreen />}>
                                 <OrderList />
                             </Suspense>
-                        </PrivateRoute>
-                        <PrivateRoute exact path="/color-list">
-                            <Suspense fallback={<LoadingScreen />}>
-                                <ColorList />
-                            </Suspense>
-                        </PrivateRoute>                  
+                        </PrivateRoute>                
                         <PrivateRoute exact path="/order-details/:id">
                             <Suspense fallback={<LoadingScreen />}>
                                 <OrderDetail />
