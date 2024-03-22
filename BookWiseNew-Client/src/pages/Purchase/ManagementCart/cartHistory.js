@@ -207,7 +207,7 @@ const CartHistory = () => {
       render: (products) => (
         <div>
           {products.map((item, index) => (
-            <div key={index}>{item.product.name}</div>
+            <div key={index}>{item.product?.name}</div>
           ))}
         </div>
       ),
@@ -220,7 +220,7 @@ const CartHistory = () => {
         <div>
           {products.map((item, index) => (
             <div key={index}>
-              {item.product.price.toLocaleString("vi", {
+              {item.product?.price.toLocaleString("vi", {
                 style: "currency",
                 currency: "VND",
               })}
@@ -236,7 +236,7 @@ const CartHistory = () => {
       render: (products) => (
         <div>
           {products.map((item, index) => (
-            <div key={index}>{item.quantity}</div>
+            <div key={index}>{item?.quantity}</div>
           ))}
         </div>
       ),

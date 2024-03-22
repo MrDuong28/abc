@@ -1,49 +1,29 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../Home/home.css";
+import QueueAnim from "rc-queue-anim";
+import { OverPack } from "rc-scroll-anim";
 import Texty from "rc-texty";
 import TweenOne from "rc-tween-one";
-import QueueAnim from "rc-queue-anim";
+import React, { useEffect, useRef, useState } from "react";
 import eventApi from "../../apis/eventApi";
 import productApi from "../../apis/productApi";
-import { OverPack } from "rc-scroll-anim";
-import { DateTime } from "../../utils/dateTime";
-import handshake from "../../assets/icon/handshake.svg";
-import promotion1 from "../../assets/home/banner-1.png";
-import banner from "../../assets/image/banner/banner.png";
-import banner2 from "../../assets/image/banner/banner2.png";
+import triangleTopRight from "../../assets/icon/Triangle-Top-Right.svg";
+import service10 from "../../assets/image/service/service10.png";
 import service6 from "../../assets/image/service/service6.png";
 import service7 from "../../assets/image/service/service7.png";
 import service8 from "../../assets/image/service/service8.png";
 import service9 from "../../assets/image/service/service9.png";
-import service10 from "../../assets/image/service/service10.png";
-import TawkMessengerReact from "@tawk.to/tawk-messenger-react";
-import triangleTopRight from "../../assets/icon/Triangle-Top-Right.svg";
+import "../Home/home.css";
 
-import { useHistory } from "react-router-dom";
-import { RightOutlined, QrcodeOutlined } from "@ant-design/icons";
 import {
+  BackTop,
+  Card,
+  Carousel,
   Col,
   Row,
-  Button,
-  Pagination,
-  Spin,
-  Carousel,
-  Card,
-  List,
-  BackTop,
-  Affix,
-  Avatar,
-  Badge,
-  Rate,
+  Spin
 } from "antd";
 import Paragraph from "antd/lib/typography/Paragraph";
+import { useHistory } from "react-router-dom";
 import { numberWithCommas } from "../../utils/common";
-
-const DATE_TIME_FORMAT = "DD - MM - YYYY";
-const gridStyle = {
-  width: "25%",
-  textAlign: "center",
-};
 
 const Home = () => {
   const [event, setEvent] = useState([]);
@@ -161,13 +141,6 @@ const Home = () => {
     })();
   }, [countdownDate]);
 
-  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
-  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
   return (
     <Spin spinning={false}>
       <div
@@ -233,7 +206,7 @@ const Home = () => {
                 <div class="product-card">
                   <div class="product-image">
                     <img
-                      src="https://nhasachphuongnam.com/images/promo/225/135-icon_05.png"
+                      src="https://nhasachphuongnam.com/images/promo/274/gift.png"
                       alt="Sách 1"
                     />
                   </div>
@@ -242,7 +215,7 @@ const Home = () => {
                 <div class="product-card">
                   <div class="product-image">
                     <img
-                      src="https://nhasachphuongnam.com/images/promo/225/135-icon_03.png"
+                      src="https://nhasachphuongnam.com/images/promo/274/gift.png"
                       alt="Sách 2"
                     />
                   </div>
@@ -251,7 +224,7 @@ const Home = () => {
                 <div class="product-card">
                   <div class="product-image">
                     <img
-                      src="https://nhasachphuongnam.com/images/promo/246/sticker_1.png"
+                      src="https://nhasachphuongnam.com/images/promo/274/gift.png"
                       alt="Sách 3"
                     />
                   </div>
@@ -266,8 +239,8 @@ const Home = () => {
                   class="right-banner__item"
                 >
                   <img
-                    src="https://nhasachphuongnam.com/images/promo/263/Banner_KM_Halloween_890x396px.jpg"
-                    alt="FOLD4 |FLIP4<br>Giá rẻ bất ngờ"
+                    src="https://nhasachphuongnam.com/images/promo/274/Asset_24.png"
+                    alt="Giá rẻ bất ngờ"
                     loading="lazy"
                     class="right-banner__img"
                   />
@@ -278,7 +251,7 @@ const Home = () => {
                 >
                   <img
                     src="https://nhasachphuongnam.com/images/promo/262/Noi_sao_khi_tre_khong_nghe_loi.jpg"
-                    alt="LENOVO IDEAPAD<br> THIẾT KẾ CỨNG CÁP"
+                    alt="THIẾT KẾ ĐẸP"
                     loading="lazy"
                     class="right-banner__img"
                   />
@@ -290,7 +263,7 @@ const Home = () => {
                   <img
                     style={{ width: "100%", height: 120 }}
                     src="https://cdn.ivolunteervietnam.com/wp-content/uploads/2023/07/07092910/cuoc-thi-thiet-ke-lai-bia-sach-nha-nam-1688696946.png"
-                    alt="LENOVO IDEAPAD<br> THIẾT KẾ CỨNG CÁP"
+                    alt="THIẾT KẾ ĐẸP"
                     loading="lazy"
                     class="right-banner__img"
                   />
@@ -555,117 +528,6 @@ const Home = () => {
               ))}
             </Row>
           </div>
-          <div className="heading_slogan">
-            <div>Tại sao</div>
-            <div>Nên chọn chúng tôi</div>
-          </div>
-          <div className="card_wrap container-home container">
-            <div>
-              <Card
-                bordered={false}
-                className="card_suggest card_why card_slogan"
-              >
-                <img src={service6}></img>
-                <p class="card-text mt-3 fw-bold text-center">
-                  Nhanh chóng & Bảo mật <br />
-                  Vận chuyển
-                </p>
-              </Card>
-            </div>
-            <div>
-              <Card
-                bordered={false}
-                className="card_suggest card_why card_slogan"
-              >
-                <img src={service7}></img>
-                <p class="card-text mt-3 fw-bold text-center">
-                  Đảm bảo 100% <br />
-                  Chính Hãng
-                </p>
-              </Card>
-            </div>
-            <div>
-              <Card
-                bordered={false}
-                className="card_suggest card_why card_slogan"
-              >
-                <img src={service8}></img>
-                <p class="card-text mt-3 fw-bold text-center">
-                  24 Giờ <br /> Đổi Trả
-                </p>
-              </Card>
-            </div>
-            <div>
-              <Card
-                bordered={false}
-                className="card_suggest card_why card_slogan"
-              >
-                <img src={service9}></img>
-                <p class="card-text mt-3 fw-bold text-center">
-                  Giao hàng <br /> Nhanh nhất
-                </p>
-              </Card>
-            </div>
-            <div>
-              <Card
-                bordered={false}
-                className="card_suggest card_why card_slogan"
-              >
-                <img src={service10}></img>
-                <p class="card-text mt-3 fw-bold text-center">
-                  Hỗ trợ <br /> Nhanh chóng
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-
-        <div className="image-footer">
-          <OverPack style={{ overflow: "hidden", height: 800, marginTop: 20 }}>
-            <TweenOne
-              key="0"
-              animation={{ opacity: 1 }}
-              className="code-box-shape"
-              style={{ opacity: 0 }}
-            />
-            <QueueAnim
-              key="queue"
-              animConfig={[
-                { opacity: [1, 0], translateY: [0, 50] },
-                { opacity: [1, 0], translateY: [0, -50] },
-              ]}
-            >
-              <div className="texty-demo-footer">
-                <Texty>NHANH LÊN! </Texty>
-              </div>
-              <div className="texty-title-footer">
-                <p>
-                  Tham Dự Buổi <strong>Ra Mắt Sách Mới</strong>
-                </p>
-              </div>
-              <Row
-                justify="center"
-                style={{ marginBottom: 30, fill: "#FFFFFF" }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="71px"
-                  height="11px"
-                >
-                  {" "}
-                  <path
-                    fill-rule="evenodd"
-                    d="M59.669,10.710 L49.164,3.306 L39.428,10.681 L29.714,3.322 L20.006,10.682 L10.295,3.322 L1.185,10.228 L-0.010,8.578 L10.295,0.765 L20.006,8.125 L29.714,0.765 L39.428,8.125 L49.122,0.781 L59.680,8.223 L69.858,1.192 L70.982,2.895 L59.669,10.710 Z"
-                  ></path>
-                </svg>
-              </Row>
-              <Row justify="center">
-                <a href="#" class="footer-button" role="button">
-                  <span>ĐĂNG KÝ NGAY</span>
-                </a>
-              </Row>
-            </QueueAnim>
-          </OverPack>
         </div>
       </div>
 

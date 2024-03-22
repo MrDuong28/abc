@@ -92,31 +92,69 @@ const NewsList = () => {
         console.log(values);
         setLoading(true);
         try {
-            const categoryList = {
-                "name": values.name,
-                "description": description,
-                "slug": values.slug
-            }
-            await axiosClient.put("/news/" + id, categoryList).then(response => {
-                if (response === undefined) {
-                    notification["error"]({
-                        message: `Thông báo`,
-                        description:
-                            'Chỉnh sửa tin tức thất bại',
-                    });
-                }
-                else {
-                    notification["success"]({
-                        message: `Thông báo`,
-                        description:
-                            'Chỉnh sửa tin tức thành công',
-                    });
-                    handleCategoryList();
-                    setOpenModalUpdate(false);
-                }
-            })
-            setLoading(false);
+            if (image) {
+                var formData = new FormData();
+                formData.append("image", image);
 
+                await axiosClient.post("/uploadFile", formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then(response => {
+                    const categoryList = {
+                        "name": values.name,
+                        "description": description,
+                        "category": values.category,
+                        "image": response.image_url,
+                    };
+
+                    return axiosClient.put("/news/" + id, categoryList).then(response => {
+                        if (response === undefined) {
+                            notification["error"]({
+                                message: `Thông báo`,
+                                description:
+                                    'Chỉnh sửa tin tức thất bại',
+                            });
+                        }
+                        else {
+                            notification["success"]({
+                                message: `Thông báo`,
+                                description:
+                                    'Chỉnh sửa tin tức thành công',
+                            });
+                            handleCategoryList();
+                            setOpenModalUpdate(false);
+                            setLoading(false);
+                        }
+                    })
+                });
+            } else { // Nếu image không tồn tại, chỉ gọi API put
+                const categoryList = {
+                    "name": values.name,
+                    "description": description,
+                    "category": values.category,
+                };
+
+                return axiosClient.put("/news/" + id, categoryList).then(response => {
+                    if (response === undefined) {
+                        notification["error"]({
+                            message: `Thông báo`,
+                            description:
+                                'Chỉnh sửa tin tức thất bại',
+                        });
+                    }
+                    else {
+                        notification["success"]({
+                            message: `Thông báo`,
+                            description:
+                                'Chỉnh sửa tin tức thành công',
+                        });
+                        handleCategoryList();
+                        setOpenModalUpdate(false);
+                        setLoading(false);
+                    }
+                });
+            }
         } catch (error) {
             throw error;
         }
@@ -194,6 +232,8 @@ const NewsList = () => {
                     description: response.data.description,
                 });
                 console.log(form2);
+                setDescription(response.data.description)
+
                 setLoading(false);
             } catch (error) {
                 throw error;
@@ -571,12 +611,6 @@ const NewsList = () => {
                         <Form.Item
                             name="image"
                             label="Ảnh"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập chọn ảnh!',
-                                },
-                            ]}
                             style={{ marginBottom: 10 }}
                         >
                             <input type="file" onChange={handleChangeImage}
@@ -587,8 +621,6 @@ const NewsList = () => {
                     </Form>
                 </Modal>
 
-
-                {/* <Pagination style={{ textAlign: "center", marginBottom: 20 }} current={currentPage} defaultCurrent={1} total={total} onChange={handlePage}></Pagination> */}
                 <BackTop style={{ textAlign: 'right' }} />
             </Spin>
         </div >

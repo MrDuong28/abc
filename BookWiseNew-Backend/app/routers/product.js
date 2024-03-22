@@ -15,6 +15,6 @@ router.put('/:id', verifyToken.checkLogin, productController.updateProduct)
 router.delete("/:id", verifyToken.checkLogin, productController.deleteProduct);
 router.get('/:id', middleware.getProduct, productController.getProductById);
 router.post('/:id/reviews', verifyToken.checkLogin, productController.createReviews);
-router.get('/recommend/:id', verifyToken.checkLogin, productController.recommendProducts);
+router.get('/recommend/:id', productController.recommendProducts);
 
 module.exports = router;
