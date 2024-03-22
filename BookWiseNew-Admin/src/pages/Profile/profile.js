@@ -70,7 +70,7 @@ const Profile = () => {
                             <Col span="9" style={{ marginTop: 20, marginLeft: 20, marginRight: 20 }}>
                                 <Card hoverable={true} className="profile-card" style={{ padding: 0, margin: 0 }}>
                                     <Row justify="center">
-                                        <img src={userData.image} style={{ width: 150, height: 150 }}></img>
+                                        <img src="https://api.dicebear.com/7.x/miniavs/svg?seed=2" style={{ width: 150, height: 150 }}></img>
                                     </Row>
                                     <Row justify="center">
                                         <Col span="24">
@@ -93,12 +93,6 @@ const Profile = () => {
                                                 </Col>
                                                 <Col span="8">
                                                     <Row justify="center">
-                                                        <p>{<SafetyOutlined />}</p>
-                                                        <p style={{ marginLeft: 5 }}>{userData.type}</p>
-                                                    </Row>
-                                                </Col>
-                                                <Col span="8">
-                                                    <Row justify="center">
                                                         <p>{<PhoneOutlined />}</p>
                                                         <p style={{ marginLeft: 5 }}>{userData.phone}</p>
                                                     </Row>
@@ -110,15 +104,7 @@ const Profile = () => {
                             </Col>
 
                             <Col span="6" style={{ marginTop: 20 }}>
-                                <ReactWeather
-                                    isLoading={isLoading}
-                                    errorMessage={errorMessage}
-                                    data={data}
-                                    lang="en"
-                                    locationLabel="Đà Nẵng"
-                                    unitsLabels={{ temperature: 'C', windSpeed: 'Km/h' }}
-                                    showForecast
-                                />
+                               
                             </Col>
                         </Row>
                     </div>
