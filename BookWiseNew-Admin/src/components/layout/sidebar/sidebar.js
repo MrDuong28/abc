@@ -64,7 +64,7 @@ function Sidebar() {
       width={215}
       style={{
         position: "fixed",
-        top: 60,
+        top: 65,
         height: '100%',
         left: 0,
         padding: 0,

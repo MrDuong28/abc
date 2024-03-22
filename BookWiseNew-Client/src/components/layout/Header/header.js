@@ -129,7 +129,7 @@ function Topbar() {
       className={styles.header}
     >
       <div className="">
-        <img style={{ color: "#000000", fontSize: 15, width: 200, height: 80, cursor: "pointer" }} src="https://upload.wikimedia.org/wikipedia/vi/2/24/Logo_Nh%C3%A3_Nam.jpg" onClick={() => handleLink("/home")}></img>
+        <img style={{ color: "#000000", fontSize: 15, width: 200, cursor: "pointer" }} src="https://i.ibb.co/hXC9P2p/432896053-431139066148630-3207667354342141055-n-1.png" onClick={() => handleLink("/home")}></img>
       </div>
       <BarsOutlined className={styles.bars} onClick={showDrawer} />
       <div className={styles.navmenu} style={{ marginLeft: 20 }}>
