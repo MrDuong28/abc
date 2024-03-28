@@ -3,8 +3,7 @@ import "./login.css";
 import userApi from "../../apis/userApi";
 import { useHistory } from "react-router-dom";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { Form, Input, Button, Checkbox, Divider, Alert, notification } from 'antd';
-import backgroundLogin from "../../assets/image/background-login.png";
+import { Form, Input, Button, Divider, Alert, notification, Modal } from 'antd';
 
 const Login = () => {
 
@@ -42,6 +41,9 @@ const Login = () => {
         console.log("email or password error" + error)
       });
   }
+
+  
+  
   useEffect(() => {
 
   }, [])
@@ -119,8 +121,11 @@ const Login = () => {
                 Đăng Nhập
               </Button>
             </Form.Item>
+
           </Form>
         </div>
+
+     
       </div>
     </div>
   );

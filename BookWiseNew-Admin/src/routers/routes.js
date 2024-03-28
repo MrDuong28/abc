@@ -108,12 +108,16 @@ const OrderDetail = lazy(() => {
         .then(([moduleExports]) => moduleExports);
 });
 
+const ContactList = lazy(() => {
+    return Promise.all([
+        import('../pages/Contact/contact'),
+        new Promise(resolve => setTimeout(resolve, 0))
+    ])
+        .then(([moduleExports]) => moduleExports);
+});
+
 
 const RouterURL = withRouter(({ location }) => {
-
-    const checkAuth = () => {
-        return localStorage.getItem('role');
-    }
 
     const LoginContainer = () => (
         <div>
@@ -146,11 +150,13 @@ const RouterURL = withRouter(({ location }) => {
                                 <DashBoard />
                             </Suspense>
                         </PrivateRoute>
+                        
                         <PrivateRoute exact path="/profile">
                             <Suspense fallback={<LoadingScreen />}>
                                 <Profile />
                             </Suspense>
                         </PrivateRoute>
+
                         <PrivateRoute exact path="/notfound">
                             <NotFound />
                         </PrivateRoute>
@@ -166,29 +172,41 @@ const RouterURL = withRouter(({ location }) => {
                                 <AccountCreate />
                             </Suspense>
                         </PrivateRoute>
+
                         <PrivateRoute exact path="/notfound">
-                            <NotFound /></PrivateRoute>
+                            <NotFound />
+                        </PrivateRoute>
 
                         <PrivateRoute exact path="/product-list">
                             <Suspense fallback={<LoadingScreen />}>
                                 <ProductList />
                             </Suspense>
                         </PrivateRoute>
+
                         <PrivateRoute exact path="/category-list">
                             <Suspense fallback={<LoadingScreen />}>
                                 <CategoryList />
                             </Suspense>
                         </PrivateRoute>
+
                         <PrivateRoute exact path="/news-list">
                             <Suspense fallback={<LoadingScreen />}>
                                 <NewsList />
                             </Suspense>
                         </PrivateRoute>
+
                         <PrivateRoute exact path="/order-list">
                             <Suspense fallback={<LoadingScreen />}>
                                 <OrderList />
                             </Suspense>
-                        </PrivateRoute>                
+                        </PrivateRoute>
+
+                        <PrivateRoute exact path="/contact-list">
+                            <Suspense fallback={<LoadingScreen />}>
+                                <ContactList />
+                            </Suspense>
+                        </PrivateRoute>
+
                         <PrivateRoute exact path="/order-details/:id">
                             <Suspense fallback={<LoadingScreen />}>
                                 <OrderDetail />
@@ -220,19 +238,7 @@ const RouterURL = withRouter(({ location }) => {
                     <Route exact path="/dash-board">
                         <DefaultContainer />
                     </Route>
-                    <Route exact path="/event">
-                        <DefaultContainer />
-                    </Route>
-                    <Route exact path="/event-create">
-                        <DefaultContainer />
-                    </Route>
-                    <Route exact path="/event-approved">
-                        <DefaultContainer />
-                    </Route>
-                    <Route exact path="/event-reject">
-                        <DefaultContainer />
-                    </Route>
-                    <Route exact path="/event-detail/:id">
+                    <Route exact path="/contact-list">
                         <DefaultContainer />
                     </Route>
                     <Route exact path="/account-create">

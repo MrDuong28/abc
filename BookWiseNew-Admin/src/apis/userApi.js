@@ -48,6 +48,10 @@ const userApi = {
         const url = '/user/searchByEmail';
         return axiosClient.get(url, { params });
     },
+    updateUser(id, data){
+        const url = '/user/change-role/'+id;
+        return axiosClient.put(url, data);
+    }
 }
 
 export default userApi;

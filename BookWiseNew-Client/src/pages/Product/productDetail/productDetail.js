@@ -268,7 +268,7 @@ const ProductDetail = () => {
         console.log("Review created");
         // Đóng modal và thực hiện các hành động khác nếu cần
         message.success("Thông báo:" + response);
-
+        handleList();
         handleCloseModal();
       })
       .catch((error) => {
@@ -282,10 +282,15 @@ const ProductDetail = () => {
   const [reviews, setProductReview] = useState([]);
   const [reviewsCount, setProductReviewCount] = useState([]);
   const [avgRating, setAvgRating] = useState(null);
+  const [user, setUser] = useState(null);
 
-  useEffect(() => {
+  const handleList = () => {
     (async () => {
       try {
+        const local = localStorage.getItem("user");
+        const user = JSON.parse(local);
+        setUser(user);
+
         await productApi.getDetailProduct(id).then((item) => {
           setProductDetail(item.product);
           setProductReview(item.reviews);
@@ -301,8 +306,14 @@ const ProductDetail = () => {
         console.log("Failed to fetch event detail:" + error);
       }
     })();
+  }
+
+  useEffect(() => {
+    handleList();
     window.scrollTo(0, 0);
   }, [cartLength]);
+
+  
 
   return (
     <div>
@@ -565,6 +576,7 @@ const ProductDetail = () => {
                           className="button_comment"
                           size={"large"}
                           onClick={handleOpenModal}
+                          disabled={!user}
                         >
                           Đánh giá ngay
                         </Button>

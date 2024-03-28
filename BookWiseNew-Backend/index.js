@@ -20,6 +20,7 @@ const orderRoute = require('./app/routers/order');
 const statisticalRoute = require('./app/routers/statistical');
 const paymentRoute = require('./app/routers/paypal');
 const colorRoute = require('./app/routers/colors');
+const contactRoute = require('./app/routers/contact');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -44,6 +45,7 @@ app.use('/api/statistical', statisticalRoute);
 app.use('/api/order', orderRoute);
 app.use('/api/payment', paymentRoute);
 app.use('/api/color', colorRoute);
+app.use('/api/contacts', contactRoute);
 app.use('/uploads', express.static('uploads'));
 // sendEmailNotification();
 

@@ -1,179 +1,44 @@
-import React, { useState, useEffect } from "react";
-import styles from "./cart.css";
-import axiosClient from "../../../apis/axiosClient";
-import { useParams } from "react-router-dom";
-import eventApi from "../../../apis/eventApi";
-import productApi from "../../../apis/productApi";
-import { useHistory } from "react-router-dom";
-import { Col, Row, Tag, Spin, Card } from "antd";
-import { DateTime } from "../../../utils/dateTime";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import {
-  Typography,
-  Button,
-  Badge,
-  Breadcrumb,
-  Popconfirm,
-  InputNumber,
-  notification,
-  Form,
-  Input,
-  Select,
-  Rate,
-} from "antd";
-import { Layout, Table, Divider, Statistic } from "antd";
-import {
-  HistoryOutlined,
-  AuditOutlined,
-  AppstoreAddOutlined,
-  CloseOutlined,
-  UserOutlined,
-  DeleteOutlined,
   CreditCardOutlined,
-  HomeOutlined,
-  CheckOutlined,
-  LeftSquareOutlined,
+  LeftSquareOutlined
 } from "@ant-design/icons";
+import {
+  Breadcrumb, Button, Card, Col, Divider, Form,
+  InputNumber, Layout, Row,
+  Spin, Statistic, Table
+} from "antd";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import "./cart.css";
 
-import Slider from "react-slick";
-
-const { Meta } = Card;
-const { Option } = Select;
 const { Content } = Layout;
-const { Title } = Typography;
-const DATE_TIME_FORMAT = "DD/MM/YYYY HH:mm";
-const { TextArea } = Input;
 
 const Cart = () => {
   const [productDetail, setProductDetail] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [suggest, setSuggest] = useState([]);
-  const [visible, setVisible] = useState(false);
-  const [dataForm, setDataForm] = useState([]);
-  const [lengthForm, setLengthForm] = useState();
   const [cartLength, setCartLength] = useState();
   const [cartTotal, setCartTotal] = useState();
   const [form] = Form.useForm();
   let { id } = useParams();
   const history = useHistory();
 
-  const steps = [
-    {
-      title: "First",
-      content: "First-content",
-    },
-    {
-      title: "Second",
-      content: "Second-content",
-    },
-    {
-      title: "Last",
-      content: "Last-content",
-    },
-  ];
-
-  const listEvent = () => {
-    setLoading(true);
-    (async () => {
-      try {
-        const response = await eventApi.getDetailEvent(id);
-        console.log(response);
-        setProductDetail(response);
-        setLoading(false);
-      } catch (error) {
-        console.log("Failed to fetch event detail:" + error);
-      }
-    })();
-    window.scrollTo(0, 0);
-  };
-
-  const handleDetailEvent = (id) => {
-    history.replace("/event-detail/" + id);
-    window.location.reload();
-    window.scrollTo(0, 0);
-  };
-
-  const getDataForm = async (uid) => {
-    try {
-      await axiosClient
-        .get("/event/" + id + "/template_feedback/" + uid + "/question")
-        .then((response) => {
-          console.log(response);
-          setDataForm(response);
-          let tabs = [];
-          for (let i = 0; i < response.length; i++) {
-            tabs.push({
-              content: response[i]?.content,
-              uid: response[i]?.uid,
-              is_rating: response[i]?.is_rating,
-            });
-          }
-          form.setFieldsValue({
-            users: tabs,
-          });
-          setLengthForm(tabs.length);
-        });
-    } catch (error) {
-      throw error;
-    }
-  };
-
   const handlePay = () => {
     history.push("/pay");
   };
-
+  
   const deleteCart = () => {
     localStorage.removeItem("cart");
-    localStorage.removeItem("cartLength");
-    window.location.reload(true);
+    localStorage.setItem("cartLength", 0);
+    setProductDetail([]);
+    setCartTotal(0);
+    setCartLength(0);
   };
-
-  const onFinish = async (values) => {
-    console.log(values.users);
-    let tabs = [];
-    for (let i = 0; i < values.users.length; i++) {
-      tabs.push({
-        scope:
-          values.users[i]?.scope == undefined ? null : values.users[i]?.scope,
-        comment:
-          values.users[i]?.comment == undefined
-            ? null
-            : values.users[i]?.comment,
-        question_uid: values.users[i]?.uid,
-      });
-    }
-    console.log(tabs);
-    setLoading(true);
-    try {
-      const dataForm = {
-        answers: tabs,
-      };
-      await axiosClient
-        .post("/event/" + id + "/answer", dataForm)
-        .then((response) => {
-          if (response === undefined) {
-            notification["error"]({
-              message: `Notification`,
-              description: "Answer event question failed",
-            });
-            setLoading(false);
-          } else {
-            notification["success"]({
-              message: `Notification`,
-              description: "Successfully answer event question",
-            });
-            setLoading(false);
-            form.resetFields();
-          }
-        });
-    } catch (error) {
-      throw error;
-    }
-  };
-
+  
   const updateQuantity = (productId, newQuantity) => {
-    console.log(newQuantity);
     // Tìm kiếm sản phẩm trong giỏ hàng
+    if (newQuantity === 0) {
+      return handleDelete(productId);
+    }
     const updatedCart = productDetail.map((item) => {
       if (item._id === productId) {
         // Cập nhật số lượng và tính toán tổng tiền
@@ -190,15 +55,17 @@ const Cart = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setProductDetail(updatedCart);
   };
-
-  const handleDelete = async (productId) => {
-    const updatedCart = JSON.parse(localStorage.getItem("cart"));
+  
+  const handleDelete = (productId) => {
+    const updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
     const filteredCart = updatedCart.filter(
       (product) => product._id !== productId
     );
     localStorage.setItem("cart", JSON.stringify(filteredCart));
-    setCartLength(cartLength - 1);
+    localStorage.setItem("cartLength", filteredCart.length); 
     setProductDetail(filteredCart);
+    setCartLength(filteredCart.length); 
+    window.location.reload();
   };
 
   const columns = [
@@ -218,7 +85,9 @@ const Cart = () => {
       title: "Tên",
       dataIndex: "name",
       key: "name",
-      render: (text) => <a>{text}</a>,
+      render: (text, record) => (
+        <a onClick={() => handleRowClick(record)}>{text}</a>
+      ),
     },
     {
       title: "Giá",
@@ -226,7 +95,7 @@ const Cart = () => {
       key: "promotion",
       render: (text) => (
         <a>
-          {text.toLocaleString("vi", { style: "currency", currency: "VND" })}
+          {text?.toLocaleString("vi", { style: "currency", currency: "VND" })}
         </a>
       ),
     },
@@ -236,10 +105,9 @@ const Cart = () => {
       key: "quantity",
       render: (text, record) => (
         <InputNumber
-          min={1}
+          min={0}
           defaultValue={text}
           onChange={(value) => {
-            // gọi hàm updateQuantity để cập nhật số lượng sản phẩm
             updateQuantity(record._id, value);
           }}
         />
@@ -252,7 +120,7 @@ const Cart = () => {
       render: (text, record) => (
         <div>
           <div className="groupButton">
-            {(record.promotion * record.quantity).toLocaleString("vi", {
+            {(record?.promotion * record?.quantity).toLocaleString("vi", {
               style: "currency",
               currency: "VND",
             })}
@@ -272,28 +140,24 @@ const Cart = () => {
   ];
 
   useEffect(() => {
-    (async () => {
-      try {
-        // await productApi.getDetailProduct(id).then((item) => {
-        //     setProductDetail(item);
-        // });
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
-        setProductDetail(cart);
-        console.log(cart);
-        const cartLength = localStorage.getItem("cartLength");
-        setCartLength(cartLength);
-        const total = cart.reduce(
-          (acc, item) => acc + item.quantity * item.promotion,
-          0
-        );
-        setCartTotal(total);
-        setLoading(false);
-      } catch (error) {
-        console.log("Failed to fetch event detail:" + error);
-      }
-    })();
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setProductDetail(cart);
+    const cartLength = localStorage.getItem("cartLength") || 0;
+    setCartLength(parseInt(cartLength));
+    const total = cart.reduce(
+      (acc, item) => acc + item.quantity * item.promotion,
+      0
+    );
+    setCartTotal(total);
+    setLoading(false);
     window.scrollTo(0, 0);
   }, []);
+
+
+  // Thêm vào component của bạn
+  const handleRowClick = (record) => {
+    history.push("/product-detail/" + record._id);
+  };
 
   return (
     <div>
@@ -369,9 +233,9 @@ const Cart = () => {
                         style={{ marginTop: 16 }}
                         type="primary"
                         onClick={() => handlePay()}
+                        disabled={productDetail.length === 0} // Nếu giỏ hàng trống, vô hiệu hóa button
                       >
-                        Thanh toán ngay{" "}
-                        <CreditCardOutlined style={{ fontSize: "20px" }} />
+                        Thanh toán ngay <CreditCardOutlined style={{ fontSize: "20px" }} />
                       </Button>
                     </Col>
                   </Row>

@@ -5,10 +5,11 @@ const OrderModel = require('../models/order');
 const jwt = require('jsonwebtoken');
 const _const = require('../config/constant')
 
+// Hàm tính cosine similarity giữa hai sản phẩm
 const calculateCosineSimilarity = (product1, product2) => {
     // Chuyển đổi các đặc trưng của sản phẩm thành vector
-    const vector1 = [product1.price, product1.quantity]; // Ví dụ: sử dụng giá và số lượng làm đặc trưng
-    const vector2 = [product2.price, product2.quantity];
+    const vector1 = [product1.price]; // Sử dụng giá làm đặc trưng
+    const vector2 = [product2.price];
 
     // Tính tổng tích của hai vector
     let dotProduct = 0;
@@ -54,44 +55,48 @@ const productController = {
     },
 
     createProduct: async (req, res) => {
-      const {
-          name,
-          price,
-          description,
-          category,
-          image,
-          promotion,
-          quantity,
-          color,
-          slide,
-          url_book  
-      } = req.body;
-  
-      const product = new ProductModel({
-          name,
-          price,
-          description,
-          category,
-          image,
-          promotion,
-          quantity,
-          slide,
-          color,
-          url_book  
-      });
-  
-      try {
-          const checkCategory = await CategoryModel.findById(category);
-          if (!checkCategory) {
-              return res.status(400).json({ error: 'Invalid category' });
-          }
-          const newProduct = await product.save();
-          res.status(200).json(newProduct);
-      } catch (err) {
-          res.status(500).json(err);
-      }
-  },
-      
+        const {
+            name,
+            price,
+            description,
+            category,
+            image,
+            promotion,
+            color,
+            slide,
+            url_book,
+            author,
+            manufacturer,
+            status // Thêm trạng thái sản phẩm
+        } = req.body;
+    
+        const product = new ProductModel({
+            name,
+            price,
+            description,
+            category,
+            image,
+            promotion,
+            slide,
+            color,
+            url_book,
+            author,
+            manufacturer,
+            status // Thêm trạng thái sản phẩm
+        });
+    
+        try {
+            const checkCategory = await CategoryModel.findById(category);
+            if (!checkCategory) {
+                return res.status(400).json({ error: 'Invalid category' });
+            }
+            const newProduct = await product.save();
+            res.status(200).json(newProduct);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+    },
+
 
     deleteProduct: async (req, res) => {
         try {
@@ -108,42 +113,46 @@ const productController = {
     updateProduct: async (req, res) => {
         const id = req.params.id;
         const {
-          name,
-          price,
-          description,
-          category,
-          image,
-          promotion,
-          quantity,
-          color,
-          url_book 
+            name,
+            price,
+            description,
+            category,
+            image,
+            promotion,
+            color,
+            url_book,
+            author,
+            manufacturer,
+            status // Thêm trạng thái sản phẩm
         } = req.body;
-      
+
         try {
-          const product = await ProductModel.findByIdAndUpdate(
-            id,
-            {
-              name,
-              price,
-              description,
-              quantity,
-              category,
-              image,
-              promotion,
-              color,
-              url_book 
-            },
-            { new: true }
-          );
-          if (!product) {
-            return res.status(404).json({ message: 'Product not found' });
-          }
-          res.status(200).json(product);
+            const product = await ProductModel.findByIdAndUpdate(
+                id,
+                {
+                    name,
+                    price,
+                    description,
+                    category,
+                    image,
+                    promotion,
+                    color,
+                    url_book,
+                    author,
+                    manufacturer,
+                    status // Thêm trạng thái sản phẩm
+                },
+                { new: true }
+            );
+            if (!product) {
+                return res.status(404).json({ message: 'Product not found' });
+            }
+            res.status(200).json(product);
         } catch (err) {
-          res.status(500).json(err);
+            res.status(500).json(err);
         }
-      },
-      
+    },
+
 
     searchCateByName: async (req, res) => {
         const page = req.body.page || 1;
@@ -178,13 +187,13 @@ const productController = {
             }
 
             // Kiểm tra xem người dùng đã đánh giá sản phẩm này chưa
-            const existingReview = await ReviewModel.findOne({ user:decodedToken.user._id, product: productId });
+            const existingReview = await ReviewModel.findOne({ user: decodedToken.user._id, product: productId });
             if (existingReview) {
                 return res.status(201).json('Bạn đã đánh giá sản phẩm này');
             }
 
             // Tạo mới đánh giá sản phẩm
-            const review = new ReviewModel({ user:decodedToken.user._id, product: productId, comment, rating });
+            const review = new ReviewModel({ user: decodedToken.user._id, product: productId, comment, rating });
             await review.save();
 
             res.status(201).json('thành công');
@@ -255,30 +264,30 @@ const productController = {
         const limit = req.body.limit || 10;
         const minPrice = req.body.minPrice; // Giá tối thiểu
         const maxPrice = req.body.maxPrice; // Giá tối đa
-      
+
         const query = {};
-      
+
         // Thêm điều kiện tìm kiếm theo giá vào query nếu có giá trị minPrice và maxPrice
         if (minPrice !== undefined && maxPrice !== undefined) {
-          query.$and = [
-            { price: { $gte: minPrice } },
-            { price: { $lte: maxPrice } }
-          ];
+            query.$and = [
+                { price: { $gte: minPrice } },
+                { price: { $lte: maxPrice } }
+            ];
         }
-      
+
         const options = {
-          page: page,
-          limit: limit,
-          populate: 'category'
+            page: page,
+            limit: limit,
+            populate: 'category'
         };
-      
+
         try {
-          const products = await ProductModel.paginate(query, options);
-          res.status(200).json({ data: products });
+            const products = await ProductModel.paginate(query, options);
+            res.status(200).json({ data: products });
         } catch (err) {
-          res.status(500).json(err);
+            res.status(500).json(err);
         }
-      }
+    }
 }
 
 module.exports = productController;

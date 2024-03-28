@@ -329,11 +329,20 @@ const OrderDetail = () => {
                             <p>
                                 <strong>Sản phẩm:</strong>
                             </p>
-                            <ul>
+                            <ul style={{ listStyle: 'none', padding: 0 }}>
                                 {order?.products?.map((product, index) => (
-                                    <li key={index}>{product}</li>
+                                    <li key={index} style={{ marginBottom: '10px', borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
+                                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                                            <img src={product.image} alt={product.name} style={{ height: 50, marginRight: 10 }} />
+                                            <div>
+                                                <span style={{ fontWeight: 'bold' }}>{product.name}</span>
+                                                <span style={{ marginLeft: '10px' }}>Số lượng: {product.quantity}</span>
+                                            </div>
+                                        </div>
+                                    </li>
                                 ))}
                             </ul>
+
                             <p>
                                 <strong>Tổng đơn hàng:</strong> {order.orderTotal}
                             </p>

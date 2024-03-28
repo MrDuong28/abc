@@ -13,6 +13,8 @@ const userApi = {
                 console.log(response);
                 if (response) {
                     localStorage.setItem("client", response.token);
+                    localStorage.setItem("user", JSON.stringify(response.user));
+
                 }
                 return response;
             });
@@ -25,14 +27,22 @@ const userApi = {
         const url = '/user/ping_role';
         return axiosClient.get(url);
     },
-    getProfile(){
+    getProfile() {
         const url = '/user/profile';
         return axiosClient.get(url);
     },
-    updateProfile(editedUserData){
-        const url = '/user';
+    getProfileById(id){
+        const url = '/user/profile/'+ id;
+        return axiosClient.get(url);
+    },
+    updateProfile(editedUserData) {
+        const url = '/user/' + editedUserData._id;
         return axiosClient.put(url, editedUserData);
-    }
+    },
+    forgotPassword(data) {
+        const url = '/user/forgot-password';
+        return axiosClient.post(url, data);
+    },
 }
 
 export default userApi;

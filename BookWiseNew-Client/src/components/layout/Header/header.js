@@ -6,7 +6,7 @@ import logo from "../../../assets/image/logo-dtu.png";
 import DropdownAvatar from "../../DropdownMenu/dropdownMenu";
 import { useHistory, NavLink } from "react-router-dom";
 import { Layout, Avatar, Badge, Row, Col, List, Popover, Modal, Drawer, Select } from 'antd';
-import { BellOutlined, NotificationTwoTone, BarsOutlined, ShoppingCartOutlined, UserOutlined  } from '@ant-design/icons';
+import { BellOutlined, NotificationTwoTone, BarsOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import axiosClient from "../../../apis/axiosClient";
 
 const { Option } = Select;
@@ -32,36 +32,6 @@ function Topbar() {
     history.push(link);
   }
 
-  const content = (
-    <div>
-      {notification.map((values, index) => {
-        return (
-          <div>
-            <List.Item style={{ padding: 0, margin: 0 }}>
-              <List.Item.Meta
-                style={{ width: 250, margin: 0 }}
-                avatar={<NotificationTwoTone style={{ fontSize: '20px', color: '#08c' }} />}
-                title={<a onClick={() => handleNotification(values.content, values.title)}>{values.title}</a>}
-                description={<p className={styles.fixLine} dangerouslySetInnerHTML={{ __html: values.content }}></p>}
-              />
-            </List.Item>
-          </div>
-        )
-      })}
-    </div>
-  );
-
-  const handleNotification = (valuesContent, valuesTitile) => {
-    setVisible(true);
-    setVisiblePopover(visible !== visible)
-    setContentNotification(valuesContent);
-    setTitleNotification(valuesTitile);
-  }
-
-  const handleVisibleChange = (visible) => {
-    setVisiblePopover(visible);
-  };
-
   const handleOk = () => {
     setVisible(false);
   }
@@ -76,15 +46,15 @@ function Topbar() {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [selectOptions, setSelectOptions] = useState([
-    
+
   ]);
 
   const handleSelectChange = async (value) => {
     setSelectedOption(value);
     console.log(value);
-    history.push("/product-detail/"+value);
+    history.push("/product-detail/" + value);
     window.location.reload();
-    };
+  };
 
   const updateSelectOptions = (newOptions) => {
     const updatedOptions = newOptions.map((option) => ({
@@ -100,8 +70,6 @@ function Topbar() {
       const response = await axiosClient.get(`/product/searchByName?name=${value}`);
       const data = response.data;
 
-      // Xử lý dữ liệu trả về ở đây
-      // Ví dụ: Cập nhật options với dữ liệu đã nhận được
       updateSelectOptions(data.docs);
     } catch (error) {
       console.error('Lỗi khi gọi API:', error);
@@ -112,11 +80,12 @@ function Topbar() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await userApi.getProfile();
+        const local = localStorage.getItem("user");
+        const user = JSON.parse(local);
         const cart = localStorage.getItem('cartLength');
         console.log(cart);
         setCart(cart);
-        setUserData(response);
+        setUserData(user);
       } catch (error) {
         console.log('Failed to fetch profile user:' + error);
       }
@@ -150,15 +119,17 @@ function Topbar() {
           style={{ marginLeft: 20, width: 300 }}
           placeholder="Bạn tìm gì..."
           optionFilterProp="children"
-          filterOption={(input, option) => (option?.label ?? '').includes(input)}
+          filterOption={(input, option) =>
+            (option?.label?.toLowerCase() ?? '').includes(input.toLowerCase())
+          }
           filterSort={(optionA, optionB) =>
-            (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
+            optionA?.label?.toLowerCase().localeCompare(optionB?.label?.toLowerCase())
           }
           options={selectOptions}
           onChange={handleSelectChange}
           onSearch={handleSearch}
-
         />
+
       </div>
       <div className={styles.logBtn}>
         <div style={{ position: 'relative', display: 'flex', float: 'right', alignItems: "center", cursor: 'pointer' }}>
@@ -181,7 +152,7 @@ function Topbar() {
           </Row> */}
           <Row>
             <DropdownAvatar key="avatar" />
-            <p style={{ marginRight: 10, padding: 0, margin: 0, color: '#FFFFFF' }}><UserOutlined  style={{ fontSize: '28px', color: '#FFFFFF' }} /></p>
+            <p style={{ marginRight: 10, padding: 0, margin: 0, color: '#FFFFFF' }}><UserOutlined style={{ fontSize: '28px', color: '#FFFFFF' }} /></p>
           </Row>
           <Modal
             title={titleNotification}

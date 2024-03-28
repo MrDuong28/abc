@@ -327,6 +327,11 @@ h3 {
     text-align: center;
 }
 
+.container-banner{
+    max-width: 1780px;
+    margin: 0 auto;
+}
+
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -929,7 +934,7 @@ h3 {
     background-color: #fff;
     border-radius: 10px;
     padding: 15px;
-    min-height: 375px;
+    max-height: 100%;
     overflow: hidden;
     margin-right: 15px;
     border-radius: 15px;
@@ -1088,6 +1093,6 @@ ul {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }

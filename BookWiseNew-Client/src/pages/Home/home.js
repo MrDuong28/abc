@@ -145,7 +145,7 @@ const Home = () => {
       >
         <div
           style={{ background: "#FFFFFF" }}
-          className="container-home container banner-promotion"
+          className="container-banner banner-promotion"
         >
           <Row justify="center" align="top" key="1">
             <Col span={4}>
@@ -165,63 +165,35 @@ const Home = () => {
             </Col>
             <Col span={15}>
               <Carousel autoplay className="carousel-image">
+
                 <div className="img">
                   <img
-                    style={{ width: "100%", height: 260 }}
-                    src="https://sachnhanam.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/20230608095234/Backdrop2-scaled.jpg"
+                    style={{ width: "100%" }}
+                    src="https://nhasachphuongnam.com/images/promo/275/Banner-Cá-Voi-Cô-Đơn-890x396__2_.jpg"
                     alt=""
                   />
                 </div>
                 <div className="img">
                   <img
-                    style={{ width: "100%", height: 260 }}
-                    src="https://cdn0.fahasa.com/media/magentothem/banner7/NCC1980BooksT1023_Gold_BannerSlide_840x320.jpg"
-                    alt=""
+                    style={{ width: "100%" }}
+                    src="https://nhasachphuongnam.com/images/promo/273/Banner-Biếm-Hoạ-Trên-Báo-Chí-SG-Trước-1975.jpg"
                   />
                 </div>
                 <div className="img">
                   <img
-                    style={{ width: "100%", height: 260 }}
-                    src="https://bookish.vn/wp-content/uploads/2020/03/banner_FB_khuyen-mai-thang-3_1200x520.jpg"
-                    alt=""
-                  />
-                </div>
-                <div className="img">
-                  <img
-                    style={{ width: "100%", height: 260 }}
+                    style={{ width: "100%" }}
                     src="https://bookish.vn/wp-content/uploads/2022/12/Banner_YES_2022_890x396px-01.jpg"
                   />
                 </div>
+                <div className="img">
+                  <img
+                    style={{ width: "100%" }}
+                    src="https://nhasachphuongnam.com/images/promo/273/Banner-Công-Chúa-Áo-Đen.jpg"
+                    alt=""
+                  />
+                </div>
               </Carousel>
-              <div className="product-promotion">
-                <div class="product-card">
-                  <div class="product-image">
-                    <img
-                      src="https://nhasachphuongnam.com/images/promo/274/gift.png"
-                      alt="Sách 1"
-                    />
-                  </div>
-                  <div class="product-name">Gift Books For You</div>
-                </div>
-                <div class="product-card">
-                  <div class="product-image">
-                    <img
-                      src="https://nhasachphuongnam.com/images/promo/274/gift.png"
-                      alt="Sách 2"
-                    />
-                  </div>
-                  <div class="product-name">Chợ sách</div>
-                </div>
-                <div class="product-card">
-                  <div class="product-image">
-                    <img
-                      src="https://nhasachphuongnam.com/images/promo/274/gift.png"
-                      alt="Sách 3"
-                    />
-                  </div>
-                  <div class="product-name">Stickers Sáng Tạo</div>
-                </div>
-              </div>
+
             </Col>
             <Col span={5}>
               <div class="right-banner image-promotion">
@@ -262,6 +234,62 @@ const Home = () => {
               </div>
             </Col>
           </Row>
+          <div className="product-promotion">
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://nhasachphuongnam.com/images/promo/274/gift.png"
+                  alt="Sách 1"
+                />
+              </div>
+              <div class="product-name">Gift Books For You</div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://nhasachphuongnam.com/images/promo/274/gift.png"
+                  alt="Sách 2"
+                />
+              </div>
+              <div class="product-name">Chợ sách</div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://nhasachphuongnam.com/images/promo/274/manga.png"
+                  alt="Sách 3"
+                />
+              </div>
+              <div class="product-name">Manga</div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://nhasachphuongnam.com/images/promo/274/teen.png"
+                  alt="Sách 2"
+                />
+              </div>
+              <div class="product-name">Tiệc Sách Tuổi Teen</div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://nhasachphuongnam.com/images/promo/274/s%C3%A1ch_c%C5%A9.png"
+                  alt="Sách 3"
+                />
+              </div>
+              <div class="product-name">Phiên chợ sách</div>
+            </div>
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://nhasachphuongnam.com/images/promo/274/sticker.png"
+                  alt="Sách 2"
+                />
+              </div>
+              <div class="product-name">Stickers Sáng Tạo</div>
+            </div>
+          </div>
         </div>
 
 
@@ -310,24 +338,35 @@ const Home = () => {
                         {item.name}
                       </Paragraph>
                       <div className="price-amount">
-                        <Paragraph className="price-product">
-                          {numberWithCommas(item.promotion)} đ
-                        </Paragraph>
-                        {item.promotion !== 0 && (
-                          <Paragraph className="price-cross">
-                            {numberWithCommas(item.price)} đ
-                          </Paragraph>
-                        )}
+                        <React.Fragment>
+                          {item?.promotion === item?.price ? (
+                            <Paragraph className="price-product">
+                              {numberWithCommas(item.promotion)} đ
+                            </Paragraph>
+                          ) : (
+                            <React.Fragment>
+                              <Paragraph className="price-product">
+                                {item?.promotion && numberWithCommas(item.promotion)} đ
+                              </Paragraph>
+                              <Paragraph className="price-cross">
+                                {item.price && numberWithCommas(item.price)} đ
+                              </Paragraph>
+                            </React.Fragment>
+                          )}
+                        </React.Fragment>
                       </div>
                     </div>
                   </div>
-                  <Paragraph
-                    className="badge"
-                    style={{ position: "absolute", top: 10, left: 9 }}
-                  >
-                    <span>Giảm giá</span>
-                    <img src={triangleTopRight} />
-                  </Paragraph>
+                  {item?.promotion !== item?.price && (
+                    <Paragraph
+                      className="badge"
+                      style={{ position: "absolute", top: 10, left: 9 }}
+                    >
+                      <span>Giảm giá</span>
+                      <img src={triangleTopRight} alt="Triangle" />
+                    </Paragraph>
+                  )}
+
                 </Col>
               ))}
             </Row>
@@ -422,24 +461,35 @@ const Home = () => {
                         {item.name}
                       </Paragraph>
                       <div className="price-amount">
-                        <Paragraph className="price-product">
-                          {numberWithCommas(item.promotion)} đ
-                        </Paragraph>
-                        {item.promotion !== 0 && (
-                          <Paragraph className="price-cross">
-                            {numberWithCommas(item.price)} đ
-                          </Paragraph>
-                        )}
+                        <React.Fragment>
+                          {item?.promotion === item?.price ? (
+                            <Paragraph className="price-product">
+                              {numberWithCommas(item.promotion)} đ
+                            </Paragraph>
+                          ) : (
+                            <React.Fragment>
+                              <Paragraph className="price-product">
+                                {item?.promotion && numberWithCommas(item.promotion)} đ
+                              </Paragraph>
+                              <Paragraph className="price-cross">
+                                {item.price && numberWithCommas(item.price)} đ
+                              </Paragraph>
+                            </React.Fragment>
+                          )}
+                        </React.Fragment>
                       </div>
                     </div>
                   </div>
-                  <Paragraph
-                    className="badge"
-                    style={{ position: "absolute", top: 10, left: 9 }}
-                  >
-                    <span>Giảm giá</span>
-                    <img src={triangleTopRight} />
-                  </Paragraph>
+                  {item?.promotion !== item?.price && (
+                    <Paragraph
+                      className="badge"
+                      style={{ position: "absolute", top: 10, left: 9 }}
+                    >
+                      <span>Giảm giá</span>
+                      <img src={triangleTopRight} alt="Triangle" />
+                    </Paragraph>
+                  )}
+
                 </Col>
               ))}
             </Row>
@@ -492,24 +542,35 @@ const Home = () => {
                         {item.name}
                       </Paragraph>
                       <div className="price-amount">
-                        <Paragraph className="price-product">
-                          {numberWithCommas(item.promotion)} đ
-                        </Paragraph>
-                        {item.promotion !== 0 && (
-                          <Paragraph className="price-cross">
-                            {numberWithCommas(item.price)} đ
-                          </Paragraph>
-                        )}
+                        <React.Fragment>
+                          {item?.promotion === item?.price ? (
+                            <Paragraph className="price-product">
+                              {numberWithCommas(item.promotion)} đ
+                            </Paragraph>
+                          ) : (
+                            <React.Fragment>
+                              <Paragraph className="price-product">
+                                {item?.promotion && numberWithCommas(item.promotion)} đ
+                              </Paragraph>
+                              <Paragraph className="price-cross">
+                                {item.price && numberWithCommas(item.price)} đ
+                              </Paragraph>
+                            </React.Fragment>
+                          )}
+                        </React.Fragment>
                       </div>
                     </div>
                   </div>
-                  <Paragraph
-                    className="badge"
-                    style={{ position: "absolute", top: 10, left: 9 }}
-                  >
-                    <span>Giảm giá</span>
-                    <img src={triangleTopRight} />
-                  </Paragraph>
+                  {item?.promotion !== item?.price && (
+                    <Paragraph
+                      className="badge"
+                      style={{ position: "absolute", top: 10, left: 9 }}
+                    >
+                      <span>Giảm giá</span>
+                      <img src={triangleTopRight} alt="Triangle" />
+                    </Paragraph>
+                  )}
+
                 </Col>
               ))}
             </Row>

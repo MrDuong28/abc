@@ -49,6 +49,12 @@ function Sidebar() {
       link: "/news-list",
       icon: <BarsOutlined />
     },
+    {
+      key: "contact-list",
+      title: "Hỗ trợ",
+      link: "/contact-list",
+      icon: <ContainerOutlined />
+    },
   ];
 
   const navigate = (link, key) => {
@@ -93,31 +99,6 @@ function Sidebar() {
               </Menu.Item>
             ))
           }
-          {/* < SubMenu key="sub1" icon={<InsertRowBelowOutlined />} title="Event Censorship">
-            {menuSubEventAdmin.map((map) => (
-              <Menu.Item
-                onClick={() => navigate(map.link, map.key)}
-                key={map.key}
-                icon={map.icon}
-                className="customeClass"
-              >
-                {map.title}
-              </Menu.Item>
-            ))}
-          </SubMenu>
-
-          < SubMenu key="sub2" icon={<ProfileOutlined />} title="Event Management">
-            {menuSubEventStudentAdmin.map((map) => (
-              <Menu.Item
-                onClick={() => navigate(map.link, map.key)}
-                key={map.key}
-                icon={map.icon}
-                className="customeClass"
-              >
-                {map.title}
-              </Menu.Item>
-            ))}
-          </SubMenu> */}
         </Menu>
 
     </Sider >

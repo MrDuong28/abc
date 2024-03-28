@@ -31,9 +31,10 @@ function DropdownAvatar() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await userApi.getProfile();
-        console.log(response);
-        setUserData(response.user);
+        const local = localStorage.getItem("user");
+        const user = JSON.parse(local);
+        console.log(user);
+        setUserData(user);
         const checkLogin = localStorage.getItem("client");
         if (checkLogin) {
           setIsLogin(checkLogin);
@@ -76,19 +77,11 @@ function DropdownAvatar() {
           >
 
             <div style={{ display: 'flex', alignItems: "center", justifyContent: "center" }}>
-              {/* <div style={{ paddingRight: 10 }}>
-                <Avatar
-                  style={{
-                    outline: 'none',
-                  }}
-                  src={userData ? userData.image : "https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"}
-                />
-              </div> */}
+              
               <p style={{ padding: 0, margin: 0, textTransform: 'capitalize', color: "#FFFFFF" }} >
                 {userData?.username}
               </p>
             </div>
-            {/* <p>Score: {userData.score}</p> */}
           </Row>
         </Dropdown>
         :

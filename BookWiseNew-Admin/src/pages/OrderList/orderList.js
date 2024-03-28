@@ -28,15 +28,10 @@ const OrderList = () => {
     const [loading, setLoading] = useState(true);
     const [form] = Form.useForm();
     const [form2] = Form.useForm();
-    const [total, setTotalList] = useState();
-    const [currentPage, setCurrentPage] = useState(1);
     const [id, setId] = useState();
 
     const history = useHistory();
 
-    const showModal = () => {
-        setOpenModalCreate(true);
-    };
 
     const handleOkUser = async (values) => {
         setLoading(true);
@@ -116,7 +111,6 @@ const OrderList = () => {
     const handleCategoryList = async () => {
         try {
             await orderApi.getListOrder({ page: 1, limit: 10000 }).then((res) => {
-                setTotalList(res.totalDocs)
                 setOrder(res.data.docs);
                 setLoading(false);
             });
@@ -146,7 +140,6 @@ const OrderList = () => {
                             'Xóa danh mục thành công',
 
                     });
-                    setCurrentPage(1);
                     handleCategoryList();
                     setLoading(false);
                 }
@@ -156,10 +149,6 @@ const OrderList = () => {
         } catch (error) {
             console.log('Failed to fetch event list:' + error);
         }
-    }
-
-    const handleDetailView = (id) => {
-        history.push("/category-detail/" + id)
     }
 
     const handleEditOrder = (id) => {
@@ -189,15 +178,10 @@ const OrderList = () => {
     const handleFilter = async (name) => {
         try {
             const res = await orderApi.searchOrder(name);
-            setTotalList(res.totalDocs)
             setOrder(res.data.docs);
         } catch (error) {
             console.log('search to fetch category list:' + error);
         }
-    }
-
-    function NoData() {
-        return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />;
     }
 
     const columns = [
@@ -210,13 +194,19 @@ const OrderList = () => {
             title: 'Tên',
             dataIndex: 'user',
             key: 'user',
-            render: (text, record) => <a>{text.username}</a>,
+            render: (text, record) => <a>{text?.username}</a>,
         },
         {
             title: 'Email',
             dataIndex: 'user',
             key: 'user',
             render: (text, record) => <a>{text.email}</a>,
+        },
+        {
+            title: 'Số điện thoại',
+            dataIndex: 'user',
+            key: 'user',
+            render: (text, record) => <a>{text?.phone}</a>,
         },
         {
             title: 'Tổng tiền',
@@ -240,9 +230,10 @@ const OrderList = () => {
             dataIndex: 'status',
             render: (slugs) => (
                 <span >
-                    {slugs === "rejected" ? <Tag style={{ width: 95, textAlign: "center" }} color="red">Đã hủy</Tag> : slugs === "approved" ? <Tag style={{ width: 95, textAlign: "center" }} color="geekblue" key={slugs}>
+                    {slugs === "rejected" ? <Tag style={{ width: 160, textAlign: "center" }} color="red">Đã hủy</Tag> : slugs === "approved" ? <Tag style={{ width: 160, textAlign: "center" }} color="geekblue" key={slugs}>
                         Vận chuyển
-                    </Tag> : slugs === "final" ? <Tag color="green" style={{ width: 95, textAlign: "center" }}>Đã giao</Tag> : <Tag color="blue" style={{ width: 95, textAlign: "center" }}>Đợi xác nhận</Tag>}
+                    </Tag> : slugs === "final" ? <Tag color="green" style={{ width: 160, textAlign: "center" }}>              Đã giao - Đã thanh toán
+                    </Tag> : <Tag color="blue" style={{ width: 160, textAlign: "center" }}>Đợi xác nhận</Tag>}
                 </span>
             ),
         },
@@ -307,7 +298,6 @@ const OrderList = () => {
             try {
                 await orderApi.getListOrder({ page: 1, limit: 10000 }).then((res) => {
                     console.log(res);
-                    setTotalList(res.totalDocs)
                     setOrder(res.data.docs);
                     setLoading(false);
                 });
@@ -482,7 +472,7 @@ const OrderList = () => {
                             style={{ marginBottom: 10 }}
                         >
                             <Select >
-                                <Option value="final">Đã giao</Option>
+                                <Option value="final">Đã giao - Đã thanh toán</Option>
                                 <Option value="approved">Đang vận chuyển</Option>
                                 <Option value="pending">Đợi xác nhận</Option>
                                 <Option value="rejected">Đã hủy</Option>

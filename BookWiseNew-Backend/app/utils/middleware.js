@@ -120,42 +120,45 @@ module.exports = {
 
     getOrder: async (req, res, next) => {
         try {
-          const order = await Order.findById(req.params.id)
-            .populate('user', 'username') // Lấy thông tin user và chỉ lấy trường name
-            .populate({
-              path: 'products.product',
-              select: 'name',
-            }); // Lấy thông tin products và chỉ lấy trường name của product
-      
-          if (!order) {
-            return res.status(404).json({ message: 'Không tìm thấy đơn hàng' });
-          }
+            const order = await Order.findById(req.params.id)
+                .populate('user', 'username') // Lấy thông tin user và chỉ lấy trường username
+                .populate({
+                    path: 'products.product',
+                    select: 'name quantity image', // Chọn các trường name, quantity và image của sản phẩm
+                }); // Lấy thông tin products và chỉ lấy trường name của product
 
-          console.log(order)
-      
-          // Truy cập và trả về tên cụ thể của từng ID
-          const userName = order.user ? order.user.username : null;
-          const productNames = order.products.map((product) => product.product.name);
-      
-          const result = {
-            _id: order._id,
-            user: userName,
-            products: productNames,
-            orderTotal: order.orderTotal,
-            address: order.address,
-            billing: order.billing,
-            status: order.status,
-            description: order.description,
-            createdAt: order.createdAt,
-            updatedAt: order.updatedAt,
-          };
-      
-          res.order = result;
-          next();
+            if (!order) {
+                return res.status(404).json({ message: 'Không tìm thấy đơn hàng' });
+            }
+
+            // Truy cập và trả về tên cụ thể của từng ID
+            const userName = order.user ? order.user.username : null;
+            const products = order.products.map((product) => ({
+                name: product.product.name,
+                quantity: product.quantity,
+                image: product.product.image, // Thêm trường image vào thông tin sản phẩm
+            }));
+
+            const result = {
+                _id: order._id,
+                user: userName,
+                products: products,
+                orderTotal: order.orderTotal,
+                address: order.address,
+                billing: order.billing,
+                status: order.status,
+                description: order.description,
+                createdAt: order.createdAt,
+                updatedAt: order.updatedAt,
+            };
+
+            res.order = result;
+            next();
         } catch (err) {
-          return res.status(500).json({ message: err.message });
+            return res.status(500).json({ message: err.message });
         }
-      },
+    },
+
 
     checkRole: (role) => async (req, res, next) => {
         if (req.user.role !== role) {

@@ -14,10 +14,6 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  quantity: {
-    type: Number,
-    default: 0
-  },
   description: {
     type: String,
     required: true
@@ -39,6 +35,11 @@ const ProductSchema = new mongoose.Schema({
   },
   url_book: {
     type: String 
+  },
+  status: {
+    type: String,
+    enum: ['Available', 'Unvailable'],
+    default: 'Available'
   }
  
 }, { timestamps: true }, { collection: 'product' });

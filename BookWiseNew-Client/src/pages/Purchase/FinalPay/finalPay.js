@@ -1,25 +1,10 @@
-import React, { useState, useEffect } from "react";
-import styles from "./finalPay.css";
-import axiosClient from "../../../apis/axiosClient";
-import { useParams } from "react-router-dom";
-import eventApi from "../../../apis/eventApi";
-import userApi from "../../../apis/userApi";
+import { AuditOutlined, HomeOutlined } from '@ant-design/icons';
+import { Breadcrumb, Button, Card, Form, Result, Spin, Steps } from "antd";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import productApi from "../../../apis/productApi";
-import { useHistory } from 'react-router-dom';
-import { Col, Row, Tag, Spin, Card } from "antd";
-import { DateTime } from "../../../utils/dateTime";
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { Typography, Button, Steps, Breadcrumb, Popconfirm, notification, Form, Input, Select, Result, Radio } from 'antd';
-import { HistoryOutlined, AuditOutlined, CloseOutlined, UserOutlined, MehOutlined, TeamOutlined, HomeOutlined, CheckOutlined } from '@ant-design/icons';
-
-import Slider from "react-slick";
-
-const { Meta } = Card;
-const { Option } = Select;
-
-const { Title } = Typography;
-const DATE_TIME_FORMAT = "DD/MM/YYYY HH:mm";
-const { TextArea } = Input;
+import userApi from "../../../apis/userApi";
+import "./finalPay.css";
 
 const FinalPay = () => {
 
@@ -27,167 +12,11 @@ const FinalPay = () => {
     const [userData, setUserData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [orderTotal, setOrderTotal] = useState([]);
-    const [visible, setVisible] = useState(false);
-    const [dataForm, setDataForm] = useState([]);
-    const [lengthForm, setLengthForm] = useState();
     const [form] = Form.useForm();
-    const [template_feedback, setTemplateFeedback] = useState();
     let { id } = useParams();
     const history = useHistory();
 
-    const hideModal = () => {
-        setVisible(false);
-    };
-
-    const accountCreate = async (values) => {
-        try {
-            console.log(userData)
-            const formatData = {
-                "userId": userData._id,
-                "address": values.address,
-                "billing": "cod",
-                "description": values.description,
-                "status": "pending",
-                "products": productDetail,
-                "orderTotal": orderTotal,
-            }
-
-            console.log(formatData);
-            await axiosClient.post("/order", formatData)
-                .then(response => {
-                    console.log(response)
-                    if (response == undefined) {
-                        notification["error"]({
-                            message: `Notification`,
-                            description:
-                                'Account create failed',
-
-                        });
-                    }
-                    else {
-                        notification["success"]({
-                            message: `Notification`,
-                            description:
-                                'Successfully account create',
-                        });
-                        form.resetFields();
-                        history.push("/account-management");
-                    }
-                }
-                );
-        } catch (error) {
-            throw error;
-        }
-        setTimeout(function () {
-            setLoading(false);
-        }, 1000);
-    }
-
-    const CancelPay = () => {
-        form.resetFields();
-        history.push("/cart");
-    }
-
-
-
-    const listEvent = () => {
-        setLoading(true);
-        (async () => {
-            try {
-                const response = await eventApi.getDetailEvent(id);
-                console.log(response);
-                setProductDetail(response);
-                setLoading(false);
-
-            } catch (error) {
-                console.log('Failed to fetch event detail:' + error);
-            }
-        })();
-        window.scrollTo(0, 0);
-    }
-
-    const handleDetailEvent = (id) => {
-        history.replace("/event-detail/" + id);
-        window.location.reload();
-        window.scrollTo(0, 0);
-    }
-
-    const getDataForm = async (uid) => {
-        try {
-            await axiosClient.get("/event/" + id + "/template_feedback/" + uid + "/question")
-                .then(response => {
-                    console.log(response);
-                    setDataForm(response);
-                    let tabs = [];
-                    for (let i = 0; i < response.length; i++) {
-                        tabs.push({
-                            content: response[i]?.content,
-                            uid: response[i]?.uid,
-                            is_rating: response[i]?.is_rating
-                        })
-                    }
-                    form.setFieldsValue({
-                        users: tabs
-                    })
-                    setLengthForm(tabs.length)
-                }
-                );
-
-        } catch (error) {
-            throw error;
-        }
-    }
-
-    const handleDirector = () => {
-        history.push("/evaluation/" + id)
-    }
-
-    const onFinish = async (values) => {
-        console.log(values.users);
-        let tabs = [];
-        for (let i = 0; i < values.users.length; i++) {
-            tabs.push({
-                scope: values.users[i]?.scope == undefined ? null : values.users[i]?.scope,
-                comment: values.users[i]?.comment == undefined ? null : values.users[i]?.comment,
-                question_uid: values.users[i]?.uid,
-
-            })
-        }
-        console.log(tabs);
-        setLoading(true);
-        try {
-            const dataForm = {
-                "answers": tabs
-            }
-            await axiosClient.post("/event/" + id + "/answer", dataForm)
-                .then(response => {
-                    if (response === undefined) {
-                        notification["error"]({
-                            message: `Notification`,
-                            description:
-                                'Answer event question failed',
-
-                        });
-                        setLoading(false);
-                    }
-                    else {
-                        notification["success"]({
-                            message: `Notification`,
-                            description:
-                                'Successfully answer event question',
-
-                        });
-                        setLoading(false);
-                        form.resetFields();
-                    }
-                }
-                );
-
-        } catch (error) {
-            throw error;
-        }
-    };
-
+    
     const handleFinal = () => {
         history.push("/")
     }

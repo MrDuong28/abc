@@ -69,10 +69,10 @@ const ProductList = () => {
                     "category": values.category,
                     "image": response.image_url,
                     "promotion": values.promotion,
-                    "quantity": values.quantity,
+                    "status": values.status,
                     "slide": images,
                     "color": values.colors,
-                    "url_book":  bookUrl
+                    "url_book": bookUrl
                 };
 
                 return axiosClient.post("/product", categoryList).then(response => {
@@ -166,10 +166,10 @@ const ProductList = () => {
                         "price": values.price,
                         "category": values.category,
                         "image": response.image_url,
-                        "promotion": values.promotion,
-                        "quantity": values.quantity,
+                        "promotion": values.promotion || 0,
+                        "status": values.status,
                         "color": values.colors,
-                        "url_book":  bookUrl
+                        "url_book": bookUrl
                     };
 
                     return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -196,10 +196,10 @@ const ProductList = () => {
                     "description": description,
                     "price": values.price,
                     "category": values.category,
-                    "promotion": values.promotion,
-                    "quantity": values.quantity,
+                    "promotion": values.promotion || 0,
+                    "status": values.status,
                     "color": values.colors,
-                    "url_book":  bookUrl.length > 0 ? bookUrl : ""
+                    "url_book": bookUrl.length > 0 ? bookUrl : ""
                 };
 
                 return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -299,8 +299,8 @@ const ProductList = () => {
                     name: response.product.name,
                     price: response.product.price,
                     category: response?.product.category?._id,
-                    quantity: response.product.quantity,
-                    promotion: response.product.promotion,
+                    status: response.product.status,
+                    promotion: response.product.promotion || 0,
                     color: response.product.color,
                 });
                 console.log(form2);
@@ -320,22 +320,6 @@ const ProductList = () => {
         } catch (error) {
             console.log('search to fetch category list:' + error);
         }
-    }
-
-    function NoData() {
-        return <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />;
-    }
-
-    function showConfirm(uid) {
-        confirm({
-            title: 'Do you want to generate meeting these event online?',
-            icon: <ExclamationCircleOutlined />,
-            onOk() {
-            },
-            onCancel() {
-                console.log('Cancel');
-            },
-        });
     }
 
     const handleChange = (content) => {
@@ -361,11 +345,6 @@ const ProductList = () => {
             dataIndex: 'name',
             key: 'name',
             render: (text) => <a>{text}</a>,
-        },
-        {
-            title: 'Số lượng',
-            dataIndex: 'quantity',
-            key: 'quantity',
         },
         {
             title: 'Giá gốc',
@@ -396,6 +375,20 @@ const ProductList = () => {
             render: (res) => (
                 <span>
                     {res?.name}
+                </span>
+            ),
+        },
+        {
+            title: 'Trạng thái',
+            dataIndex: 'status',
+            key: 'status',
+            render: (status) => (
+                <span>
+                    {status === 'Available' ? (
+                        <Tag color="green">Bật</Tag>
+                    ) : (
+                        <Tag color="red">Tắt</Tag>
+                    )}
                 </span>
             ),
         },
@@ -446,11 +439,6 @@ const ProductList = () => {
         setVisible(true);
     };
 
-    const handleClose = () => {
-        form.resetFields();
-        setVisible(false);
-    };
-
     const handleSubmit = () => {
         form.validateFields().then((values) => {
             form.resetFields();
@@ -482,7 +470,7 @@ const ProductList = () => {
                     setNewsList(res.data.docs);
                     setLoading(false);
                 });
-                
+
                 ;
             } catch (error) {
                 console.log('Failed to fetch event list:' + error);
@@ -583,17 +571,20 @@ const ProductList = () => {
                         </Form.Item>
 
                         <Form.Item
-                            name="quantity"
-                            label="Số lượng"
+                            name="status"
+                            label="Trạng thái"
                             rules={[
                                 {
                                     required: true,
-                                    message: 'Vui lòng nhập số lượng!',
+                                    message: 'Vui lòng chọn trạng thái!',
                                 },
                             ]}
                             style={{ marginBottom: 10 }}
                         >
-                            <Input placeholder="Số lượng" type="number" />
+                            <Select placeholder="Chọn trạng thái">
+                                <Select.Option value="Available">Bật</Select.Option>
+                                <Select.Option value="Unavailable">Tắt</Select.Option>
+                            </Select>
                         </Form.Item>
 
                         <Form.Item
@@ -613,12 +604,6 @@ const ProductList = () => {
                         <Form.Item
                             name="promotion"
                             label="Giá giảm"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập giá giảm!',
-                                },
-                            ]}
                             style={{ marginBottom: 10 }}
                         >
                             <Input placeholder="Giá giảm" type="number" />
@@ -831,6 +816,23 @@ const ProductList = () => {
                         </Form.Item>
 
                         <Form.Item
+                            name="status"
+                            label="Trạng thái"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Vui lòng chọn trạng thái!',
+                                },
+                            ]}
+                            style={{ marginBottom: 10 }}
+                        >
+                            <Select placeholder="Chọn trạng thái">
+                                <Select.Option value="Available">Bật</Select.Option>
+                                <Select.Option value="Unavailable">Tắt</Select.Option>
+                            </Select>
+                        </Form.Item>
+
+                        <Form.Item
                             name="promotion"
                             label="Giá giảm"
                             rules={[
@@ -858,12 +860,6 @@ const ProductList = () => {
                             name="url_book"
                             label="File sách"
                             style={{ marginBottom: 10 }}
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng chọn file sách!',
-                                },
-                            ]}
                         >
                             <Upload
                                 name="images"

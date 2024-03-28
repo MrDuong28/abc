@@ -21,7 +21,7 @@ import "./profile.css";
 const Profile = () => {
     const [event, setEvent] = useState([]);
     const [eventTemp, setEventTemp] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [visible, setVisible] = useState(false);
     const [form] = Form.useForm();
     const [userData, setUserData] = useState([]);
@@ -54,6 +54,12 @@ const Profile = () => {
         editedUserData._id = user?._id;
         try {
             const response = await userApi.updateProfile(editedUserData);
+            if(response){
+                const response = await userApi.getProfileById(user?._id);
+                setUserData(response.data);
+                localStorage.setItem("user", JSON.stringify(response.data));
+                window.location.reload();
+            }
             notification.success({ message: 'Cập nhật thông tin thành công' });
             setIsModalVisible(false);
         } catch (error) {
@@ -65,10 +71,10 @@ const Profile = () => {
     useEffect(() => {
         (async () => {
             try {
-                const response = await userApi.getProfile();
-                localStorage.setItem("user", JSON.stringify(response.user));
-                setUserData(response.user);
-                setLoading(false);
+                const local = localStorage.getItem("user");
+                const user = JSON.parse(local);
+                console.log(user);
+                setUserData(user);
             } catch (error) {
                 console.log('Failed to fetch profile user:' + error);
             }

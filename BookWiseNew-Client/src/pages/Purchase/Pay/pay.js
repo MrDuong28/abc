@@ -176,12 +176,14 @@ const Pay = () => {
         },
       });
 
+      console.log(response)
+
       if (response) {
         const local = localStorage.getItem("user");
         const currentUser = JSON.parse(local);
 
         const formatData = {
-          userId: currentUser.user._id,
+          userId: currentUser._id,
           address: address,
           billing: "paypal",
           description: description,
@@ -244,13 +246,13 @@ const Pay = () => {
         await productApi.getDetailProduct(id).then((item) => {
           setProductDetail(item);
         });
-        const response = await userApi.getProfile();
-        localStorage.setItem("user", JSON.stringify(response));
-        console.log(response);
+        const local = localStorage.getItem("user");
+        const user = JSON.parse(local);
+        console.log(user);
         form.setFieldsValue({
-          name: response.user.username,
-          email: response.user.email,
-          phone: response.user.phone,
+          name: user.username,
+          email: user.email,
+          phone: user.phone,
         });
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         console.log(cart);
@@ -270,7 +272,7 @@ const Pay = () => {
         setOrderTotal(totalPrice);
         setProductDetail(transformedData);
         console.log(transformedData);
-        setUserData(response.user);
+        setUserData(user);
         setLoading(false);
       } catch (error) {
         console.log("Failed to fetch event detail:" + error);
@@ -331,7 +333,7 @@ const Pay = () => {
                     hasFeedback
                     style={{ marginBottom: 10 }}
                   >
-                    <Input disabled placeholder="Tên" />
+                    <Input  placeholder="Tên" />
                   </Form.Item>
 
                   <Form.Item
@@ -349,7 +351,7 @@ const Pay = () => {
                     hasFeedback
                     style={{ marginBottom: 10 }}
                   >
-                    <Input disabled placeholder="Số điện thoại" />
+                    <Input  placeholder="Số điện thoại" />
                   </Form.Item>
 
                   <Form.Item
