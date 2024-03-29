@@ -132,6 +132,7 @@ const AccountManagement = () => {
                     <Row>
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             <div>
+                                {/* Kiểm tra nếu người dùng không phải là admin và không phải là tài khoản admin */}
                                 {!record.role.includes('isAdmin') && (
                                     <Button
                                         size="small"
@@ -156,23 +157,27 @@ const AccountManagement = () => {
                                         style={{ width: 190, borderRadius: 15, height: 30 }}
                                     >{"Mở chặn tài khoản"}
                                     </Button>
-                                </Popconfirm> : <Popconfirm
-                                    title="Bạn muốn chặn tài khoản này?"
-                                    onConfirm={() => handleBanAccount(record)}
-                                    okText="Yes"
-                                    cancelText="No"
-                                >
-                                    <Button
-                                        size="small"
-                                        icon={<StopOutlined />}
-                                        style={{ width: 190, borderRadius: 15, height: 30 }}
-                                    >{"Chặn tài khoản"}
-                                    </Button>
-                                </Popconfirm>}
+                                </Popconfirm> : (
+                                    // Kiểm tra nếu người dùng không phải là admin thì mới hiển thị nút chặn tài khoản
+                                    !record.role.includes('isAdmin') &&
+                                    <Popconfirm
+                                        title="Bạn muốn chặn tài khoản này?"
+                                        onConfirm={() => handleBanAccount(record)}
+                                        okText="Yes"
+                                        cancelText="No"
+                                    >
+                                        <Button
+                                            size="small"
+                                            icon={<StopOutlined />}
+                                            style={{ width: 190, borderRadius: 15, height: 30 }}
+                                        >{"Chặn tài khoản"}
+                                        </Button>
+                                    </Popconfirm>
+                                )}
                             </div>
                         </div>
                     </Row>
-
+        
                 </div >
             ),
         },

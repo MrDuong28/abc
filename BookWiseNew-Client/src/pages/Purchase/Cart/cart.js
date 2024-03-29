@@ -159,6 +159,11 @@ const Cart = () => {
     history.push("/product-detail/" + record._id);
   };
 
+  const handleNavigateToHome = () => {
+    history.push('/'); // Chuyển hướng về trang home
+};
+
+
   return (
     <div>
       <div class="py-5">
@@ -168,7 +173,7 @@ const Cart = () => {
               <Layout className="box_cart">
                 <Content className="site-layout-background">
                   <Breadcrumb>
-                    <Breadcrumb.Item href="http://localhost:3500/product-list/643cd88879b4192efedda4e6">
+                    <Breadcrumb.Item onClick={handleNavigateToHome}>
                       <LeftSquareOutlined style={{ fontSize: "24px" }} />
                       <span> Tiếp tục mua sắm</span>
                     </Breadcrumb.Item>

@@ -367,18 +367,29 @@ const ProductDetail = () => {
                   bordered={false}
                   style={{ width: "50%" }}
                 >
-                  <div className="price_product">
-                    {productDetail?.promotion?.toLocaleString("vi", {
-                      style: "currency",
-                      currency: "VND",
-                    })}
-                  </div>
-                  <div className="promotion_product">
-                    {productDetail?.price?.toLocaleString("vi", {
-                      style: "currency",
-                      currency: "VND",
-                    })}
-                  </div>
+                  {productDetail?.promotion === productDetail?.price ? (
+    <div className="price_product">
+        {productDetail?.promotion?.toLocaleString("vi", {
+            style: "currency",
+            currency: "VND",
+        })}
+    </div>
+) : (
+    <div>
+        <div className="price_product">
+            {productDetail?.promotion?.toLocaleString("vi", {
+                style: "currency",
+                currency: "VND",
+            })}
+        </div>
+        <div className="promotion_product">
+            {productDetail?.price?.toLocaleString("vi", {
+                style: "currency",
+                currency: "VND",
+            })}
+        </div>
+    </div>
+)}
                   <div class="box-product-promotion">
                     <div class="box-product-promotion-header">
                       <p>Ưu đãi</p>
