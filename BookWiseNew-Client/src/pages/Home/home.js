@@ -95,24 +95,37 @@ const Home = () => {
       }
       try {
         const data = { limit: 10, page: 1 };
+
+        // Hàm lọc dữ liệu chỉ giữ lại các mục có trạng thái "available"
+        const filterAvailableProducts = (products) => {
+          return products.filter(product => product.status === "Available");
+        };
+
+        // Lấy dữ liệu từ API và lọc các sản phẩm có trạng thái "available"
         const response = await productApi.getProductsByCategory(
           data,
-          "643cd88879b4192efedda4e6"
+          "65fd67f2207e1639f49dc016"
         );
         console.log(response);
-        setProductsPhone(response.data.docs);
+        const availableProductsPhone = filterAvailableProducts(response.data.docs);
+        setProductsPhone(availableProductsPhone);
+
         const response2 = await productApi.getProductsByCategory(
           data,
-          "643cd89a79b4192efedda4ee"
+          "65fd67c2207e1639f49dc012"
         );
         console.log(response2);
-        setProductsPC(response2.data.docs);
+        const availableProductsPC = filterAvailableProducts(response2.data.docs);
+        setProductsPC(availableProductsPC);
+
         const response3 = await productApi.getProductsByCategory(
           data,
-          "643d030051fc7a906603da39"
+          "65fd6755207e1639f49dbfe4"
         );
         console.log(response3);
-        setProductsTablet(response3.data.docs);
+        const availableProductsTablet = filterAvailableProducts(response3.data.docs);
+        setProductsTablet(availableProductsTablet);
+
       } catch (error) {
         console.log(error);
       }
