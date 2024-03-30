@@ -45,13 +45,14 @@ const ProductList = () => {
         minPrice: minPrice,
         maxPrice: maxPrice,
       };
-      await axiosClient
-        .post("/product/searchByPrice", dataForm)
+      await axiosClient.post("/product/searchByPrice", dataForm)
         .then((response) => {
           if (response === undefined) {
             setLoading(false);
           } else {
-            setProductDetail(response.data.docs);
+            // Lọc các sản phẩm có trạng thái là "Available"
+            const availableProducts = response.data.docs.filter(product => product.status === "Available");
+            setProductDetail(availableProducts);
             setLoading(false);
           }
         });
@@ -59,6 +60,7 @@ const ProductList = () => {
       throw error;
     }
   };
+
 
   const handleSearchClick = () => {
     // Gọi hàm tìm kiếm theo giá
