@@ -22,6 +22,10 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  manufacturer: {
+    type: String,
+    required: true
+  },
   slide: {
     type: [String]
   },

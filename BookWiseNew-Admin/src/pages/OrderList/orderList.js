@@ -265,20 +265,6 @@ const OrderList = () => {
                             >
                                 Chỉnh sửa
                             </Button>
-                            <Popconfirm
-                                title="Bạn có chắc chắn xóa đơn hàng này?"
-                                onConfirm={() => handleDeleteCategory(record._id)}
-                                okText="Yes"
-                                cancelText="No"
-                            >
-                                <Button
-                                    size="small"
-                                    icon={<DeleteOutlined />}
-                                    style={{ width: 150, borderRadius: 15, height: 30 }}
-                                >
-                                    Xóa
-                                </Button>
-                            </Popconfirm>
                         </div>
                     </Row>
 

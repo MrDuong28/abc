@@ -72,7 +72,8 @@ const ProductList = () => {
                     "status": values.status,
                     "slide": images,
                     "color": values.colors,
-                    "url_book": bookUrl
+                    "url_book": bookUrl,
+                    "manufacturer": values.manufacturer
                 };
 
                 return axiosClient.post("/product", categoryList).then(response => {
@@ -169,7 +170,8 @@ const ProductList = () => {
                         "promotion": values.promotion || 0,
                         "status": values.status,
                         "color": values.colors,
-                        "url_book": bookUrl
+                        "url_book": bookUrl,
+                        "manufacturer": values.manufacturer
                     };
 
                     return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -199,7 +201,8 @@ const ProductList = () => {
                     "promotion": values.promotion || 0,
                     "status": values.status,
                     "color": values.colors,
-                    "url_book": bookUrl.length > 0 ? bookUrl : ""
+                    "url_book": bookUrl.length > 0 ? bookUrl : "",
+                    "manufacturer": values.manufacturer
                 };
 
                 return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -280,10 +283,6 @@ const ProductList = () => {
         }
     }
 
-    const handleDetailView = (id) => {
-        history.push("/product-detail/" + id)
-    }
-
     const handleChangeImage = (event) => {
         setImage(event.target.files[0]);
     }
@@ -302,6 +301,7 @@ const ProductList = () => {
                     status: response.product.status,
                     promotion: response.product.promotion || 0,
                     color: response.product.color,
+                    manufacturer: response.product.manufacturer
                 });
                 console.log(form2);
                 setDescription(response.product.description);
@@ -377,6 +377,12 @@ const ProductList = () => {
                     {res?.name}
                 </span>
             ),
+        },
+        {
+            title: 'Tên tác giả',
+            dataIndex: 'manufacturer',
+            key: 'manufacturer',
+            render: (text) => <a>{text}</a>,
         },
         {
             title: 'Trạng thái',
@@ -607,6 +613,20 @@ const ProductList = () => {
                             style={{ marginBottom: 10 }}
                         >
                             <Input placeholder="Giá giảm" type="number" />
+                        </Form.Item>
+
+                        <Form.Item
+                            name="manufacturer"
+                            label="Nhà xuất bản"
+                            style={{ marginBottom: 10 }}
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Vui lòng nhập nhà xuất bản!',
+                                },
+                            ]}
+                        >
+                            <Input placeholder="Nhà xuất bản" />
                         </Form.Item>
 
                         <Form.Item
@@ -844,6 +864,20 @@ const ProductList = () => {
                             style={{ marginBottom: 10 }}
                         >
                             <Input placeholder="Giá giảm" />
+                        </Form.Item>
+
+                        <Form.Item
+                            name="manufacturer"
+                            label="Nhà xuất bản"
+                            style={{ marginBottom: 10 }}
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Vui lòng nhập nhà xuất bản!',
+                                },
+                            ]}
+                        >
+                            <Input placeholder="Nhà xuất bản" />
                         </Form.Item>
 
                         <Form.Item
