@@ -101,10 +101,10 @@ const CartHistory = () => {
                 })}
               </div>
               <div className="product-quantity">
-                Số lượng: {item.quantity}
+                Số lượng: {item?.quantity}
               </div>
               <div className="product-total">
-                Tổng tiền: {(item.product.price * item.quantity).toLocaleString("vi", {
+                Tổng tiền: {(item?.product?.price * item.quantity).toLocaleString("vi", {
                   style: "currency",
                   currency: "VND",
                 })}
