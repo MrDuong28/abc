@@ -391,13 +391,16 @@ const ProductList = () => {
             render: (status) => (
                 <span>
                     {status === 'Available' ? (
-                        <Tag color="green">Bật</Tag>
+                        <Tag color="green">Còn hàng</Tag>
+                    ) : status === 'Unavailable' ? (
+                        <Tag color="red">Hết hàng</Tag>
                     ) : (
-                        <Tag color="red">Tắt</Tag>
+                        <Tag color="yellow">Ngừng kinh doanh</Tag>
                     )}
                 </span>
             ),
         },
+        
         {
             title: 'Action',
             key: 'action',
@@ -588,8 +591,9 @@ const ProductList = () => {
                             style={{ marginBottom: 10 }}
                         >
                             <Select placeholder="Chọn trạng thái">
-                                <Select.Option value="Available">Bật</Select.Option>
-                                <Select.Option value="Unavailable">Tắt</Select.Option>
+                                <Select.Option value="Available">Còn hàng</Select.Option>
+                                <Select.Option value="Unavailable">Hết hàng</Select.Option>
+                                <Select.Option value="Discontinued">Ngừng kinh doanh</Select.Option>
                             </Select>
                         </Form.Item>
 
@@ -847,8 +851,9 @@ const ProductList = () => {
                             style={{ marginBottom: 10 }}
                         >
                             <Select placeholder="Chọn trạng thái">
-                                <Select.Option value="Available">Bật</Select.Option>
-                                <Select.Option value="Unavailable">Tắt</Select.Option>
+                                <Select.Option value="Available">Còn hàng</Select.Option>
+                                <Select.Option value="Unavailable">Hết hàng</Select.Option>
+                                <Select.Option value="Discontinued">Ngừng kinh doanh</Select.Option>
                             </Select>
                         </Form.Item>
 

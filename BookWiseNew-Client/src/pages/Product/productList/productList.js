@@ -51,8 +51,7 @@ const ProductList = () => {
             setLoading(false);
           } else {
             // Lọc các sản phẩm có trạng thái là "Available"
-            const availableProducts = response.data.docs.filter(product => product.status === "Available");
-            setProductDetail(availableProducts);
+            setProductDetail(response.data.docs);
             setLoading(false);
           }
         });
@@ -209,14 +208,28 @@ const ProductList = () => {
                           </div>
                         </div>
                       </div>
-                      {item?.promotion !== item?.price && (
+                      {item?.status === 'Unavailable' || item?.status === 'Discontinued' ? (
                         <Paragraph
                           className="badge"
                           style={{ position: "absolute", top: 10, left: 9 }}
                         >
-                          <span>Giảm giá</span>
+                          {item?.status === 'Unavailable' ? (
+                            <span>Hết hàng</span>
+                          ) : (
+                            <span>Ngừng kinh doanh</span>
+                          )}
                           <img src={triangleTopRight} alt="Triangle" />
                         </Paragraph>
+                      ) : (
+                        item?.promotion !== item?.price && (
+                          <Paragraph
+                            className="badge"
+                            style={{ position: "absolute", top: 10, left: 9 }}
+                          >
+                            <span>Giảm giá</span>
+                            <img src={triangleTopRight} alt="Triangle" />
+                          </Paragraph>
+                        )
                       )}
 
                     </List.Item>

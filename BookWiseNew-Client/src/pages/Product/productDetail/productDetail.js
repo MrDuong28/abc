@@ -1,53 +1,19 @@
-import React, { useState, useEffect } from "react";
-import styles from "./productDetail.css";
+import {
+  Avatar, Breadcrumb, Button, Card, Carousel, Col, Form,
+  Input, List, Modal, Rate, Row,
+  Spin,
+  message, notification
+} from "antd";
+import Paragraph from "antd/lib/typography/Paragraph";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
 import axiosClient from "../../../apis/axiosClient";
-import { useParams } from "react-router-dom";
 import eventApi from "../../../apis/eventApi";
 import productApi from "../../../apis/productApi";
-import { useHistory } from "react-router-dom";
-import { Col, Row, Tag, Spin, Card } from "antd";
-import { DateTime } from "../../../utils/dateTime";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import {
-  Typography,
-  Button,
-  Badge,
-  Breadcrumb,
-  Popconfirm,
-  Carousel,
-  notification,
-  Form,
-  Input,
-  Select,
-  Rate,
-  Modal,
-  message,
-  List,
-  Avatar,
-  Descriptions,
-} from "antd";
-import {
-  HistoryOutlined,
-  AuditOutlined,
-  AppstoreAddOutlined,
-  CloseOutlined,
-  UserOutlined,
-  MehOutlined,
-  TeamOutlined,
-  HomeOutlined,
-  CheckOutlined,
-} from "@ant-design/icons";
-import Paragraph from "antd/lib/typography/Paragraph";
-import { numberWithCommas } from "../../../utils/common";
 import triangleTopRight from "../../../assets/icon/Triangle-Top-Right.svg";
+import { numberWithCommas } from "../../../utils/common";
+import "./productDetail.css";
 
-import Slider from "react-slick";
-
-const { Meta } = Card;
-const { Option } = Select;
-
-const { Title } = Typography;
-const DATE_TIME_FORMAT = "DD/MM/YYYY HH:mm";
 const { TextArea } = Input;
 
 const ProductDetail = () => {
@@ -68,55 +34,6 @@ const ProductDetail = () => {
   const [colorProduct, setColorProduct] = useState("");
   const [selectedColor, setSelectedColor] = useState(null);
 
-  const hideModal = () => {
-    setVisible(false);
-  };
-
-  const listEvent = () => {
-    setLoading(true);
-    (async () => {
-      try {
-        const response = await eventApi.getDetailEvent(id);
-        console.log(response);
-        setProductDetail(response);
-        setLoading(false);
-      } catch (error) {
-        console.log("Failed to fetch event detail:" + error);
-      }
-    })();
-    window.scrollTo(0, 0);
-  };
-
-  const handleDetailEvent = (id) => {
-    history.replace("/event-detail/" + id);
-    window.location.reload();
-    window.scrollTo(0, 0);
-  };
-
-  const getDataForm = async (uid) => {
-    try {
-      await axiosClient
-        .get("/event/" + id + "/template_feedback/" + uid + "/question")
-        .then((response) => {
-          console.log(response);
-          setDataForm(response);
-          let tabs = [];
-          for (let i = 0; i < response.length; i++) {
-            tabs.push({
-              content: response[i]?.content,
-              uid: response[i]?.uid,
-              is_rating: response[i]?.is_rating,
-            });
-          }
-          form.setFieldsValue({
-            users: tabs,
-          });
-          setLengthForm(tabs.length);
-        });
-    } catch (error) {
-      throw error;
-    }
-  };
 
   const viewBookOnline = (url) => {
     window.location.href = url;
@@ -179,50 +96,6 @@ const ProductDetail = () => {
     localStorage.setItem("cartLength", updatedItems.length);
     history.push("/cart");
   };
-
-  const onFinish = async (values) => {
-    console.log(values.users);
-    let tabs = [];
-    for (let i = 0; i < values.users.length; i++) {
-      tabs.push({
-        scope:
-          values.users[i]?.scope == undefined ? null : values.users[i]?.scope,
-        comment:
-          values.users[i]?.comment == undefined
-            ? null
-            : values.users[i]?.comment,
-        question_uid: values.users[i]?.uid,
-      });
-    }
-    console.log(tabs);
-    setLoading(true);
-    try {
-      const dataForm = {
-        answers: tabs,
-      };
-      await axiosClient
-        .post("/event/" + id + "/answer", dataForm)
-        .then((response) => {
-          if (response === undefined) {
-            notification["error"]({
-              message: `Notification`,
-              description: "Answer event question failed",
-            });
-            setLoading(false);
-          } else {
-            notification["success"]({
-              message: `Notification`,
-              description: "Successfully answer event question",
-            });
-            setLoading(false);
-            form.resetFields();
-          }
-        });
-    } catch (error) {
-      throw error;
-    }
-  };
-
   const handleReadMore = (id) => {
     console.log(id);
     history.push("/product-detail/" + id);
@@ -313,7 +186,7 @@ const ProductDetail = () => {
     window.scrollTo(0, 0);
   }, [cartLength]);
 
-  
+
 
   return (
     <div>
@@ -368,28 +241,28 @@ const ProductDetail = () => {
                   style={{ width: "50%" }}
                 >
                   {productDetail?.promotion === productDetail?.price ? (
-    <div className="price_product">
-        {productDetail?.promotion?.toLocaleString("vi", {
-            style: "currency",
-            currency: "VND",
-        })}
-    </div>
-) : (
-    <div>
-        <div className="price_product">
-            {productDetail?.promotion?.toLocaleString("vi", {
-                style: "currency",
-                currency: "VND",
-            })}
-        </div>
-        <div className="promotion_product">
-            {productDetail?.price?.toLocaleString("vi", {
-                style: "currency",
-                currency: "VND",
-            })}
-        </div>
-    </div>
-)}
+                    <div className="price_product">
+                      {productDetail?.promotion?.toLocaleString("vi", {
+                        style: "currency",
+                        currency: "VND",
+                      })}
+                    </div>
+                  ) : (
+                    <div>
+                      <div className="price_product">
+                        {productDetail?.promotion?.toLocaleString("vi", {
+                          style: "currency",
+                          currency: "VND",
+                        })}
+                      </div>
+                      <div className="promotion_product">
+                        {productDetail?.price?.toLocaleString("vi", {
+                          style: "currency",
+                          currency: "VND",
+                        })}
+                      </div>
+                    </div>
+                  )}
                   <div class="box-product-promotion">
                     <div class="box-product-promotion-header">
                       <p>Ưu đãi</p>
@@ -421,6 +294,7 @@ const ProductDetail = () => {
                       className="by"
                       size={"large"}
                       onClick={() => paymentCard(productDetail)}
+                      disabled={productDetail?.status === 'Unavailable' || productDetail?.status === 'Discontinued'}
                     >
                       Mua ngay
                     </Button>
@@ -429,6 +303,7 @@ const ProductDetail = () => {
                       className="cart"
                       size={"large"}
                       onClick={() => addCart(productDetail)}
+                      disabled={productDetail?.status === 'Unavailable' || productDetail?.status === 'Discontinued'}
                     >
                       Thêm vào giỏ
                     </Button>

@@ -96,35 +96,27 @@ const Home = () => {
       try {
         const data = { limit: 10, page: 1 };
 
-        // Hàm lọc dữ liệu chỉ giữ lại các mục có trạng thái "available"
-        const filterAvailableProducts = (products) => {
-          return products.filter(product => product.status === "Available");
-        };
-
         // Lấy dữ liệu từ API và lọc các sản phẩm có trạng thái "available"
         const response = await productApi.getProductsByCategory(
           data,
           "65fd67f2207e1639f49dc016"
         );
         console.log(response);
-        const availableProductsPhone = filterAvailableProducts(response.data.docs);
-        setProductsPhone(availableProductsPhone);
+        setProductsPhone(response.data.docs);
 
         const response2 = await productApi.getProductsByCategory(
           data,
           "65fd67c2207e1639f49dc012"
         );
         console.log(response2);
-        const availableProductsPC = filterAvailableProducts(response2.data.docs);
-        setProductsPC(availableProductsPC);
+        setProductsPC(response2.data.docs);
 
         const response3 = await productApi.getProductsByCategory(
           data,
           "65fd6755207e1639f49dbfe4"
         );
         console.log(response3);
-        const availableProductsTablet = filterAvailableProducts(response3.data.docs);
-        setProductsTablet(availableProductsTablet);
+        setProductsTablet(response3.data.docs);
 
       } catch (error) {
         console.log(error);
@@ -370,15 +362,30 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  {item?.promotion !== item?.price && (
+                  {item?.status === 'Unavailable' || item?.status === 'Discontinued' ? (
                     <Paragraph
                       className="badge"
                       style={{ position: "absolute", top: 10, left: 9 }}
                     >
-                      <span>Giảm giá</span>
+                      {item?.status === 'Unavailable' ? (
+                        <span>Hết hàng</span>
+                      ) : (
+                        <span>Ngừng kinh doanh</span>
+                      )}
                       <img src={triangleTopRight} alt="Triangle" />
                     </Paragraph>
+                  ) : (
+                    item?.promotion !== item?.price && (
+                      <Paragraph
+                        className="badge"
+                        style={{ position: "absolute", top: 10, left: 9 }}
+                      >
+                        <span>Giảm giá</span>
+                        <img src={triangleTopRight} alt="Triangle" />
+                      </Paragraph>
+                    )
                   )}
+
 
                 </Col>
               ))}
@@ -493,14 +500,28 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  {item?.promotion !== item?.price && (
+                  {item?.status === 'Unavailable' || item?.status === 'Discontinued' ? (
                     <Paragraph
                       className="badge"
                       style={{ position: "absolute", top: 10, left: 9 }}
                     >
-                      <span>Giảm giá</span>
+                      {item?.status === 'Unavailable' ? (
+                        <span>Hết hàng</span>
+                      ) : (
+                        <span>Ngừng kinh doanh</span>
+                      )}
                       <img src={triangleTopRight} alt="Triangle" />
                     </Paragraph>
+                  ) : (
+                    item?.promotion !== item?.price && (
+                      <Paragraph
+                        className="badge"
+                        style={{ position: "absolute", top: 10, left: 9 }}
+                      >
+                        <span>Giảm giá</span>
+                        <img src={triangleTopRight} alt="Triangle" />
+                      </Paragraph>
+                    )
                   )}
 
                 </Col>
@@ -574,16 +595,29 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  {item?.promotion !== item?.price && (
+                  {item?.status === 'Unavailable' || item?.status === 'Discontinued' ? (
                     <Paragraph
                       className="badge"
                       style={{ position: "absolute", top: 10, left: 9 }}
                     >
-                      <span>Giảm giá</span>
+                      {item?.status === 'Unavailable' ? (
+                        <span>Hết hàng</span>
+                      ) : (
+                        <span>Ngừng kinh doanh</span>
+                      )}
                       <img src={triangleTopRight} alt="Triangle" />
                     </Paragraph>
+                  ) : (
+                    item?.promotion !== item?.price && (
+                      <Paragraph
+                        className="badge"
+                        style={{ position: "absolute", top: 10, left: 9 }}
+                      >
+                        <span>Giảm giá</span>
+                        <img src={triangleTopRight} alt="Triangle" />
+                      </Paragraph>
+                    )
                   )}
-
                 </Col>
               ))}
             </Row>
