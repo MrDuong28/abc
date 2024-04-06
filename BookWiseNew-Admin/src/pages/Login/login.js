@@ -21,7 +21,7 @@ const Login = () => {
           (async () => {
             try {
               console.log(response);
-              if (response.user.role === "isAdmin" && response.user.status !== "noactive") {
+              if (response.user.role !== "isClient" && response.user.status !== "noactive") {
                 history.push("/dash-board");
               } else {
                 notification["error"]({

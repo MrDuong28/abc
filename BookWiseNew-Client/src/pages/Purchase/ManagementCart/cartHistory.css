@@ -1,34 +1,39 @@
 .product-item {
     display: flex;
     align-items: center;
-  }
-  
-  .product-image-container {
+}
+
+.product-image-container {
     margin-right: 10px;
-  }
-  
-  .divider {
+}
+
+.divider {
     border-top: 1px solid #ccc;
     margin: 10px 0;
-    width: 100%; /* Đảm bảo thanh kẻ ngang chiếm toàn bộ chiều rộng */
-  }
-  .product-price {
-    color: #007bff; /* Màu xanh lam */
-  }
-  
-  .product-quantity {
-    color: #28a745; /* Màu xanh lá cây */
-  }
-  
-  .product-total {
-    color: #dc3545; /* Màu đỏ */
-  }
-  
+    width: 100%;
+    /* Đảm bảo thanh kẻ ngang chiếm toàn bộ chiều rộng */
+}
+
+.product-price {
+    color: #007bff;
+    /* Màu xanh lam */
+}
+
+.product-quantity {
+    color: #28a745;
+    /* Màu xanh lá cây */
+}
+
+.product-total {
+    color: #dc3545;
+    /* Màu đỏ */
+}
+
 .container {
     max-width: 1280px;
 }
 
-.container .product_detail{
+.container .product_detail {
     padding-top: 20px;
     padding-left: 25px;
     padding-right: 25px;
@@ -65,13 +70,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 5px;
-  }
-  
-  .product-item img {
-    width: 50px; 
-    height: 50px; 
+}
+
+.product-item img {
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
-  }
+}
 
 .box-product-promotion-header {
     background-color: #fee2e2;
@@ -95,7 +100,7 @@
     font-weight: 700;
 }
 
-.box-content-promotion{
+.box-content-promotion {
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
@@ -106,44 +111,44 @@ hr {
     background-color: #ccccccc0;
 }
 
-.box_cart{
+.box_cart {
     display: flex;
 }
 
-.box_cart .by{
+.box_cart .by {
     margin-top: 20px;
     width: 100%;
 }
 
-.box_cart .cart{
+.box_cart .cart {
     margin-top: 20px;
     margin-left: 5px;
 }
 
-.box_detail_description{
+.box_detail_description {
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
 }
 
-.product_name{
+.product_name {
     font-size: 20px;
     font-weight: 600;
 }
 
-.price h1{
+.price h1 {
     display: block;
     padding: 0;
     margin: 0;
 }
 
-.price{
+.price {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.price .rate{
+.price .rate {
     margin-left: 15px;
 }
 
@@ -156,5 +161,5 @@ hr {
 
 .policy {
     margin: 20px 16px 0 16px;
-   
+
 }

@@ -10,7 +10,7 @@ const userApi = {
             })
             .then(response => {
                 console.log(response);
-                if (response.status == true && response.user.role == "isAdmin") {
+                if (response.status == true && response.user.role != "isClient") {
                     localStorage.setItem("token", response.token);
                     localStorage.setItem("user", JSON.stringify(response.user));
                 }

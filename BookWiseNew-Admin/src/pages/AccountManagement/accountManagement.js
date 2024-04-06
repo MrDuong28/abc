@@ -87,17 +87,22 @@ const AccountManagement = () => {
             render: (text, record) => (
                 <Space size="middle">
                     {
-
                         text === "isAdmin" ?
-                            <Tag color="blue" key={text} style={{ width: 100, textAlign: "center" }} icon={<CopyOutlined />}>
-                                Quản lý
-                            </Tag> : text === "isCompany" ? <Tag color="green" key={text} style={{ width: 100, textAlign: "center" }} icon={<CheckCircleOutlined />}>
-                                Công ty
-                            </Tag> : <Tag color="magenta" key={text} style={{ width: 100, textAlign: "center" }} icon={<CheckCircleOutlined />}>
-                                Khách hàng
-                            </Tag>
+                            <Tag color="blue" key={text} style={{ width: 140, textAlign: "center" }} icon={<CopyOutlined />}>
+                                Quản lý cấp cao
+                            </Tag> :
+                            text === "isAdmin2" ? // Thêm điều kiện cho isAdmin2
+                                <Tag color="purple" key={text} style={{ width: 140, textAlign: "center" }} icon={<CopyOutlined />}>
+                                    Quản lý cấp 2
+                                </Tag> :
+                                text === "isCompany" ?
+                                    <Tag color="green" key={text} style={{ width: 140, textAlign: "center" }} icon={<CheckCircleOutlined />}>
+                                        Công ty
+                                    </Tag> :
+                                    <Tag color="magenta" key={text} style={{ width: 140, textAlign: "center" }} icon={<CheckCircleOutlined />}>
+                                        Khách hàng
+                                    </Tag>
                     }
-
                 </Space>
             ),
         },
@@ -131,19 +136,44 @@ const AccountManagement = () => {
                 <div>
                     <Row>
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
-                            <div>
-                                {/* Kiểm tra nếu người dùng không phải là admin và không phải là tài khoản admin */}
-                                {!record.role.includes('isAdmin') && (
-                                    <Button
-                                        size="small"
-                                        icon={<SecurityScanOutlined />}
-                                        style={{ width: 190, borderRadius: 15, height: 30 }}
-                                        onClick={() => handleChangeRole(record)}
+                            {role === "isAdmin" ? <div>
+                                {record.role !== "isAdmin" && (
+                                    <Popconfirm
+                                        title="Bạn có muốn thay đổi quyền admin cho tài khoản này không?"
+                                        onConfirm={() => handleChangeRole(record)}
+                                        okText="Yes"
+                                        cancelText="No"
                                     >
-                                        {"Thay đổi quyền admin"}
-                                    </Button>
+                                        <Button
+                                            size="small"
+                                            icon={<SecurityScanOutlined />}
+                                            style={{ width: 190, borderRadius: 15, height: 30 }}
+                                        >
+                                            {"Thay đổi quyền admin"}
+                                        </Button>
+                                    </Popconfirm>
                                 )}
-                            </div>
+                            </div> : null}
+
+                            {role === "isAdmin2" ? <div>
+                                {record.role !== "isAdmin" && (
+                                    <Popconfirm
+                                        title="Bạn có muốn thay đổi quyền admin cho tài khoản này không?"
+                                        onConfirm={() => handleChangeRole(record)}
+                                        okText="Yes"
+                                        cancelText="No"
+                                    >
+                                        <Button
+                                            size="small"
+                                            icon={<SecurityScanOutlined />}
+                                            style={{ width: 190, borderRadius: 15, height: 30 }}
+                                        >
+                                            {"Thay đổi quyền admin"}
+                                        </Button>
+                                    </Popconfirm>
+                                )}
+                            </div> : null}
+
                             <div style={{ marginTop: 5 }}>
                                 {record.status !== "actived" ? <Popconfirm
                                     title="Bạn muốn mở chặn tài khoản này?"
@@ -177,7 +207,7 @@ const AccountManagement = () => {
                             </div>
                         </div>
                     </Row>
-        
+
                 </div >
             ),
         },
@@ -270,9 +300,14 @@ const AccountManagement = () => {
         }
     }
 
+    const [role, setRole] = useState();
+
     useEffect(() => {
         (async () => {
             try {
+                const data = JSON.parse(localStorage.getItem("user"));
+                setRole(data.role);
+
                 const response = await userApi.listUserByAdmin({ page: 1, limit: 1000 });
                 console.log(response);
                 setUser(response.data.docs);
