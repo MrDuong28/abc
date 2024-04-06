@@ -83,7 +83,7 @@ const CartHistory = () => {
             </div>
               <h3 className="product-name-1">{item.product?.name}</h3>
               <div className="product-price">
-                Giá: {item?.product?.price?.toLocaleString("vi", {
+                Giá gốc: {item?.product?.price?.toLocaleString("vi", {
                   style: "currency",
                   currency: "VND",
                 })}
