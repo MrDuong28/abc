@@ -1,5 +1,5 @@
 import {
-  Breadcrumb, Button, Card, Form,
+  Breadcrumb, Button, Card, Divider,
   Modal,
   Spin, Table, Tag,
   notification
@@ -71,48 +71,52 @@ const CartHistory = () => {
       dataIndex: "products",
       key: "products",
       render: (products) => (
-        <div>
+        <div className="product-images">
           {products.map((item, index) => (
-            <div key={index} className="product-item" onClick={() => handleProductClick(item.product?._id)}>
+            <div key={index} className="product-item">
               <img
                 src={item.product?.image}
                 alt={item.product?.name}
+                className="product-image"
               />
-              {item.product?.name}
             </div>
           ))}
         </div>
       ),
     },
+
     {
-      title: "Giá",
+      title: "Thông tin sản phẩm",
       dataIndex: "products",
-      key: "products",
+      key: "productInfo",
       render: (products) => (
         <div>
           {products.map((item, index) => (
-            <div key={index}>
-              {item?.product?.price?.toLocaleString("vi", {
-                style: "currency",
-                currency: "VND",
-              })}
+            <div key={index} className="product-info">
+              <h3 className="product-name-1">{item.product?.name}</h3>
+              <div className="product-price">
+                Giá: {item?.product?.price?.toLocaleString("vi", {
+                  style: "currency",
+                  currency: "VND",
+                })}
+              </div>
+              <div className="product-quantity">
+                Số lượng: {item.quantity}
+              </div>
+              <div className="product-total">
+                Tổng tiền: {(item.product.price * item.quantity).toLocaleString("vi", {
+                  style: "currency",
+                  currency: "VND",
+                })}
+              </div>
+              {index !== products.length - 1 && <Divider />}
             </div>
           ))}
         </div>
       ),
     },
-    {
-      title: "Số lượng",
-      dataIndex: "products",
-      key: "products",
-      render: (products) => (
-        <div>
-          {products.map((item, index) => (
-            <div key={index}>{item?.quantity}</div>
-          ))}
-        </div>
-      ),
-    },
+
+
     {
       title: "Tổng đơn hàng",
       dataIndex: "orderTotal",

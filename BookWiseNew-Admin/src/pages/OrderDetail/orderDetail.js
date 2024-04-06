@@ -15,6 +15,7 @@ import { DateTime } from "../../utils/dateTime";
 import ProductList from '../ProductList/productList';
 import axiosClient from '../../apis/axiosClient';
 import { PageHeader } from '@ant-design/pro-layout';
+import moment from 'moment';
 const { Option } = Select;
 const { confirm } = Modal;
 const DATE_TIME_FORMAT = "DD/MM/YYYY HH:mm";
@@ -320,52 +321,53 @@ const OrderDetail = () => {
                     <div className="order-details">
                         <h2>Chi tiết đơn hàng</h2>
                         <div className="order-info">
-                            <p>
-                                <strong>Mã đơn hàng:</strong> {order._id}
-                            </p>
-                            <p>
-                                <strong>Người dùng:</strong> {order.user}
-                            </p>
-                            <p>
-                                <strong>Sản phẩm:</strong>
-                            </p>
-                            <ul style={{ listStyle: 'none', padding: 0 }}>
-                                {order?.products?.map((product, index) => (
-                                    <li key={index} style={{ marginBottom: '10px', borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
-                                        <div style={{ display: 'flex', alignItems: 'center' }}>
-                                            <img src={product.image} alt={product.name} style={{ height: 50, marginRight: 10 }} />
-                                            <div>
-                                                <span style={{ fontWeight: 'bold' }}>{product.name}</span>
-                                                <span style={{ marginLeft: '10px' }}>Số lượng: {product.quantity}</span>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Mã đơn hàng</th>
+                                        <th>Người dùng</th>
+                                        <th>Sản phẩm</th>
+                                        <th>Tổng đơn hàng</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Thanh toán</th>
+                                        <th>Trạng thái</th>
+                                        <th>Mô tả</th>
+                                        <th>Ngày tạo</th>
+                                        <th>Ngày cập nhật</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{order._id}</td>
+                                        <td>{order.user}</td>
+                                        <td>
+                                            <div className="order-products">
+                                                {order?.products?.map((product, index) => (
+                                                    <div key={index} className="product-item">
+                                                        <img src={product.image} alt={product.name} className="product-image" />
+                                                        <div className="product-details">
+                                                            <span className="product-name">{product.name}</span>
+                                                            <span className="product-quantity">Số lượng: {product.quantity}</span>
+                                                            <div className="product-price">Đơn giá: {product.price}</div>
+                                                        </div>
+                                                    </div>
+                                                ))}
                                             </div>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
+                                        </td>
 
-                            <p>
-                                <strong>Tổng đơn hàng:</strong> {order.orderTotal}
-                            </p>
-                            <p>
-                                <strong>Địa chỉ:</strong> {order.address}
-                            </p>
-                            <p>
-                                <strong>Thanh toán:</strong> {order.billing}
-                            </p>
-                            <p>
-                                <strong>Trạng thái:</strong> {order.status}
-                            </p>
-                            <p>
-                                <strong>Mô tả:</strong> {order.description}
-                            </p>
-                            <p>
-                                <strong>Ngày tạo:</strong> {order.createdAt}
-                            </p>
-                            <p>
-                                <strong>Ngày cập nhật:</strong> {order.updatedAt}
-                            </p>
+                                        <td>{order.orderTotal}</td>
+                                        <td>{order.address}</td>
+                                        <td>{order.billing}</td>
+                                        <td>{order.status}</td>
+                                        <td>{order.description}</td>
+                                        <td>{moment(order.createdAt).format('DD/MM/YYYY HH:mm')}</td>
+                                        <td>{moment(order.updatedAt).format('DD/MM/YYYY HH:mm')}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+
                 </div>
 
 

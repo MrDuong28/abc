@@ -136,8 +136,11 @@ module.exports = {
             const products = order.products.map((product) => ({
                 name: product.product.name,
                 quantity: product.quantity,
-                image: product.product.image, // Thêm trường image vào thông tin sản phẩm
+                image: product.product.image, 
+                price: product.price,
+
             }));
+            
 
             const result = {
                 _id: order._id,
