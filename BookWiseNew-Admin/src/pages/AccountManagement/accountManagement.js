@@ -156,7 +156,7 @@ const AccountManagement = () => {
                             </div> : null}
 
                             {role === "isAdmin2" ? <div>
-                                {record.role !== "isAdmin" && (
+                                {record.role == "isClient" && (
                                     <Popconfirm
                                         title="Bạn có muốn thay đổi quyền admin cho tài khoản này không?"
                                         onConfirm={() => handleChangeRole(record)}
