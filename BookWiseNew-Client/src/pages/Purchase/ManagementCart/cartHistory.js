@@ -67,25 +67,6 @@ const CartHistory = () => {
 
   const columns = [
     {
-      title: "Ảnh sản phẩm",
-      dataIndex: "products",
-      key: "products",
-      render: (products) => (
-        <div className="product-images">
-          {products.map((item, index) => (
-            <div key={index} className="product-item">
-              <img
-                src={item.product?.image}
-                alt={item.product?.name}
-                className="product-image"
-              />
-            </div>
-          ))}
-        </div>
-      ),
-    },
-
-    {
       title: "Thông tin sản phẩm",
       dataIndex: "products",
       key: "productInfo",
@@ -93,6 +74,13 @@ const CartHistory = () => {
         <div>
           {products.map((item, index) => (
             <div key={index} className="product-info">
+              <div key={index} className="product-item">
+              <img
+                src={item.product?.image}
+                alt={item.product?.name}
+                className="product-image"
+              />
+            </div>
               <h3 className="product-name-1">{item.product?.name}</h3>
               <div className="product-price">
                 Giá: {item?.product?.price?.toLocaleString("vi", {
