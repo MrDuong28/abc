@@ -70,11 +70,9 @@ const ProductList = () => {
     (async () => {
       try {
         await productApi.getProductCategory(id).then((response) => {
-          // Lọc danh sách sản phẩm chỉ lấy những sản phẩm có trạng thái là 'Available'
-          const availableProducts = response.data.docs.filter(product => product.status === 'Available');
 
           // Cập nhật state với danh sách sản phẩm chỉ có trạng thái 'Available'
-          setProductDetail(availableProducts);
+          setProductDetail(response.data.docs);
         });
         const response = await productApi.getCategory({ limit: 50, page: 1 });
         setCategories(response.data.docs);
@@ -209,28 +207,28 @@ const ProductList = () => {
                         </div>
                       </div>
                       {item?.status === 'Unavailable' || item?.status === 'Discontinued' ? (
-                        <Paragraph
-                          className="badge"
-                          style={{ position: "absolute", top: 10, left: 9 }}
-                        >
-                          {item?.status === 'Unavailable' ? (
-                            <span>Hết hàng</span>
-                          ) : (
-                            <span>Ngừng kinh doanh</span>
-                          )}
-                          <img src={triangleTopRight} alt="Triangle" />
-                        </Paragraph>
+                    <Paragraph
+                      className="badge"
+                      style={{ position: "absolute", top: 10, left: 9 }}
+                    >
+                      {item?.status === 'Unavailable' ? (
+                        <span>Hết hàng</span>
                       ) : (
-                        item?.promotion !== item?.price && (
-                          <Paragraph
-                            className="badge"
-                            style={{ position: "absolute", top: 10, left: 9 }}
-                          >
-                            <span>Giảm giá</span>
-                            <img src={triangleTopRight} alt="Triangle" />
-                          </Paragraph>
-                        )
+                        <span>Ngừng kinh doanh</span>
                       )}
+                      <img src={triangleTopRight} alt="Triangle" />
+                    </Paragraph>
+                  ) : (
+                    item?.promotion !== item?.price && (
+                      <Paragraph
+                        className="badge"
+                        style={{ position: "absolute", top: 10, left: 9 }}
+                      >
+                        <span>Giảm giá</span>
+                        <img src={triangleTopRight} alt="Triangle" />
+                      </Paragraph>
+                    )
+                  )}
 
                     </List.Item>
                   )}

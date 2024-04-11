@@ -231,6 +231,7 @@ const ProductDetail = () => {
                 )}
               </Col>
               <Col span={16}>
+             
                 <div className="price">
                   <h1 className="product_name">{productDetail.name}</h1>
                   <Rate disabled value={avgRating} className="rate" />
@@ -263,6 +264,22 @@ const ProductDetail = () => {
                       </div>
                     </div>
                   )}
+                
+                <div>
+              {productDetail?.status === 'Unavailable' || productDetail?.status === 'Discontinued' ? (
+                    <Paragraph
+                      className="badge"
+                      style={{ marginTop: 10 }}
+                    >
+                      {productDetail?.status === 'Unavailable' ? (
+                        <span>Hết hàng</span>
+                      ) : (
+                        <span>Ngừng kinh doanh</span>
+                      )}
+                      <img src={triangleTopRight} alt="Triangle" />
+                    </Paragraph>
+                  ) : null}
+              </div>
                   <div class="box-product-promotion">
                     <div class="box-product-promotion-header">
                       <p>Ưu đãi</p>
