@@ -29,7 +29,7 @@ const AccountManagement = () => {
     const handleChangeRole = async (record) => {
         try {
             const params = {
-                role: 'isAdmin', // Thay đổi quyền thành admin
+                role: 'isAdmin2', // Thay đổi quyền thành admin
             };
             await userApi.updateUser(record._id, params,); // Gọi API update user
             notification.success({
@@ -45,6 +45,26 @@ const AccountManagement = () => {
             });
         }
     };
+
+    const handleChangeRole2 = async (record) => {
+        try {
+            const params = {
+                role: 'isClient', // Thay đổi quyền thành admin
+            };
+            await userApi.updateUser(record._id, params,); // Gọi API update user
+            notification.success({
+                message: 'Thành công',
+                description: 'Thay đổi quyền admin thành công!',
+            });
+            handleListUser(); // Load lại danh sách người dùng sau khi thay đổi
+        } catch (error) {
+            console.log('Failed to change role:' + error);
+            notification.error({
+                message: 'Lỗi',
+                description: 'Thay đổi quyền admin thất bại!',
+            });
+        }
+    }
 
     const columns = [
         {
@@ -137,9 +157,9 @@ const AccountManagement = () => {
                     <Row>
                         <div style={{ display: 'flex', flexDirection: 'column' }}>
                             {role === "isAdmin" ? <div>
-                                {record.role !== "isAdmin" && (
+                                {record.role === "isClient" && (
                                     <Popconfirm
-                                        title="Bạn có muốn thay đổi quyền admin cho tài khoản này không?"
+                                        title="Bạn có muốn thay đổi quyền admin cấp 2 cho tài khoản này không?"
                                         onConfirm={() => handleChangeRole(record)}
                                         okText="Yes"
                                         cancelText="No"
@@ -150,29 +170,28 @@ const AccountManagement = () => {
                                             style={{ width: 190, borderRadius: 15, height: 30 }}
                                         >
                                             {"Thay đổi quyền admin"}
+                                        </Button>
+                                    </Popconfirm>
+                                )}
+
+                                {record.role === "isAdmin2" && (
+                                    <Popconfirm
+                                        title="Bạn có muốn thay đổi quyền thành khách hàng cho tài khoản này không?"
+                                        onConfirm={() => handleChangeRole2(record)}
+                                        okText="Yes"
+                                        cancelText="No"
+                                    >
+                                        <Button
+                                            size="small"
+                                            icon={<SecurityScanOutlined />}
+                                            style={{ width: 190, borderRadius: 15, height: 30 }}
+                                        >
+                                            {"Thay đổi quyền Client"}
                                         </Button>
                                     </Popconfirm>
                                 )}
                             </div> : null}
 
-                            {role === "isAdmin2" ? <div>
-                                {record.role == "isClient" && (
-                                    <Popconfirm
-                                        title="Bạn có muốn thay đổi quyền admin cho tài khoản này không?"
-                                        onConfirm={() => handleChangeRole(record)}
-                                        okText="Yes"
-                                        cancelText="No"
-                                    >
-                                        <Button
-                                            size="small"
-                                            icon={<SecurityScanOutlined />}
-                                            style={{ width: 190, borderRadius: 15, height: 30 }}
-                                        >
-                                            {"Thay đổi quyền admin"}
-                                        </Button>
-                                    </Popconfirm>
-                                )}
-                            </div> : null}
 
                             <div style={{ marginTop: 5 }}>
                                 {record.status !== "actived" ? <Popconfirm
@@ -189,20 +208,21 @@ const AccountManagement = () => {
                                     </Button>
                                 </Popconfirm> : (
                                     // Kiểm tra nếu người dùng không phải là admin thì mới hiển thị nút chặn tài khoản
-                                    !record.role.includes('isAdmin') &&
-                                    <Popconfirm
-                                        title="Bạn muốn chặn tài khoản này?"
-                                        onConfirm={() => handleBanAccount(record)}
-                                        okText="Yes"
-                                        cancelText="No"
-                                    >
-                                        <Button
-                                            size="small"
-                                            icon={<StopOutlined />}
-                                            style={{ width: 190, borderRadius: 15, height: 30 }}
-                                        >{"Chặn tài khoản"}
-                                        </Button>
-                                    </Popconfirm>
+                                    record.role !== "isAdmin" && record.role !== "isAdmin2" && (
+                                        <Popconfirm
+                                            title="Bạn muốn chặn tài khoản này?"
+                                            onConfirm={() => handleBanAccount(record)}
+                                            okText="Yes"
+                                            cancelText="No"
+                                        >
+                                            <Button
+                                                size="small"
+                                                icon={<StopOutlined />}
+                                                style={{ width: 190, borderRadius: 15, height: 30 }}
+                                            >{"Chặn tài khoản"}
+                                            </Button>
+                                        </Popconfirm>
+                                    )
                                 )}
                             </div>
                         </div>
