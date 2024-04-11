@@ -266,6 +266,8 @@ const ProductDetail = () => {
                   )}
                 
                 <div>
+                  <span style={{fontSize: 15}}>
+                Tác giả: {productDetail.manufacturer}</span>
               {productDetail?.status === 'Unavailable' || productDetail?.status === 'Discontinued' ? (
                     <Paragraph
                       className="badge"
