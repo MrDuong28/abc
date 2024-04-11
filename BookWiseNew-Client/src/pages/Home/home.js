@@ -174,7 +174,7 @@ const Home = () => {
                 <div className="img">
                   <img
                     style={{ width: "100%" }}
-                    src="https://nhasachphuongnam.com/images/promo/275/Banner-Cá-Voi-Cô-Đơn-890x396__2_.jpg"
+                    src="https://nhasachphuongnam.com/images/promo/276/Banners-Balo-Yome-890x396.jpg"
                     alt=""
                   />
                 </div>
@@ -304,7 +304,7 @@ const Home = () => {
           </div>
           <div className="texty-title">
             <p>
-              Sách <strong style={{ color: "#3b1d82" }}>Mới Xuất Bản</strong>
+              Sách <strong style={{ color: "#FF0000" }}>Mới Xuất Bản</strong>
             </p>
           </div>
 
@@ -443,7 +443,7 @@ const Home = () => {
           </div>
           <div className="texty-title">
             <p>
-              Sách <strong style={{ color: "#3b1d82" }}>Bán Chạy</strong>
+              Sách <strong style={{ color: "#FF0000" }}>Bán Chạy</strong>
             </p>
           </div>
 
@@ -536,7 +536,7 @@ const Home = () => {
           </div>
           <div className="texty-title">
             <p>
-              Giảm Giá <strong style={{ color: "#3b1d82" }}>Đặc Biệt</strong>
+              Giảm Giá <strong style={{ color: "#FF0000" }}>Đặc Biệt</strong>
             </p>
           </div>
 

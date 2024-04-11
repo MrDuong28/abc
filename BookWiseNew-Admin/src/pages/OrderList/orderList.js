@@ -200,7 +200,7 @@ const OrderList = () => {
             title: 'Email',
             dataIndex: 'user',
             key: 'user',
-            render: (text, record) => <a>{text.email}</a>,
+            render: (text, record) => <a>{text?.email}</a>,
         },
         {
             title: 'Số điện thoại',
