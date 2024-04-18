@@ -1,24 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import "./productList.css";
 import {
-    Col, Row, Typography, Spin, Button, Card, Drawer, Empty, Input, Space, message,
-    Form, Pagination, Modal, Popconfirm, notification, BackTop, Tag, Breadcrumb, Select, Table, Upload
-} from 'antd';
-import {
-    AppstoreAddOutlined, UploadOutlined, DeleteOutlined, PlusOutlined, EyeOutlined, ExclamationCircleOutlined, SearchOutlined,
-    CalendarOutlined, UserOutlined, TeamOutlined, HomeOutlined, HistoryOutlined, FormOutlined, TagOutlined, EditOutlined
+    DeleteOutlined,
+    EditOutlined,
+    FormOutlined,
+    HomeOutlined,
+    PlusOutlined,
+    UploadOutlined
 } from '@ant-design/icons';
-import QRCode from 'qrcode.react';
-import eventApi from "../../apis/eventApi";
-import productApi from "../../apis/productsApi";
-import { useHistory } from 'react-router-dom';
-import { DateTime } from "../../utils/dateTime";
-import axiosClient from '../../apis/axiosClient';
-import 'suneditor/dist/css/suneditor.min.css';
-import SunEditor from 'suneditor-react';
 import { PageHeader } from '@ant-design/pro-layout';
+import {
+    BackTop,
+    Breadcrumb,
+    Button,
+    Col,
+    Drawer,
+    Form,
+    Input,
+    Modal, Popconfirm,
+    Row,
+    Select,
+    Space,
+    Spin,
+    Table,
+    Tag,
+    Typography,
+    Upload,
+    message,
+    notification
+} from 'antd';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import SunEditor from 'suneditor-react';
+import 'suneditor/dist/css/suneditor.min.css';
+import axiosClient from '../../apis/axiosClient';
 import newsApi from "../../apis/newsApi";
+import productApi from "../../apis/productsApi";
 import uploadFileApi from '../../apis/uploadFileApi';
+import "./productList.css";
 const { confirm } = Modal;
 const { Option } = Select;
 const { Title } = Typography;
