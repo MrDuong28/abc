@@ -18,6 +18,7 @@ import 'suneditor/dist/css/suneditor.min.css';
 import SunEditor from 'suneditor-react';
 import { PageHeader } from '@ant-design/pro-layout';
 import newsApi from "../../apis/newsApi";
+import uploadFileApi from '../../apis/uploadFileApi';
 const { confirm } = Modal;
 const { Option } = Select;
 const { Title } = Typography;
@@ -29,6 +30,8 @@ const ProductList = () => {
     const [openModalCreate, setOpenModalCreate] = useState(false);
     const [openModalUpdate, setOpenModalUpdate] = useState(false);
     const [image, setImage] = useState();
+    const [audioUrl, setAudio] = useState();
+
     const [newsList, setNewsList] = useState([]);
 
     const [open, setOpen] = useState(false);
@@ -73,7 +76,8 @@ const ProductList = () => {
                     "slide": images,
                     "color": values.colors,
                     "url_book": bookUrl,
-                    "manufacturer": values.manufacturer
+                    "manufacturer": values.manufacturer,
+                    "audioUrl": audioUrl
                 };
 
                 return axiosClient.post("/product", categoryList).then(response => {
@@ -171,7 +175,8 @@ const ProductList = () => {
                         "status": values.status,
                         "color": values.colors,
                         "url_book": bookUrl,
-                        "manufacturer": values.manufacturer
+                        "manufacturer": values.manufacturer,
+                        "audioUrl": audioUrl
                     };
 
                     return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -202,7 +207,9 @@ const ProductList = () => {
                     "status": values.status,
                     "color": values.colors,
                     "url_book": bookUrl.length > 0 ? bookUrl : "",
-                    "manufacturer": values.manufacturer
+                    "manufacturer": values.manufacturer,
+                    "audioUrl": audioUrl
+
                 };
 
                 return axiosClient.put("/product/" + id, categoryList).then(response => {
@@ -287,6 +294,17 @@ const ProductList = () => {
         setImage(event.target.files[0]);
     }
 
+    const handleChangeAudioUrl = async (e) => {
+        setLoading(true);
+        const response = await uploadFileApi.uploadFile(e);
+        if (response) {
+            setAudio(response);
+        }
+        setLoading(false);
+    }
+
+
+
     const handleProductEdit = (id) => {
         setOpenModalUpdate(true);
         (async () => {
@@ -304,6 +322,7 @@ const ProductList = () => {
                     manufacturer: response.product.manufacturer
                 });
                 console.log(form2);
+                setAudio(response?.product?.audioUrl)
                 setDescription(response.product.description);
                 setLoading(false);
             } catch (error) {
@@ -385,6 +404,16 @@ const ProductList = () => {
             render: (text) => <a>{text}</a>,
         },
         {
+            title: 'Audio',
+            dataIndex: 'audioUrl',
+            key: 'audioUrl',
+            render: (audioUrl) => (
+                <span>
+                    <a href={audioUrl} target="_blank" rel="noopener noreferrer">Nghe audio</a>
+                </span>
+            ),
+        },
+        {
             title: 'Trạng thái',
             dataIndex: 'status',
             key: 'status',
@@ -400,7 +429,7 @@ const ProductList = () => {
                 </span>
             ),
         },
-        
+
         {
             title: 'Action',
             key: 'action',
@@ -565,6 +594,7 @@ const ProductList = () => {
                         }}
                         scrollToFirstError
                     >
+                                                <Spin spinning={loading}>
                         <Form.Item
                             name="name"
                             label="Tên"
@@ -648,6 +678,27 @@ const ProductList = () => {
                                 id="avatar" name="file"
                                 accept="image/png, image/jpeg" />
                         </Form.Item>
+
+                        <Form.Item
+                            name="audioUrl"
+                            label="Audio URL"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Vui lòng nhập đường dẫn âm thanh!',
+                                },
+                            ]}
+                            style={{ marginBottom: 10 }}
+                        >
+                            <input
+                                type="file"
+                                onChange={handleChangeAudioUrl}
+                                id="audioUrl"
+                                name="audioUrl"
+                                accept="audio/mpeg, audio/wav, audio/ogg, audio/mp3"
+                            />
+                        </Form.Item>
+
 
                         <Form.Item
                             name="images"
@@ -767,6 +818,7 @@ const ProductList = () => {
                             />
                         </Form.Item>
 
+                        </Spin>
                     </Form>
                 </Drawer>
 
@@ -909,6 +961,20 @@ const ProductList = () => {
                             >
                                 <Button icon={<UploadOutlined />}>Tải lên sách</Button>
                             </Upload>
+                        </Form.Item>
+
+                        <Form.Item
+                            name="audioUrl"
+                            label="Audio URL"
+                            style={{ marginBottom: 10 }}
+                        >
+                            <input
+                                type="file"
+                                onChange={handleChangeAudioUrl}
+                                id="audioUrl"
+                                name="audioUrl"
+                                accept="audio/mpeg, audio/wav, audio/ogg, audio/mp3"
+                            />
                         </Form.Item>
 
                         <Form.Item

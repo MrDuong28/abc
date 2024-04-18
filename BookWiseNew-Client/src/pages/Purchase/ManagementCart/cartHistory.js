@@ -97,6 +97,10 @@ const CartHistory = () => {
                   currency: "VND",
                 })}
               </div>
+              <div className="product-total">
+              {item?.product?.audioUrl ? <a href={item?.product?.audioUrl} target="_blank" rel="noopener noreferrer">Nghe audio</a> : null}
+              </div>
+              
               {index !== products.length - 1 && <Divider />}
             </div>
           ))}
@@ -158,6 +162,7 @@ const CartHistory = () => {
         </span>
       ),
     },
+    
     {
       title: "Ngày đặt",
       dataIndex: "createdAt",
@@ -200,12 +205,6 @@ const CartHistory = () => {
     handleList();
     window.scrollTo(0, 0);
   }, []);
-
-  // Thêm vào component của bạn
-  const handleProductClick = (id) => {
-    history.push("/product-detail/" + id);
-  };
-
   return (
     <div>
       <Spin spinning={false}>

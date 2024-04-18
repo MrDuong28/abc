@@ -67,7 +67,8 @@ const productController = {
             url_book,
             author,
             manufacturer,
-            status // Thêm trạng thái sản phẩm
+            status,
+            audioUrl 
         } = req.body;
     
         const product = new ProductModel({
@@ -82,7 +83,8 @@ const productController = {
             url_book,
             author,
             manufacturer,
-            status // Thêm trạng thái sản phẩm
+            status,
+            audioUrl 
         });
     
         try {
@@ -123,7 +125,8 @@ const productController = {
             url_book,
             author,
             manufacturer,
-            status // Thêm trạng thái sản phẩm
+            status,
+            audioUrl 
         } = req.body;
 
         try {
@@ -140,7 +143,8 @@ const productController = {
                     url_book,
                     author,
                     manufacturer,
-                    status // Thêm trạng thái sản phẩm
+                    status,
+                    audioUrl 
                 },
                 { new: true }
             );

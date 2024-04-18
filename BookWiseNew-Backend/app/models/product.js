@@ -39,6 +39,9 @@ const ProductSchema = new mongoose.Schema({
   url_book: {
     type: String 
   },
+  audioUrl: { 
+    type: String
+  },
   status: {
     type: String,
     enum: ['Available', 'Unvailable'],
