@@ -4,14 +4,17 @@ import {
   Spin,
   message, notification
 } from "antd";
+import { PlayCircleOutlined, PauseCircleOutlined } from '@ant-design/icons';
 import Paragraph from "antd/lib/typography/Paragraph";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axiosClient from "../../../apis/axiosClient";
-import eventApi from "../../../apis/eventApi";
 import productApi from "../../../apis/productApi";
 import triangleTopRight from "../../../assets/icon/Triangle-Top-Right.svg";
 import { numberWithCommas } from "../../../utils/common";
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
 import "./productDetail.css";
 
 const { TextArea } = Input;
@@ -21,11 +24,7 @@ const ProductDetail = () => {
   const [recommend, setRecommend] = useState([]);
   const [loading, setLoading] = useState(true);
   const [cartLength, setCartLength] = useState();
-  const [visible, setVisible] = useState(false);
-  const [dataForm, setDataForm] = useState([]);
-  const [lengthForm, setLengthForm] = useState();
   const [form] = Form.useForm();
-  const [template_feedback, setTemplateFeedback] = useState();
   let { id } = useParams();
   const history = useHistory();
   const [visible2, setVisible2] = useState(false);
@@ -37,6 +36,23 @@ const ProductDetail = () => {
 
   const viewBookOnline = (url) => {
     window.location.href = url;
+  };
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+  const [showAudioPlayer, setShowAudioPlayer] = useState(false);
+
+  const handleListenBook = () => {
+    setShowAudioPlayer(true);
+
+    if (audioRef.current && audioRef.current.audio.current) {
+      if (isPlaying) {
+        audioRef.current.audio.current.pause(); // Dừng phát âm thanh
+      } else {
+        audioRef.current.audio.current.play(); // Phát âm thanh
+      }
+    }
+    setIsPlaying(!isPlaying); // Cập nhật trạng thái phát nhạc
   };
 
   const addCart = (product) => {
@@ -231,7 +247,7 @@ const ProductDetail = () => {
                 )}
               </Col>
               <Col span={16}>
-             
+
                 <div className="price">
                   <h1 className="product_name">{productDetail.name}</h1>
                   <Rate disabled value={avgRating} className="rate" />
@@ -264,24 +280,24 @@ const ProductDetail = () => {
                       </div>
                     </div>
                   )}
-                
-                <div>
-                  <span style={{fontSize: 15}}>
-                Tác giả: {productDetail.manufacturer}</span>
-              {productDetail?.status === 'Unavailable' || productDetail?.status === 'Discontinued' ? (
-                    <Paragraph
-                      className="badge"
-                      style={{ marginTop: 10 }}
-                    >
-                      {productDetail?.status === 'Unavailable' ? (
-                        <span>Hết hàng</span>
-                      ) : (
-                        <span>Ngừng kinh doanh</span>
-                      )}
-                      <img src={triangleTopRight} alt="Triangle" />
-                    </Paragraph>
-                  ) : null}
-              </div>
+
+                  <div>
+                    <span style={{ fontSize: 15 }}>
+                      Tác giả: {productDetail.manufacturer}</span>
+                    {productDetail?.status === 'Unavailable' || productDetail?.status === 'Discontinued' ? (
+                      <Paragraph
+                        className="badge"
+                        style={{ marginTop: 10 }}
+                      >
+                        {productDetail?.status === 'Unavailable' ? (
+                          <span>Hết hàng</span>
+                        ) : (
+                          <span>Ngừng kinh doanh</span>
+                        )}
+                        <img src={triangleTopRight} alt="Triangle" />
+                      </Paragraph>
+                    ) : null}
+                  </div>
                   <div class="box-product-promotion">
                     <div class="box-product-promotion-header">
                       <p>Ưu đãi</p>
@@ -326,15 +342,31 @@ const ProductDetail = () => {
                     >
                       Thêm vào giỏ
                     </Button>
-                    <Button
-                      type="primary"
-                      className="cart"
-                      size="large"
-                      onClick={() => viewBookOnline(productDetail.url_book)}
-                    >
-                      Xem sách online
-                    </Button>
+                    {productDetail?.audioUrl && (
+                      <Button
+                        type="primary"
+                        className="cart"
+                        size="large"
+                        onClick={handleListenBook}
+                        icon={isPlaying ? <PauseCircleOutlined /> : <PlayCircleOutlined />}
+                      >
+                        {isPlaying ? 'Dừng sách' : 'Nghe sách'}
+                      </Button>
+                    )}
+                    {!productDetail?.audioUrl && (
+                      <>
+                        <Button
+                          type="primary"
+                          className="cart"
+                          size="large"
+                          onClick={() => viewBookOnline(productDetail.url_book)}
+                        >
+                          Xem sách online
+                        </Button>
+                      </>
+                    )}
                   </div>
+
                 </Card>
               </Col>
             </Row>
@@ -347,7 +379,17 @@ const ProductDetail = () => {
                 dangerouslySetInnerHTML={{ __html: productDetail.description }}
               ></div>
             </div>
-
+            {showAudioPlayer && (
+              <div className="audio-player-container">
+                <AudioPlayer
+                  ref={audioRef}
+                  autoPlay
+                  src={productDetail.audioUrl}
+                  onPause={() => setIsPlaying(false)}
+                  onPlay={() => setIsPlaying(true)}
+                />
+              </div>
+            )}
             <Row gutter={12} style={{ marginTop: 20 }}>
               <Col span={16}>
                 <Card className="card_total" bordered={false}>

@@ -75,12 +75,12 @@ const CartHistory = () => {
           {products.map((item, index) => (
             <div key={index} className="product-info">
               <div key={index} className="product-item">
-              <img
-                src={item.product?.image}
-                alt={item.product?.name}
-                className="product-image"
-              />
-            </div>
+                <img
+                  src={item.product?.image}
+                  alt={item.product?.name}
+                  className="product-image"
+                />
+              </div>
               <h3 className="product-name-1">{item.product?.name}</h3>
               <div className="product-price">
                 Giá gốc: {item?.product?.price?.toLocaleString("vi", {
@@ -97,10 +97,10 @@ const CartHistory = () => {
                   currency: "VND",
                 })}
               </div>
-              <div className="product-total">
-              {item?.product?.audioUrl ? <a href={item?.product?.audioUrl} target="_blank" rel="noopener noreferrer">Nghe audio</a> : null}
-              </div>
-              
+              {/* <div className="product-total">
+                {item?.product?.audioUrl ? <a href={item?.product?.audioUrl} target="_blank" rel="noopener noreferrer">Nghe audio</a> : null}
+              </div> */}
+
               {index !== products.length - 1 && <Divider />}
             </div>
           ))}
@@ -162,7 +162,7 @@ const CartHistory = () => {
         </span>
       ),
     },
-    
+
     {
       title: "Ngày đặt",
       dataIndex: "createdAt",

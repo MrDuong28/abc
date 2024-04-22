@@ -14,6 +14,7 @@ import {
     Col,
     Drawer,
     Form,
+    Checkbox,
     Input,
     Modal, Popconfirm,
     Row,
@@ -338,6 +339,9 @@ const ProductList = () => {
                     color: response.product.color,
                     manufacturer: response.product.manufacturer
                 });
+                if (response.product.audioUrl) {
+                    setShowPromotion(true)
+                }
                 console.log(form2);
                 setAudio(response?.product?.audioUrl)
                 setDescription(response.product.description);
@@ -532,6 +536,15 @@ const ProductList = () => {
             }
         })();
     }, [])
+
+    // Định nghĩa state để theo dõi trạng thái của checkbox
+    const [showPromotion, setShowPromotion] = useState(false);
+
+    // Xử lý sự kiện khi checkbox được thay đổi
+    const handleShowPromotionChange = (e) => {
+        setShowPromotion(e.target.checked);
+    };
+
     return (
         <div>
             <Spin spinning={loading}>
@@ -611,229 +624,230 @@ const ProductList = () => {
                         }}
                         scrollToFirstError
                     >
-                                                <Spin spinning={loading}>
-                        <Form.Item
-                            name="name"
-                            label="Tên"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập tên!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Input placeholder="Tên" />
-                        </Form.Item>
+                        <Spin spinning={loading}>
+                            <Form.Item
+                                name="showPromotion"
+                                style={{ marginBottom: 10 }}
+                            >
+                                <Checkbox onChange={handleShowPromotionChange}>Sách nói?</Checkbox>
+                            </Form.Item>
+                            <Form.Item
+                                name="name"
+                                label="Tên"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Vui lòng nhập tên!',
+                                    },
+                                ]}
+                                style={{ marginBottom: 10 }}
+                            >
+                                <Input placeholder="Tên" />
+                            </Form.Item>
+                            {!showPromotion && (
+                                <>
+                                    <Form.Item
+                                        name="status"
+                                        label="Trạng thái"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message: 'Vui lòng chọn trạng thái!',
+                                            },
+                                        ]}
+                                        style={{ marginBottom: 10 }}
+                                    >
+                                        <Select placeholder="Chọn trạng thái">
+                                            <Select.Option value="Available">Còn hàng</Select.Option>
+                                            <Select.Option value="Unavailable">Hết hàng</Select.Option>
+                                            <Select.Option value="Discontinued">Ngừng kinh doanh</Select.Option>
+                                        </Select>
+                                    </Form.Item>
 
-                        <Form.Item
-                            name="status"
-                            label="Trạng thái"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng chọn trạng thái!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Select placeholder="Chọn trạng thái">
-                                <Select.Option value="Available">Còn hàng</Select.Option>
-                                <Select.Option value="Unavailable">Hết hàng</Select.Option>
-                                <Select.Option value="Discontinued">Ngừng kinh doanh</Select.Option>
-                            </Select>
-                        </Form.Item>
+                                    <Form.Item
+                                        name="price"
+                                        label="Giá gốc"
+                                        rules={[
+                                            {
+                                                required: true,
+                                                message: 'Vui lòng nhập giá gốc!',
+                                            },
+                                        ]}
+                                        style={{ marginBottom: 10 }}
+                                    >
+                                        <Input placeholder="Giá gốc" type="number" />
+                                    </Form.Item>
 
-                        <Form.Item
-                            name="price"
-                            label="Giá gốc"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập giá gốc!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Input placeholder="Giá gốc" type="number" />
-                        </Form.Item>
+                                    <Form.Item
+                                        name="promotion"
+                                        label="Giá giảm"
+                                        style={{ marginBottom: 10 }}
+                                    >
+                                        <Input placeholder="Giá giảm" type="number" />
+                                    </Form.Item>
+                                </>)}
+                            <Form.Item
+                                name="manufacturer"
+                                label="Nhà xuất bản"
+                                style={{ marginBottom: 10 }}
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Vui lòng nhập nhà xuất bản!',
+                                    },
+                                ]}
+                            >
+                                <Input placeholder="Nhà xuất bản" />
+                            </Form.Item>
 
-                        <Form.Item
-                            name="promotion"
-                            label="Giá giảm"
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Input placeholder="Giá giảm" type="number" />
-                        </Form.Item>
+                            <Form.Item
+                                name="image"
+                                label="Ảnh"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Vui lòng nhập chọn ảnh!',
+                                    },
+                                ]}
+                                style={{ marginBottom: 10 }}
+                            >
+                                <input type="file" onChange={handleChangeImage}
+                                    id="avatar" name="file"
+                                    accept="image/png, image/jpeg" />
+                            </Form.Item>
 
-                        <Form.Item
-                            name="manufacturer"
-                            label="Nhà xuất bản"
-                            style={{ marginBottom: 10 }}
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập nhà xuất bản!',
-                                },
-                            ]}
-                        >
-                            <Input placeholder="Nhà xuất bản" />
-                        </Form.Item>
-
-                        <Form.Item
-                            name="image"
-                            label="Ảnh"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập chọn ảnh!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <input type="file" onChange={handleChangeImage}
-                                id="avatar" name="file"
-                                accept="image/png, image/jpeg" />
-                        </Form.Item>
-
-                        <Form.Item
-                            name="audioUrl"
-                            label="Audio URL"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập đường dẫn âm thanh!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <input
-                                type="file"
-                                onChange={handleChangeAudioUrl}
-                                id="audioUrl"
+                            <Form.Item
                                 name="audioUrl"
-                                accept="audio/mpeg, audio/wav, audio/ogg, audio/mp3"
-                            />
-                        </Form.Item>
-
-
-                        <Form.Item
-                            name="images"
-                            label="Hình ảnh slide"
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Upload
-                                name="images"
-                                listType="picture-card"
-                                showUploadList={true}
-                                beforeUpload={() => false}
-                                onChange={handleImageUpload}
-                                multiple
+                                label="Audio URL"
+                                style={{ marginBottom: 10 }}
                             >
-                                <Button icon={<UploadOutlined />}>Tải lên</Button>
-                            </Upload>
-                        </Form.Item>
+                                <input
+                                    type="file"
+                                    onChange={handleChangeAudioUrl}
+                                    id="audioUrl"
+                                    name="audioUrl"
+                                    accept="audio/mpeg, audio/wav, audio/ogg, audio/mp3"
+                                />
+                            </Form.Item>
 
-                        <Form.Item
-                            name="url_book"
-                            label="File sách"
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Upload
+
+                            <Form.Item
                                 name="images"
-                                listType="picture-card"
-                                showUploadList={true}
-                                beforeUpload={() => false}
-                                onChange={handleFileUpload}
-                                multiple
+                                label="Hình ảnh slide"
+                                style={{ marginBottom: 10 }}
                             >
-                                <Button icon={<UploadOutlined />}>Tải lên sách</Button>
-                            </Upload>
-                        </Form.Item>
+                                <Upload
+                                    name="images"
+                                    listType="picture-card"
+                                    showUploadList={true}
+                                    beforeUpload={() => false}
+                                    onChange={handleImageUpload}
+                                    multiple
+                                >
+                                    <Button icon={<UploadOutlined />}>Tải lên</Button>
+                                </Upload>
+                            </Form.Item>
 
-                        <Form.Item
-                            name="category"
-                            label="Danh mục"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng chọn danh mục!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Select style={{ width: '100%' }} tokenSeparators={[',']} placeholder="Danh mục" showSearch filterOption={(input, option) =>
-                                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }>
-                                {category.map((item, index) => {
-                                    return (
-                                        <Option value={item._id} key={index} >
-                                            {item.name}
-                                        </Option>
-                                    )
-                                })}
-                            </Select>
-                        </Form.Item>
+                            <Form.Item
+                                name="url_book"
+                                label="File sách"
+                                style={{ marginBottom: 10 }}
+                            >
+                                <Upload
+                                    name="images"
+                                    listType="picture-card"
+                                    showUploadList={true}
+                                    beforeUpload={() => false}
+                                    onChange={handleFileUpload}
+                                    multiple
+                                >
+                                    <Button icon={<UploadOutlined />}>Tải lên sách</Button>
+                                </Upload>
+                            </Form.Item>
 
-                        <Form.Item
-                            name="description"
-                            label="Mô tả"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập mô tả!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
+                            <Form.Item
+                                name="category"
+                                label="Danh mục"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Vui lòng chọn danh mục!',
+                                    },
+                                ]}
+                                style={{ marginBottom: 10 }}
+                            >
+                                <Select style={{ width: '100%' }} tokenSeparators={[',']} placeholder="Danh mục" showSearch filterOption={(input, option) =>
+                                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                }>
+                                    {category.map((item, index) => {
+                                        return (
+                                            <Option value={item._id} key={index} >
+                                                {item.name}
+                                            </Option>
+                                        )
+                                    })}
+                                </Select>
+                            </Form.Item>
 
-                            <SunEditor
-                                lang="en"
-                                placeholder="Content"
-                                onChange={handleChange}
-                                setOptions={{
-                                    buttonList: [
-                                        ["undo", "redo"],
-                                        ["font", "fontSize"],
-                                        // ['paragraphStyle', 'blockquote'],
-                                        [
-                                            "bold",
-                                            "underline",
-                                            "italic",
-                                            "strike",
-                                            "subscript",
-                                            "superscript"
+                            <Form.Item
+                                name="description"
+                                label="Mô tả"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Vui lòng nhập mô tả!',
+                                    },
+                                ]}
+                                style={{ marginBottom: 10 }}
+                            >
+
+                                <SunEditor
+                                    lang="en"
+                                    placeholder="Content"
+                                    onChange={handleChange}
+                                    setOptions={{
+                                        buttonList: [
+                                            ["undo", "redo"],
+                                            ["font", "fontSize"],
+                                            // ['paragraphStyle', 'blockquote'],
+                                            [
+                                                "bold",
+                                                "underline",
+                                                "italic",
+                                                "strike",
+                                                "subscript",
+                                                "superscript"
+                                            ],
+                                            ["fontColor", "hiliteColor"],
+                                            ["align", "list", "lineHeight"],
+                                            ["outdent", "indent"],
+
+                                            ["table", "horizontalRule", "link", "image", "video"],
+                                            // ['math'] //You must add the 'katex' library at options to use the 'math' plugin.
+                                            // ['imageGallery'], // You must add the "imageGalleryUrl".
+                                            // ["fullScreen", "showBlocks", "codeView"],
+                                            ["preview", "print"],
+                                            ["removeFormat"]
+
+                                            // ['save', 'template'],
+                                            // '/', Line break
                                         ],
-                                        ["fontColor", "hiliteColor"],
-                                        ["align", "list", "lineHeight"],
-                                        ["outdent", "indent"],
-
-                                        ["table", "horizontalRule", "link", "image", "video"],
-                                        // ['math'] //You must add the 'katex' library at options to use the 'math' plugin.
-                                        // ['imageGallery'], // You must add the "imageGalleryUrl".
-                                        // ["fullScreen", "showBlocks", "codeView"],
-                                        ["preview", "print"],
-                                        ["removeFormat"]
-
-                                        // ['save', 'template'],
-                                        // '/', Line break
-                                    ],
-                                    fontSize: [
-                                        8, 10, 14, 18, 24,
-                                    ], // Or Array of button list, eg. [['font', 'align'], ['image']]
-                                    defaultTag: "div",
-                                    minHeight: "500px",
-                                    showPathLabel: false,
-                                    attributesWhitelist: {
-                                        all: "style",
-                                        table: "cellpadding|width|cellspacing|height|style",
-                                        tr: "valign|style",
-                                        td: "styleinsert|height|style",
-                                        img: "title|alt|src|style"
-                                    }
-                                }}
-                            />
-                        </Form.Item>
+                                        fontSize: [
+                                            8, 10, 14, 18, 24,
+                                        ], // Or Array of button list, eg. [['font', 'align'], ['image']]
+                                        defaultTag: "div",
+                                        minHeight: "500px",
+                                        showPathLabel: false,
+                                        attributesWhitelist: {
+                                            all: "style",
+                                            table: "cellpadding|width|cellspacing|height|style",
+                                            tr: "valign|style",
+                                            td: "styleinsert|height|style",
+                                            img: "title|alt|src|style"
+                                        }
+                                    }}
+                                />
+                            </Form.Item>
 
                         </Spin>
                     </Form>
@@ -894,51 +908,48 @@ const ProductList = () => {
                             <Input placeholder="Tên" />
                         </Form.Item>
 
-                        <Form.Item
-                            name="price"
-                            label="Giá gốc"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập giá gốc!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Input placeholder="Giá gốc" />
-                        </Form.Item>
+                        {!showPromotion && (
+                            <>
+                                <Form.Item
+                                    name="status"
+                                    label="Trạng thái"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Vui lòng chọn trạng thái!',
+                                        },
+                                    ]}
+                                    style={{ marginBottom: 10 }}
+                                >
+                                    <Select placeholder="Chọn trạng thái">
+                                        <Select.Option value="Available">Còn hàng</Select.Option>
+                                        <Select.Option value="Unavailable">Hết hàng</Select.Option>
+                                        <Select.Option value="Discontinued">Ngừng kinh doanh</Select.Option>
+                                    </Select>
+                                </Form.Item>
 
-                        <Form.Item
-                            name="status"
-                            label="Trạng thái"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng chọn trạng thái!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Select placeholder="Chọn trạng thái">
-                                <Select.Option value="Available">Còn hàng</Select.Option>
-                                <Select.Option value="Unavailable">Hết hàng</Select.Option>
-                                <Select.Option value="Discontinued">Ngừng kinh doanh</Select.Option>
-                            </Select>
-                        </Form.Item>
+                                <Form.Item
+                                    name="price"
+                                    label="Giá gốc"
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Vui lòng nhập giá gốc!',
+                                        },
+                                    ]}
+                                    style={{ marginBottom: 10 }}
+                                >
+                                    <Input placeholder="Giá gốc" type="number" />
+                                </Form.Item>
 
-                        <Form.Item
-                            name="promotion"
-                            label="Giá giảm"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Vui lòng nhập giá giảm!',
-                                },
-                            ]}
-                            style={{ marginBottom: 10 }}
-                        >
-                            <Input placeholder="Giá giảm" />
-                        </Form.Item>
+                                <Form.Item
+                                    name="promotion"
+                                    label="Giá giảm"
+                                    style={{ marginBottom: 10 }}
+                                >
+                                    <Input placeholder="Giá giảm" type="number" />
+                                </Form.Item>
+                            </>)}
 
                         <Form.Item
                             name="manufacturer"

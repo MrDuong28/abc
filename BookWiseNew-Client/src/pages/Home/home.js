@@ -380,13 +380,15 @@ const Home = () => {
                         className="badge"
                         style={{ position: "absolute", top: 10, left: 9 }}
                       >
-                        <span>Giảm giá</span>
+                        {item?.audioUrl ? (
+                          <span>Sách nói</span>
+                        ) : (
+                          <span>Giảm giá</span>
+                        )}
                         <img src={triangleTopRight} alt="Triangle" />
                       </Paragraph>
                     )
                   )}
-
-
                 </Col>
               ))}
             </Row>
@@ -518,12 +520,15 @@ const Home = () => {
                         className="badge"
                         style={{ position: "absolute", top: 10, left: 9 }}
                       >
-                        <span>Giảm giá</span>
+                        {item?.audioUrl ? (
+                          <span>Sách nói</span>
+                        ) : (
+                          <span>Giảm giá</span>
+                        )}
                         <img src={triangleTopRight} alt="Triangle" />
                       </Paragraph>
                     )
                   )}
-
                 </Col>
               ))}
             </Row>
@@ -613,7 +618,11 @@ const Home = () => {
                         className="badge"
                         style={{ position: "absolute", top: 10, left: 9 }}
                       >
-                        <span>Giảm giá</span>
+                        {item?.audioUrl ? (
+                          <span>Sách nói</span>
+                        ) : (
+                          <span>Giảm giá</span>
+                        )}
                         <img src={triangleTopRight} alt="Triangle" />
                       </Paragraph>
                     )

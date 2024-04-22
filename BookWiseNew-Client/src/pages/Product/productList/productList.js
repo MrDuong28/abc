@@ -186,49 +186,67 @@ const ProductList = () => {
                           >
                             {item.name}
                           </Paragraph>
-                          <div className="price-amount">
-                            <React.Fragment>
-                              {item?.promotion === item?.price ? (
-                                <Paragraph className="price-product">
-                                  {numberWithCommas(item.promotion)} đ
-                                </Paragraph>
-                              ) : (
-                                <React.Fragment>
+                          {!item?.audioUrl && (
+
+                            <div className="price-amount">
+                              <React.Fragment>
+                                {item?.promotion === item?.price ? (
                                   <Paragraph className="price-product">
-                                    {item?.promotion && numberWithCommas(item.promotion)} đ
+                                    {numberWithCommas(item.promotion)} đ
                                   </Paragraph>
-                                  <Paragraph className="price-cross">
-                                    {item.price && numberWithCommas(item.price)} đ
-                                  </Paragraph>
-                                </React.Fragment>
-                              )}
-                            </React.Fragment>
-                          </div>
+                                ) : (
+                                  <React.Fragment>
+                                    <Paragraph className="price-product">
+                                      {item?.promotion && numberWithCommas(item.promotion)} đ
+                                    </Paragraph>
+                                    <Paragraph className="price-cross">
+                                      {item.price && numberWithCommas(item.price)} đ
+                                    </Paragraph>
+                                  </React.Fragment>
+                                )}
+                              </React.Fragment>
+                            </div>
+                          )}
                         </div>
                       </div>
-                      {item?.status === 'Unavailable' || item?.status === 'Discontinued' ? (
-                    <Paragraph
-                      className="badge"
-                      style={{ position: "absolute", top: 10, left: 9 }}
-                    >
-                      {item?.status === 'Unavailable' ? (
-                        <span>Hết hàng</span>
+                      {item?.status === 'Unavailable' || item?.status === 'Discontinued' && !item?.audioUrl ? (
+                        <Paragraph
+                          className="badge"
+                          style={{ position: "absolute", top: 10, left: 9 }}
+                        >
+                          {item?.status === 'Unavailable' ? (
+                            <span>Hết hàng</span>
+                          ) : (
+                            <span>Ngừng kinh doanh</span>
+                          )}
+                          <img src={triangleTopRight} alt="Triangle" />
+                        </Paragraph>
                       ) : (
-                        <span>Ngừng kinh doanh</span>
+                        item?.promotion !== item?.price && (
+                          <Paragraph
+                            className="badge"
+                            style={{ position: "absolute", top: 10, left: 9 }}
+                          >
+                            <span>Giảm giá</span>
+                            <img src={triangleTopRight} alt="Triangle" />
+                          </Paragraph>
+                        )
                       )}
-                      <img src={triangleTopRight} alt="Triangle" />
-                    </Paragraph>
-                  ) : (
-                    item?.promotion !== item?.price && (
-                      <Paragraph
-                        className="badge"
-                        style={{ position: "absolute", top: 10, left: 9 }}
-                      >
-                        <span>Giảm giá</span>
-                        <img src={triangleTopRight} alt="Triangle" />
-                      </Paragraph>
-                    )
-                  )}
+
+                      {item?.audioUrl ? (
+                        <Paragraph
+                          className="badge"
+                          style={{ position: "absolute", top: 10, left: 9 }}
+                        >
+                          {item?.audioUrl ? (
+                            <span>Sách nói</span>
+                          ) : (
+                            <span>Giảm giá</span>
+                          )}
+                          <img src={triangleTopRight} alt="Triangle" />
+                        </Paragraph>
+                      )
+                        : null}
 
                     </List.Item>
                   )}
